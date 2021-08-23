@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiSample", "WebApiSampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRpcSample", "GRpcSample\GRpcSample.csproj", "{2860E01E-7789-4DB0-80FC-85F6FAFC3665}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerSample", "WorkerSample\WorkerSample.csproj", "{3FCC2F50-737C-476E-8D0B-CC828A88ED82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostSample", "HostSample\HostSample.csproj", "{3FCC2F50-737C-476E-8D0B-CC828A88ED82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

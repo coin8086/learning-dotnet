@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>dotnet-WorkerSample-D4F7B830-8023-40EC-AD2D-0B17C29DEC36</UserSecretsId>
+    <UserSecretsId>dotnet-HostSample-D4F7B830-8023-40EC-AD2D-0B17C29DEC36</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
