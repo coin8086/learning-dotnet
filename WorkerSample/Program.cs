@@ -19,6 +19,7 @@ namespace WorkerSample
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHostedService<Worker>();
+                    services.AddHostedService<WorkerOfAppLifetime>();
                 });
     }
 }
