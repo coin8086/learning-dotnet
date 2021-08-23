@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -57,8 +54,21 @@ namespace WorkerSample
                     ShowConfig(root);
                     Console.WriteLine("ConfigureAppConfiguration END\n");
                 })
-                .ConfigureServices((hostContext, services) =>
+                .ConfigureServices((builderContext, services) =>
                 {
+                    var config = builderContext.Configuration;
+
+                    //For simple config without validation or with IValidateOptions<WorkerOptions>
+                    //services.Configure<WorkerOptions>(config.GetSection(nameof(WorkerOptions)));
+
+                    //For config with DataAnnotations validation and optionally inline Validate function
+                    services.AddOptions<WorkerOptions>().Bind(config.GetSection(nameof(WorkerOptions)))
+                        .ValidateDataAnnotations()
+                        .Validate(config =>
+                        {
+                            return !(string.IsNullOrWhiteSpace(config.Name) && config.Age != 0);
+                        }, "Something wrong!");
+
                     services.AddHostedService<Worker>();
                     services.AddHostedService<WorkerOfAppLifetime>();
                 });
