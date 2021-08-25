@@ -73,7 +73,7 @@ namespace HostSample
                     services.AddHostedService<WorkerOfAppLifetime>();
                 });
 
-        public static void ShowConfig(IConfigurationRoot root)
+        public static void ShowConfig(IConfiguration root)
         {
             Console.WriteLine("Configuration Tree:");
             foreach (var section in root.GetChildren())
