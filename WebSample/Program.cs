@@ -22,5 +22,24 @@ namespace WebSample
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        public static void ShowConfig(IConfiguration root)
+        {
+            Console.WriteLine("Configuration Tree:");
+            foreach (var section in root.GetChildren())
+            {
+                ShowConfigSection(section, 1);
+            }
+        }
+
+        public static void ShowConfigSection(IConfigurationSection section, int level)
+        {
+            var indent = new string(' ', level * 2);
+            Console.WriteLine($"{indent}Path={section.Path}, Key={section.Key}, Value={section.Value}");
+            foreach (var subsec in section.GetChildren())
+            {
+                ShowConfigSection(subsec, level + 1);
+            }
+        }
     }
 }
