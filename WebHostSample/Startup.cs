@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -39,29 +40,43 @@ namespace WebHostSample
 
             app.UseMyMiddleware("Hellooooo!");
 
+            app.UseRouting();
+
             app.Use(async (context, next) =>
             {
-                logger.LogInformation("Use In");
+                logger.LogInformation("Middleware In");
+                var endpoint = context.GetEndpoint();
+                if (endpoint is null)
+                {
+                    logger.LogInformation("No endpoint is found!");
+                }
+                else
+                {
+                    if (endpoint is RouteEndpoint route)
+                    {
+                        logger.LogInformation($"Endpoint has pattern: {route.RoutePattern.RawText}");
+                    }
+                    logger.LogInformation($"Endpoint has metadata: {string.Join(", ", endpoint.Metadata)}");
+                }
+
                 await next.Invoke();
-                logger.LogInformation("Use Out");
+                logger.LogInformation("Middleware Out");
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Hello World!");
+                }).WithMetadata("All is well!", 100);
             });
 
             app.Run(async context =>
             {
                 logger.LogInformation("Run In");
-                await context.Response.WriteAsync("Hello, Middleware!");
+                await context.Response.WriteAsync("Hey! I caught you!");
                 logger.LogInformation("Run Out");
             });
-
-            //app.UseRouting();
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        await context.Response.WriteAsync("Hello World!");
-            //    });
-            //});
         }
     }
 }

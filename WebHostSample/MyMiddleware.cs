@@ -22,14 +22,14 @@ namespace WebHostSample
             _next = next;
             _logger = logger;
             _msg = msg;
-            _logger.LogInformation($"MyMiddleware::MyMiddleware: {msg}");
+            _logger.LogInformation($"MyMiddleware {msg} is created.");
         }
 
         public async Task InvokeAsync(HttpContext context)
         {
-            _logger.LogInformation($"MyMiddleware::InvokeAsync {_msg} In");
+            _logger.LogInformation($"MyMiddleware {_msg} In");
             await _next(context);
-            _logger.LogInformation($"MyMiddleware::InvokeAsync {_msg} Out");
+            _logger.LogInformation($"MyMiddleware {_msg} Out");
         }
     }
 
