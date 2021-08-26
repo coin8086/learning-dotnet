@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,20 +12,24 @@ namespace WebHostSample
     {
         private readonly RequestDelegate _next;
 
+        private ILogger<MyMiddleware> _logger;
+
         private string _msg;
 
-        public MyMiddleware(RequestDelegate next, string msg)
+        //NOTE: logger is passed by DI, and the order of logger and msg doesn't matter, though UseMyMiddleware
+        public MyMiddleware(RequestDelegate next, ILogger<MyMiddleware> logger, string msg)
         {
-            Console.WriteLine($"MyMiddleware::MyMiddleware: {msg}");
             _next = next;
+            _logger = logger;
             _msg = msg;
+            _logger.LogInformation($"MyMiddleware::MyMiddleware: {msg}");
         }
 
         public async Task InvokeAsync(HttpContext context)
         {
-            Console.WriteLine($"MyMiddleware::InvokeAsync {_msg} In");
+            _logger.LogInformation($"MyMiddleware::InvokeAsync {_msg} In");
             await _next(context);
-            Console.WriteLine($"MyMiddleware::InvokeAsync {_msg} Out");
+            _logger.LogInformation($"MyMiddleware::InvokeAsync {_msg} Out");
         }
     }
 
