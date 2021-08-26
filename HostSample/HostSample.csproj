@@ -1,5 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
+  <Import Project="..\Common.props" />
+
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>dotnet-HostSample-D4F7B830-8023-40EC-AD2D-0B17C29DEC36</UserSecretsId>

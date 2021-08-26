@@ -1,0 +1,8 @@
+<Project>
+
+  <PropertyGroup>
+    <DefaultItemExcludes>$(DefaultItemExcludes);**\*.swp</DefaultItemExcludes>
+  </PropertyGroup>
+
+</Project>
+
