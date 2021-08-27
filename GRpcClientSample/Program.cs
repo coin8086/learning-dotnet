@@ -13,8 +13,11 @@ namespace GRpcClientSample
             var client = new Greeter.GreeterClient(channel);
             var reply = await client.SayHelloAsync(new HelloRequest { Name = "GreeterClient" });
             Console.WriteLine("Greeting from server: " + reply.Message);
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+
+            var client2 = new Example.ExampleClient(channel);
+            var response = await client2.UnaryCallAsync(new ExampleRequest() { PageIndex = 1, PageSize = 3, IsDescending = false });
+            Console.WriteLine($"Request: PageIndex={response.Request.PageIndex}, PageSize={response.Request.PageSize}");
+            Console.WriteLine($"Response: {string.Join(", ", response.Titles)}");
         }
     }
 }
