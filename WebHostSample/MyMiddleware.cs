@@ -27,9 +27,13 @@ namespace WebHostSample
 
         public async Task InvokeAsync(HttpContext context)
         {
+            //Try log scope with config "Console:IncludeScopes = True"
+            //using (_logger.BeginScope("MyMiddleware Scope"))
+            //{
             _logger.LogInformation($"MyMiddleware {_msg} In");
             await _next(context);
             _logger.LogInformation($"MyMiddleware {_msg} Out");
+            //}
         }
     }
 
