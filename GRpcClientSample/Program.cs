@@ -8,13 +8,27 @@ namespace GRpcClientSample
 {
     class Program
     {
+
         static async Task Main(string[] args)
         {
             // The port number must match the port of the gRPC server.
             using var channel = GrpcChannel.ForAddress("http://localhost:5000");
+            Console.WriteLine("SayHello:");
             var client = new Greeter.GreeterClient(channel);
-            var reply = await client.SayHelloAsync(new HelloRequest { Name = "GreeterClient" });
+            using var call2 = client.SayHelloAsync(new HelloRequest { Name = "GreeterClient" });
+            var headers = await call2.ResponseHeadersAsync;
+            Console.WriteLine("Headers:");
+            foreach (var h in headers)
+            {
+                Console.WriteLine(h);
+            }
+            var reply = await call2.ResponseAsync;
             Console.WriteLine("Greeting from server: " + reply.Message);
+            Console.WriteLine("Trailers:");
+            foreach (var h in call2.GetTrailers())
+            {
+                Console.WriteLine(h);
+            }
             Console.WriteLine();
 
             var client2 = new Example.ExampleClient(channel);

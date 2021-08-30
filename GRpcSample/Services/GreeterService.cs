@@ -17,6 +17,12 @@ namespace GRpcSample
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
+            var headers = context.RequestHeaders.Select((h) => h.ToString());
+            _logger.LogInformation("Headers:\n{headers}", string.Join('\n', headers));
+
+            var rand = new Random();
+            context.ResponseTrailers.Add("Lucky-Number", rand.Next(10000).ToString());
+
             return Task.FromResult(new HelloReply
             {
                 Message = "Hello " + request.Name
