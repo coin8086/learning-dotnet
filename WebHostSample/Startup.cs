@@ -38,13 +38,23 @@ namespace WebHostSample
                 app.UseDeveloperExceptionPage();
             }
 
+            //Use custom middleware class
             app.UseMyMiddleware("Hellooooo!");
+
+            //The original Use
+            app.Use(next => async (context) =>
+            {
+                logger.LogInformation("Middleware In");
+                await next(context);
+                logger.LogInformation("Middleware Out");
+            });
 
             app.UseRouting();
 
+            //The extension Use
             app.Use(async (context, next) =>
             {
-                logger.LogInformation("Middleware In");
+                logger.LogInformation("Middleware2 In");
                 var endpoint = context.GetEndpoint();
                 if (endpoint is null)
                 {
@@ -59,8 +69,8 @@ namespace WebHostSample
                     logger.LogInformation($"Endpoint has metadata: {string.Join(", ", endpoint.Metadata)}");
                 }
 
-                await next.Invoke();
-                logger.LogInformation("Middleware Out");
+                await next();
+                logger.LogInformation("Middleware2 Out");
             });
 
             app.UseEndpoints(endpoints =>
