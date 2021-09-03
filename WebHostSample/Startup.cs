@@ -79,6 +79,8 @@ namespace WebHostSample
                 {
                     await context.Response.WriteAsync("Hello World!");
                 }).WithMetadata("All is well!", 100);
+
+                endpoints.MapMyEndpoint("/my");
             });
 
             app.Run(async context =>
