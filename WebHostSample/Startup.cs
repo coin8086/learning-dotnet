@@ -41,6 +41,14 @@ namespace WebHostSample
             //Use custom middleware class
             app.UseMyMiddleware("Hellooooo!");
 
+            app.Map("/branch", app =>
+            {
+                app.Run(async context =>
+                {
+                    await context.Response.WriteAsync("Branch is hit.");
+                });
+            });
+
             //The original Use
             app.Use(next => async (context) =>
             {
