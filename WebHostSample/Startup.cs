@@ -62,7 +62,6 @@ namespace WebHostSample
             //The extension Use
             app.Use(async (context, next) =>
             {
-                logger.LogInformation("Middleware2 In");
                 var endpoint = context.GetEndpoint();
                 if (endpoint is null)
                 {
@@ -78,7 +77,6 @@ namespace WebHostSample
                 }
 
                 await next();
-                logger.LogInformation("Middleware2 Out");
             });
 
             app.UseEndpoints(endpoints =>
