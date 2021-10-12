@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostSample", "HostSample\Ho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRpcClientSample", "GRpcClientSample\GRpcClientSample.csproj", "{F92B76B0-B350-4078-9139-8C6A16057894}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestSample", "XUnitTestSample\XUnitTestSample.csproj", "{3BAEAD1D-B5C3-4452-8B96-B643835DA998}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,5 +88,17 @@ Global
 		{F92B76B0-B350-4078-9139-8C6A16057894}.Release|x64.Build.0 = Release|Any CPU
 		{F92B76B0-B350-4078-9139-8C6A16057894}.Release|x86.ActiveCfg = Release|Any CPU
 		{F92B76B0-B350-4078-9139-8C6A16057894}.Release|x86.Build.0 = Release|Any CPU
+		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Debug|x64.Build.0 = Debug|Any CPU
+		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Debug|x86.Build.0 = Debug|Any CPU
+		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Release|x64.ActiveCfg = Release|Any CPU
+		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Release|x64.Build.0 = Release|Any CPU
+		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Release|x86.ActiveCfg = Release|Any CPU
+		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
