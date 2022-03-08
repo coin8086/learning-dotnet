@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRpcClientSample", "GRpcClientSample\GRpcClientSample.csproj", "{F92B76B0-B350-4078-9139-8C6A16057894}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestSample", "XUnitTestSample\XUnitTestSample.csproj", "{3BAEAD1D-B5C3-4452-8B96-B643835DA998}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSample", "JsonSample\JsonSample.csproj", "{D219F83D-7C6F-4078-8479-90CD76C4AD64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -100,5 +102,17 @@ Global
 		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Release|x64.Build.0 = Release|Any CPU
 		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Release|x86.ActiveCfg = Release|Any CPU
 		{3BAEAD1D-B5C3-4452-8B96-B643835DA998}.Release|x86.Build.0 = Release|Any CPU
+		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Debug|x64.Build.0 = Debug|Any CPU
+		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Debug|x86.Build.0 = Debug|Any CPU
+		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Release|x64.ActiveCfg = Release|Any CPU
+		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Release|x64.Build.0 = Release|Any CPU
+		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Release|x86.ActiveCfg = Release|Any CPU
+		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
