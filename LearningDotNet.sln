@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestSample", "XUnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSample", "JsonSample\JsonSample.csproj", "{D219F83D-7C6F-4078-8479-90CD76C4AD64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingSample", "LoggingSample\LoggingSample.csproj", "{57C1709A-0C0E-4C3B-8819-EA03625AD271}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,5 +116,17 @@ Global
 		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Release|x64.Build.0 = Release|Any CPU
 		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Release|x86.ActiveCfg = Release|Any CPU
 		{D219F83D-7C6F-4078-8479-90CD76C4AD64}.Release|x86.Build.0 = Release|Any CPU
+		{57C1709A-0C0E-4C3B-8819-EA03625AD271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C1709A-0C0E-4C3B-8819-EA03625AD271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C1709A-0C0E-4C3B-8819-EA03625AD271}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{57C1709A-0C0E-4C3B-8819-EA03625AD271}.Debug|x64.Build.0 = Debug|Any CPU
+		{57C1709A-0C0E-4C3B-8819-EA03625AD271}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{57C1709A-0C0E-4C3B-8819-EA03625AD271}.Debug|x86.Build.0 = Debug|Any CPU
+		{57C1709A-0C0E-4C3B-8819-EA03625AD271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C1709A-0C0E-4C3B-8819-EA03625AD271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C1709A-0C0E-4C3B-8819-EA03625AD271}.Release|x64.ActiveCfg = Release|Any CPU
+		{57C1709A-0C0E-4C3B-8819-EA03625AD271}.Release|x64.Build.0 = Release|Any CPU
+		{57C1709A-0C0E-4C3B-8819-EA03625AD271}.Release|x86.ActiveCfg = Release|Any CPU
+		{57C1709A-0C0E-4C3B-8819-EA03625AD271}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
