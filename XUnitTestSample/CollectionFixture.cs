@@ -7,8 +7,23 @@ using Xunit;
 
 namespace XUnitTestSample
 {
+    public class CollectionFixtureData : ClassFixtureData, IAsyncLifetime
+    {
+        public new Task DisposeAsync()
+        {
+            Console.WriteLine("[CollectionFixtureData]: Cleaning up resource for test...");
+            return Task.CompletedTask;
+        }
+
+        public new Task InitializeAsync()
+        {
+            Console.WriteLine("[CollectionFixtureData]: Preparing resource for test...");
+            return Task.CompletedTask;
+        }
+    }
+
     [CollectionDefinition("Some Collection")]
-    public class CollectionDefinition : ICollectionFixture<FixtureData>
+    public class CollectionDefinition : ICollectionFixture<CollectionFixtureData>
     {
         // This class has no code, and is never created. Its purpose is simply
         // to be the place to apply [CollectionDefinition] and all the
@@ -22,9 +37,9 @@ namespace XUnitTestSample
     [Collection("Some Collection")]
     public class CollectionFixture
     {
-        private FixtureData _data;
+        private ClassFixtureData _data;
 
-        public CollectionFixture(FixtureData data)
+        public CollectionFixture(CollectionFixtureData data)
         {
             _data = data;
         }
@@ -39,9 +54,9 @@ namespace XUnitTestSample
     [Collection("Some Collection")]
     public class CollectionFixture2
     {
-        private FixtureData _data;
+        private ClassFixtureData _data;
 
-        public CollectionFixture2(FixtureData data)
+        public CollectionFixture2(CollectionFixtureData data)
         {
             _data = data;
         }

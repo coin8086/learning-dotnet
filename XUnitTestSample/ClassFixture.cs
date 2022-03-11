@@ -7,11 +7,11 @@ using Xunit;
 
 namespace XUnitTestSample
 {
-    public class ClassFixture : IClassFixture<FixtureData>
+    public class ClassFixture : IClassFixture<ClassFixtureData>
     {
-        private FixtureData _data;
+        private ClassFixtureData _data;
 
-        public ClassFixture(FixtureData data)
+        public ClassFixture(ClassFixtureData data)
         {
             _data = data;
         }
@@ -33,13 +33,25 @@ namespace XUnitTestSample
         }
     }
 
-    public class FixtureData
+    public class ClassFixtureData : IAsyncLifetime
     {
         private int _num = 0;
 
         public int Num
         {
             get { return _num++; }
+        }
+
+        public Task DisposeAsync()
+        {
+            Console.WriteLine("[ClassFixtureData]: Cleaning up resource for test...");
+            return Task.CompletedTask;
+        }
+
+        public Task InitializeAsync()
+        {
+            Console.WriteLine("[ClassFixtureData]: Preparing resource for test...");
+            return Task.CompletedTask;
         }
     }
 }
