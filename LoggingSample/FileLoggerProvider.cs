@@ -17,6 +17,8 @@ namespace LoggingSample
 
         private StreamWriter _fileWriter;
 
+        private object _fileLock = new object();
+
         private ConcurrentDictionary<string, ILogger> _loggers = new (StringComparer.OrdinalIgnoreCase);
 
         public FileLoggerProvider(string filePath, LogLevel logLevel)
@@ -64,7 +66,10 @@ namespace LoggingSample
 
         public void WriteMessage(string msg)
         {
-            _fileWriter.Write(msg);
+            lock (_fileLock)
+            {
+                _fileWriter.Write(msg);
+            }
         }
     }
 
