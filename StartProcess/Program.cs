@@ -60,9 +60,12 @@ where options are:
             {
                 UseShellExecute = false,
             };
-            foreach (var arg in argList)
+            if (argList != null)
             {
-                startInfo.ArgumentList.Add(arg);
+                foreach (var arg in argList)
+                {
+                    startInfo.ArgumentList.Add(arg);
+                }
             }
             using var process = new Process()
             {
