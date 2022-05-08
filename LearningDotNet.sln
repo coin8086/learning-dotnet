@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathHash", "PathHash\PathHa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSample", "TaskSample\TaskSample.csproj", "{D2F5CBE2-B032-4029-8B5E-752555571E23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteSharedFile", "WriteSharedFile\WriteSharedFile.csproj", "{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -198,5 +200,17 @@ Global
 		{D2F5CBE2-B032-4029-8B5E-752555571E23}.Release|x64.Build.0 = Release|Any CPU
 		{D2F5CBE2-B032-4029-8B5E-752555571E23}.Release|x86.ActiveCfg = Release|Any CPU
 		{D2F5CBE2-B032-4029-8B5E-752555571E23}.Release|x86.Build.0 = Release|Any CPU
+		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Debug|x64.Build.0 = Debug|Any CPU
+		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Debug|x86.Build.0 = Debug|Any CPU
+		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Release|x64.ActiveCfg = Release|Any CPU
+		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Release|x64.Build.0 = Release|Any CPU
+		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
