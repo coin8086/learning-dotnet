@@ -10,8 +10,10 @@ namespace LoggingSample
             using var loggerFactory = LoggerFactory.Create(builder =>
             {
                 builder
+                    .ClearProviders()
                     .AddFilter("LoggingSample.Program", LogLevel.Information)
-                    .AddConsole()
+                    //.AddConsole()
+                    .AddConsoleLogger()
                     //NOTE: the cusomt file logger doesn't pick up log settings from appsettings.json.
                     //And, its log level is only determined by the argument passed in here.
                     .AddFileLogger("LogFile.txt", LogLevel.Error);
