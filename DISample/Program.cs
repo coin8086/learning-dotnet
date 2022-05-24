@@ -65,9 +65,30 @@ namespace DISample
             Console.WriteLine("================= SubclassingTest End =================");
         }
 
+        static void MultipleClassesOfTheSameInterface()
+        {
+            Console.WriteLine("================= MultipleClassesOfTheSameInterface Start =================");
+            var services = new ServiceCollection();
+            //The order matters for GetRequiredService: the latter will override the former.
+            services.Add(ServiceDescriptor.Singleton<IBase, Base>());
+            services.Add(ServiceDescriptor.Singleton<IBase, Sub>());
+            var provider = ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(services);
+
+            var sb = provider.GetRequiredService<IBase>();
+            sb.Speak();
+
+            Console.WriteLine("Enumerating IBase instances...");
+            foreach (var s in provider.GetServices<IBase>())
+            {
+                s.Speak();
+            }
+
+            Console.WriteLine("================= MultipleClassesOfTheSameInterface End =================");
+        }
+
         static void Main(string[] args)
         {
-            SubclassingTest();
+            MultipleClassesOfTheSameInterface();
         }
     }
 }
