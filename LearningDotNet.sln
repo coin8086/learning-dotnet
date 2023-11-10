@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSample", "TaskSample\Ta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteSharedFile", "WriteSharedFile\WriteSharedFile.csproj", "{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventAndThread", "EventAndThread\EventAndThread.csproj", "{A79E4A96-67C3-49E4-A1FA-CD945D54734B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -212,5 +214,17 @@ Global
 		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Release|x64.Build.0 = Release|Any CPU
 		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Release|x86.ActiveCfg = Release|Any CPU
 		{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}.Release|x86.Build.0 = Release|Any CPU
+		{A79E4A96-67C3-49E4-A1FA-CD945D54734B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A79E4A96-67C3-49E4-A1FA-CD945D54734B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A79E4A96-67C3-49E4-A1FA-CD945D54734B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A79E4A96-67C3-49E4-A1FA-CD945D54734B}.Debug|x64.Build.0 = Debug|Any CPU
+		{A79E4A96-67C3-49E4-A1FA-CD945D54734B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A79E4A96-67C3-49E4-A1FA-CD945D54734B}.Debug|x86.Build.0 = Debug|Any CPU
+		{A79E4A96-67C3-49E4-A1FA-CD945D54734B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A79E4A96-67C3-49E4-A1FA-CD945D54734B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A79E4A96-67C3-49E4-A1FA-CD945D54734B}.Release|x64.ActiveCfg = Release|Any CPU
+		{A79E4A96-67C3-49E4-A1FA-CD945D54734B}.Release|x64.Build.0 = Release|Any CPU
+		{A79E4A96-67C3-49E4-A1FA-CD945D54734B}.Release|x86.ActiveCfg = Release|Any CPU
+		{A79E4A96-67C3-49E4-A1FA-CD945D54734B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
