@@ -1,39 +1,39 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHostSample", "WebHostSample\WebHostSample.csproj", "{E2580BEC-DC30-4FF9-A236-99A544EA16A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebHostSample", "WebHostSample\WebHostSample.csproj", "{E2580BEC-DC30-4FF9-A236-99A544EA16A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiSample", "WebApiSample\WebApiSample.csproj", "{00D81B5B-E39E-4750-ABB9-7D309630C6CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiSample", "WebApiSample\WebApiSample.csproj", "{00D81B5B-E39E-4750-ABB9-7D309630C6CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRpcSample", "GRpcSample\GRpcSample.csproj", "{2860E01E-7789-4DB0-80FC-85F6FAFC3665}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcSample", "GRpcSample\GRpcSample.csproj", "{2860E01E-7789-4DB0-80FC-85F6FAFC3665}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostSample", "HostSample\HostSample.csproj", "{3FCC2F50-737C-476E-8D0B-CC828A88ED82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostSample", "HostSample\HostSample.csproj", "{3FCC2F50-737C-476E-8D0B-CC828A88ED82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRpcClientSample", "GRpcClientSample\GRpcClientSample.csproj", "{F92B76B0-B350-4078-9139-8C6A16057894}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcClientSample", "GRpcClientSample\GRpcClientSample.csproj", "{F92B76B0-B350-4078-9139-8C6A16057894}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestSample", "XUnitTestSample\XUnitTestSample.csproj", "{3BAEAD1D-B5C3-4452-8B96-B643835DA998}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestSample", "XUnitTestSample\XUnitTestSample.csproj", "{3BAEAD1D-B5C3-4452-8B96-B643835DA998}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSample", "JsonSample\JsonSample.csproj", "{D219F83D-7C6F-4078-8479-90CD76C4AD64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonSample", "JsonSample\JsonSample.csproj", "{D219F83D-7C6F-4078-8479-90CD76C4AD64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingSample", "LoggingSample\LoggingSample.csproj", "{57C1709A-0C0E-4C3B-8819-EA03625AD271}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingSample", "LoggingSample\LoggingSample.csproj", "{57C1709A-0C0E-4C3B-8819-EA03625AD271}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DISample", "DISample\DISample.csproj", "{73FF27C2-DDC3-45A8-926A-EB89ABF53BCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DISample", "DISample\DISample.csproj", "{73FF27C2-DDC3-45A8-926A-EB89ABF53BCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartProcess", "StartProcess\StartProcess.csproj", "{6DF4CA28-FFDF-4F40-B2D9-B32B8948EC4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartProcess", "StartProcess\StartProcess.csproj", "{6DF4CA28-FFDF-4F40-B2D9-B32B8948EC4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutexSample", "MutexSample\MutexSample.csproj", "{73EBA3D8-FE86-44E3-AF95-D8AEF241A3EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MutexSample", "MutexSample\MutexSample.csproj", "{73EBA3D8-FE86-44E3-AF95-D8AEF241A3EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathHash", "PathHash\PathHash.csproj", "{934651BE-85B6-48F4-80BD-DC2D8831E9B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PathHash", "PathHash\PathHash.csproj", "{934651BE-85B6-48F4-80BD-DC2D8831E9B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSample", "TaskSample\TaskSample.csproj", "{D2F5CBE2-B032-4029-8B5E-752555571E23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskSample", "TaskSample\TaskSample.csproj", "{D2F5CBE2-B032-4029-8B5E-752555571E23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteSharedFile", "WriteSharedFile\WriteSharedFile.csproj", "{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteSharedFile", "WriteSharedFile\WriteSharedFile.csproj", "{3F71B742-CE50-4491-A70D-E4E4B9CEC4CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventAndThread", "EventAndThread\EventAndThread.csproj", "{A79E4A96-67C3-49E4-A1FA-CD945D54734B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskAndEvent", "TaskAndEvent\TaskAndEvent.csproj", "{A79E4A96-67C3-49E4-A1FA-CD945D54734B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventAndThreadInWPF", "EventAndThreadInWPF\EventAndThreadInWPF.csproj", "{C44A6F97-052F-4834-80E9-77CCB3472DA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventAndThreadInWPF", "EventAndThreadInWPF\EventAndThreadInWPF.csproj", "{C44A6F97-052F-4834-80E9-77CCB3472DA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,9 +43,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E2580BEC-DC30-4FF9-A236-99A544EA16A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -240,5 +237,11 @@ Global
 		{C44A6F97-052F-4834-80E9-77CCB3472DA7}.Release|x64.Build.0 = Release|Any CPU
 		{C44A6F97-052F-4834-80E9-77CCB3472DA7}.Release|x86.ActiveCfg = Release|Any CPU
 		{C44A6F97-052F-4834-80E9-77CCB3472DA7}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F48E9A7-1366-4AD7-B870-5DC3C142DDBE}
 	EndGlobalSection
 EndGlobal
