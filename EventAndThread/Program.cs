@@ -16,7 +16,7 @@ namespace EventAndThread
     {
         public event EventHandler<CustomEventArgs>? RaiseCustomEvent;
 
-        public void DoSomething()
+        public void FireEvent()
         {
             OnRaiseCustomEvent(new CustomEventArgs("Event triggered"));
         }
@@ -60,6 +60,25 @@ namespace EventAndThread
         }
     }
 
+    class AsyncSubscriber
+    {
+        private readonly string _id;
+
+        public AsyncSubscriber(string id, Publisher pub)
+        {
+            _id = id;
+            pub.RaiseCustomEvent += HandleCustomEvent;
+        }
+
+        //NOTE the async modifier, compare this handler with the RaiseCustomEvent type and how that event is triggered.
+        async void HandleCustomEvent(object? sender, CustomEventArgs e)
+        {
+            Console.WriteLine($"+ {_id} received this message: {e.Message} in thread {Thread.CurrentThread.ManagedThreadId}");
+            await Task.Delay(1000);
+            Console.WriteLine($"- {_id} received this message: {e.Message} in thread {Thread.CurrentThread.ManagedThreadId}");
+        }
+    }
+
     class Program
     {
         static void Main()
@@ -69,12 +88,14 @@ namespace EventAndThread
             var pub = new Publisher();
             var sub1 = new Subscriber("sub1", pub);
             var sub2 = new Subscriber("sub2", pub);
+            var sub3 = new AsyncSubscriber("sub3", pub);
+            var sub4 = new AsyncSubscriber("sub4", pub);
 
-            pub.DoSomething();
+            pub.FireEvent();
 
             // Keep the console window open
-            //Console.WriteLine("Press any key to continue...");
-            //Console.ReadLine();
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
         }
     }
 }
