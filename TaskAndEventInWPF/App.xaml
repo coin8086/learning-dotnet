@@ -1,7 +1,7 @@
-﻿<Application x:Class="EventAndThreadInWPF.App"
+﻿<Application x:Class="TaskAndEventInWPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:EventAndThreadInWPF"
+             xmlns:local="clr-namespace:TaskAndEventInWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

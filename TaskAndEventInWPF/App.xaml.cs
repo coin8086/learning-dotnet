@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace EventAndThreadInWPF;
+namespace TaskAndEventInWPF;
 
 /// <summary>
 /// Interaction logic for App.xaml

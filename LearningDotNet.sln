@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteSharedFile", "WriteSha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskAndEvent", "TaskAndEvent\TaskAndEvent.csproj", "{A79E4A96-67C3-49E4-A1FA-CD945D54734B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventAndThreadInWPF", "EventAndThreadInWPF\EventAndThreadInWPF.csproj", "{C44A6F97-052F-4834-80E9-77CCB3472DA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskAndEventInWPF", "TaskAndEventInWPF\TaskAndEventInWPF.csproj", "{C44A6F97-052F-4834-80E9-77CCB3472DA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
