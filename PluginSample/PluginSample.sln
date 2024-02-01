@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloPlugin", "HelloPlugin\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonPlugin", "JsonPlugin\JsonPlugin.csproj", "{AC793018-C73E-4526-9A75-1380138DC99A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldJsonPlugin", "OldJsonPlugin\OldJsonPlugin.csproj", "{814ABCDB-A354-42DB-A11F-6AE4FB0A1FD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AC793018-C73E-4526-9A75-1380138DC99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC793018-C73E-4526-9A75-1380138DC99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC793018-C73E-4526-9A75-1380138DC99A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{814ABCDB-A354-42DB-A11F-6AE4FB0A1FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{814ABCDB-A354-42DB-A11F-6AE4FB0A1FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{814ABCDB-A354-42DB-A11F-6AE4FB0A1FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{814ABCDB-A354-42DB-A11F-6AE4FB0A1FD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

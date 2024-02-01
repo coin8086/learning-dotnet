@@ -23,7 +23,8 @@ namespace AppWithPlugin
                 {
                     // Paths to plugins to load.
                     @"HelloPlugin\bin\Debug\net8.0\HelloPlugin.dll",
-                    @"JsonPlugin\bin\Debug\net8.0\JsonPlugin.dll"
+                    @"JsonPlugin\bin\Debug\net8.0\JsonPlugin.dll",
+                    @"OldJsonPlugin\bin\Debug\net8.0\OldJsonPlugin.dll"
                 };
 
                 IEnumerable<ICommand> commands = pluginPaths.SelectMany(pluginPath =>
