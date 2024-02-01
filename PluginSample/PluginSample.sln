@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginBase", "PluginBase\Pl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloPlugin", "HelloPlugin\HelloPlugin.csproj", "{264EDB53-6FC5-470C-B37C-B4EF47BEBE63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonPlugin", "JsonPlugin\JsonPlugin.csproj", "{AC793018-C73E-4526-9A75-1380138DC99A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{264EDB53-6FC5-470C-B37C-B4EF47BEBE63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{264EDB53-6FC5-470C-B37C-B4EF47BEBE63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{264EDB53-6FC5-470C-B37C-B4EF47BEBE63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC793018-C73E-4526-9A75-1380138DC99A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC793018-C73E-4526-9A75-1380138DC99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC793018-C73E-4526-9A75-1380138DC99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC793018-C73E-4526-9A75-1380138DC99A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
