@@ -1,10 +1,14 @@
 namespace ServiceConfiguration;
 
+using Microsoft.Extensions.DependencyInjection;
+
 public class Program
 {
     public static void Main(string[] args)
     {
         var builder = Host.CreateApplicationBuilder(args);
+
+        builder.Services.AddMyService(builder.Configuration);
 
         builder.Services.AddHostedService<Worker>();
 
@@ -12,7 +16,8 @@ public class Program
 
         var switchMappings = new Dictionary<string, string>()
         {
-            { "-m", "WorkerOptions:Message" }
+            { "-m", "WorkerOptions:Message" },
+            { "-n", MyService.ConfigKey }
         };
         builder.Configuration.AddCommandLine(args, switchMappings);
 
