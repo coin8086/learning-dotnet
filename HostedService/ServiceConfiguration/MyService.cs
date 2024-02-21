@@ -17,7 +17,7 @@ class MyService
     }
 }
 
-public static class ServiceCollectionMyServiceExtensions
+static class ServiceCollectionMyServiceExtensions
 {
     public static IServiceCollection AddMyService(this IServiceCollection services, IConfiguration configuration)
     {

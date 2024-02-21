@@ -1,7 +1,5 @@
 namespace ServiceConfiguration;
 
-using Microsoft.Extensions.DependencyInjection;
-
 public class Program
 {
     public static void Main(string[] args)
@@ -10,9 +8,7 @@ public class Program
 
         builder.Services.AddMyService(builder.Configuration);
 
-        builder.Services.AddHostedService<Worker>();
-
-        builder.Services.Configure<WorkerOptions>(builder.Configuration.GetSection(nameof(WorkerOptions)));
+        builder.Services.AddWorkerService(builder.Configuration);
 
         var switchMappings = new Dictionary<string, string>()
         {

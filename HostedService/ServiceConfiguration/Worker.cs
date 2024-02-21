@@ -32,3 +32,13 @@ class Worker : BackgroundService
         }
     }
 }
+
+static class ServiceCollectionWorkerServiceExtensions
+{
+    public static IServiceCollection AddWorkerService(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddHostedService<Worker>();
+        services.Configure<WorkerOptions>(configuration.GetSection(nameof(WorkerOptions)));
+        return services;
+    }
+}
