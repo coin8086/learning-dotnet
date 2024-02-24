@@ -8,7 +8,7 @@ public class Program
 
         //NOTE: Options can be get without using DI.
         var opts = builder.Configuration.GetSection("Worker").Get<WorkerOptions>();
-        Console.WriteLine($"Id={opts.Id}, Message={opts.Message}");
+        Console.WriteLine($"Id={opts?.Id}, Message={opts?.Message}");
 
         builder.Services.AddMyService(builder.Configuration);
 
