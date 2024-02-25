@@ -16,6 +16,12 @@ public class Program
             Console.WriteLine(source.ToString());
         }
 
+        Console.WriteLine("Config Properties:");
+        foreach (var p in ((IConfigurationBuilder)(builder.Configuration)).Properties)
+        {
+            Console.WriteLine($"{p.Key}={p.Value.ToString()}");
+        }
+
         builder.Services.AddMyService(builder.Configuration);
 
         builder.Services.AddWorkerService(builder.Configuration);
