@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiSample", "WebApiSampl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcSample", "GRpcSample\GRpcSample.csproj", "{2860E01E-7789-4DB0-80FC-85F6FAFC3665}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostSample", "HostSample\HostSample.csproj", "{3FCC2F50-737C-476E-8D0B-CC828A88ED82}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcClientSample", "GRpcClientSample\GRpcClientSample.csproj", "{F92B76B0-B350-4078-9139-8C6A16057894}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestSample", "XUnitTestSample\XUnitTestSample.csproj", "{3BAEAD1D-B5C3-4452-8B96-B643835DA998}"
@@ -37,31 +35,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskAndEventInWPF", "TaskAn
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HostedService", "HostedService", "{18A66334-599D-4740-9E8D-86AD0799DC7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptyWorker", "HostedService\EmptyWorker\EmptyWorker.csproj", "{E30AAF61-3054-4557-8049-DB54EE15F4B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmptyWorker", "HostedService\EmptyWorker\EmptyWorker.csproj", "{E30AAF61-3054-4557-8049-DB54EE15F4B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceConfiguration", "HostedService\ServiceConfiguration\ServiceConfiguration.csproj", "{E2780144-2606-490D-9A65-7370168D5C19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceConfiguration", "HostedService\ServiceConfiguration\ServiceConfiguration.csproj", "{E2780144-2606-490D-9A65-7370168D5C19}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{AF288630-EA0D-40ED-96D3-D4987817BE6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWithPlugin", "Plugins\AppWithPlugin\AppWithPlugin.csproj", "{0D4318A3-C314-400C-9446-1CB94308E8A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppWithPlugin", "Plugins\AppWithPlugin\AppWithPlugin.csproj", "{0D4318A3-C314-400C-9446-1CB94308E8A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloPlugin", "Plugins\HelloPlugin\HelloPlugin.csproj", "{4C47563C-6542-4857-BD78-DD5F8EF6534B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloPlugin", "Plugins\HelloPlugin\HelloPlugin.csproj", "{4C47563C-6542-4857-BD78-DD5F8EF6534B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonPlugin", "Plugins\JsonPlugin\JsonPlugin.csproj", "{2B807FF1-30FA-462F-93A9-F58CEFF0818D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonPlugin", "Plugins\JsonPlugin\JsonPlugin.csproj", "{2B807FF1-30FA-462F-93A9-F58CEFF0818D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldJsonPlugin", "Plugins\OldJsonPlugin\OldJsonPlugin.csproj", "{C6315A4D-E1FE-4F57-BEAB-703C3325B69E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldJsonPlugin", "Plugins\OldJsonPlugin\OldJsonPlugin.csproj", "{C6315A4D-E1FE-4F57-BEAB-703C3325B69E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginBase", "Plugins\PluginBase\PluginBase.csproj", "{24361530-B990-4F0C-B054-5DF02C61D9EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginBase", "Plugins\PluginBase\PluginBase.csproj", "{24361530-B990-4F0C-B054-5DF02C61D9EC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Timers", "Timers", "{88503AF2-B447-4DCB-9EEC-7BFD060D532C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemTimer", "Timers\SystemTimer\SystemTimer.csproj", "{E8161CE4-1535-4630-A1EC-A03B2E2A2EAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemTimer", "Timers\SystemTimer\SystemTimer.csproj", "{E8161CE4-1535-4630-A1EC-A03B2E2A2EAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadTimer", "Timers\ThreadTimer\ThreadTimer.csproj", "{ED215A18-2B85-45FB-8879-3ADE61BE49D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadTimer", "Timers\ThreadTimer\ThreadTimer.csproj", "{ED215A18-2B85-45FB-8879-3ADE61BE49D5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{6140EE31-9271-4D28-A5A3-9521F01D5BD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleConfiguration", "Configuration\ConsoleConfiguration\ConsoleConfiguration.csproj", "{ADB78CCE-F859-41EF-896D-3759783465E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleConfiguration", "Configuration\ConsoleConfiguration\ConsoleConfiguration.csproj", "{ADB78CCE-F859-41EF-896D-3759783465E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,18 +107,6 @@ Global
 		{2860E01E-7789-4DB0-80FC-85F6FAFC3665}.Release|x64.Build.0 = Release|Any CPU
 		{2860E01E-7789-4DB0-80FC-85F6FAFC3665}.Release|x86.ActiveCfg = Release|Any CPU
 		{2860E01E-7789-4DB0-80FC-85F6FAFC3665}.Release|x86.Build.0 = Release|Any CPU
-		{3FCC2F50-737C-476E-8D0B-CC828A88ED82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FCC2F50-737C-476E-8D0B-CC828A88ED82}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FCC2F50-737C-476E-8D0B-CC828A88ED82}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{3FCC2F50-737C-476E-8D0B-CC828A88ED82}.Debug|x64.Build.0 = Debug|Any CPU
-		{3FCC2F50-737C-476E-8D0B-CC828A88ED82}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3FCC2F50-737C-476E-8D0B-CC828A88ED82}.Debug|x86.Build.0 = Debug|Any CPU
-		{3FCC2F50-737C-476E-8D0B-CC828A88ED82}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FCC2F50-737C-476E-8D0B-CC828A88ED82}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FCC2F50-737C-476E-8D0B-CC828A88ED82}.Release|x64.ActiveCfg = Release|Any CPU
-		{3FCC2F50-737C-476E-8D0B-CC828A88ED82}.Release|x64.Build.0 = Release|Any CPU
-		{3FCC2F50-737C-476E-8D0B-CC828A88ED82}.Release|x86.ActiveCfg = Release|Any CPU
-		{3FCC2F50-737C-476E-8D0B-CC828A88ED82}.Release|x86.Build.0 = Release|Any CPU
 		{F92B76B0-B350-4078-9139-8C6A16057894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F92B76B0-B350-4078-9139-8C6A16057894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F92B76B0-B350-4078-9139-8C6A16057894}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -389,9 +375,6 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6F48E9A7-1366-4AD7-B870-5DC3C142DDBE}
-	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E30AAF61-3054-4557-8049-DB54EE15F4B9} = {18A66334-599D-4740-9E8D-86AD0799DC7E}
 		{E2780144-2606-490D-9A65-7370168D5C19} = {18A66334-599D-4740-9E8D-86AD0799DC7E}
@@ -403,5 +386,8 @@ Global
 		{E8161CE4-1535-4630-A1EC-A03B2E2A2EAE} = {88503AF2-B447-4DCB-9EEC-7BFD060D532C}
 		{ED215A18-2B85-45FB-8879-3ADE61BE49D5} = {88503AF2-B447-4DCB-9EEC-7BFD060D532C}
 		{ADB78CCE-F859-41EF-896D-3759783465E9} = {6140EE31-9271-4D28-A5A3-9521F01D5BD1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F48E9A7-1366-4AD7-B870-5DC3C142DDBE}
 	EndGlobalSection
 EndGlobal
