@@ -6,9 +6,9 @@ class MyService
 
     private ILogger _logger;
 
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
-    public MyService(ILogger<MyService> logger, string name)
+    public MyService(ILogger<MyService> logger, string? name)
     {
         _logger = logger;
         Name = name;
@@ -28,7 +28,7 @@ static class ServiceCollectionMyServiceExtensions
         {
             var logger = provider.GetService<ILogger<MyService>>();
             var value = configuration[MyService.ConfigKey];
-            return new MyService(logger, value);
+            return new MyService(logger!, value);
         });
     }
 }

@@ -10,16 +10,15 @@ public class Program
         var opts = builder.Configuration.GetSection("Worker").Get<WorkerOptions>();
         Console.WriteLine($"Id={opts?.Id}, Message={opts?.Message}");
 
+        Console.WriteLine("Config Sources:");
+        foreach (var source in builder.Configuration.Sources)
+        {
+            Console.WriteLine(source.ToString());
+        }
+
         builder.Services.AddMyService(builder.Configuration);
 
         builder.Services.AddWorkerService(builder.Configuration);
-
-        var switchMappings = new Dictionary<string, string>()
-        {
-            { "-m", "WorkerOptions:Message" },
-            { "-n", MyService.ConfigKey }
-        };
-        builder.Configuration.AddCommandLine(args, switchMappings);
 
         var host = builder.Build();
         host.Run();
