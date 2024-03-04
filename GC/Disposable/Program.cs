@@ -1,18 +1,22 @@
 ﻿// See https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose
 
+using Microsoft.Win32.SafeHandles;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Disposable;
 
 class Sample : IDisposable
 {
-    private bool _disposed;
+    private bool _disposed = false;
     private Stopwatch _stopwatch;
+    private SafeHandle? _handle;
 
     public Sample()
     {
         Console.WriteLine("Sample()");
         _stopwatch = Stopwatch.StartNew();
+        _handle = new SafeFileHandle(IntPtr.Zero, true);
     }
 
     public void Dispose()
@@ -35,7 +39,9 @@ class Sample : IDisposable
             if (disposing)
             {
                 Console.WriteLine("disposing = true");
-                // TODO: dispose managed state (managed objects)
+                // Dispose managed state (managed objects)
+                _handle?.Dispose();
+                _handle = null;
             }
             else
             {
@@ -52,7 +58,7 @@ class Sample : IDisposable
         }
     }
 
-    // Override finalizer ONLY IF 'Dispose(bool disposing)' has code to free unmanaged resources
+    // NOTE: Override finalizer ONLY IF 'Dispose(bool disposing)' has code to free unmanaged resources
     // Here a finalizer is provided only as a way to explore GC.
     ~Sample()
     {
