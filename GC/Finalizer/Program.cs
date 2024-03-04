@@ -19,7 +19,7 @@ public class ExampleClass
                           this, sw.Elapsed);
     }
 
-    //The destructor doesn't seem to get called in a console app in .Net 8?
+    //The finalizer doesn't seem to get called in a console app in .Net 8?
     ~ExampleClass()
     {
         Console.WriteLine("Destructing object");
