@@ -45,13 +45,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleConfiguration", "Configuration\ConsoleConfiguration\ConsoleConfiguration.csproj", "{ADB78CCE-F859-41EF-896D-3759783465E9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{97E8AA03-D5F5-44A6-8BF0-D6EF68653C20}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task", "Task", "{97E8AA03-D5F5-44A6-8BF0-D6EF68653C20}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskAndEvent", "Tasks\TaskAndEvent\TaskAndEvent.csproj", "{F4C6E471-3D63-4852-AD2B-8679533942AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskAndEvent", "Task\TaskAndEvent\TaskAndEvent.csproj", "{F4C6E471-3D63-4852-AD2B-8679533942AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskAndEventInWPF", "Tasks\TaskAndEventInWPF\TaskAndEventInWPF.csproj", "{0ADEB9A3-0964-4AAB-9399-A72C10B46C49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskAndEventInWPF", "Task\TaskAndEventInWPF\TaskAndEventInWPF.csproj", "{0ADEB9A3-0964-4AAB-9399-A72C10B46C49}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskSample", "Tasks\TaskSample\TaskSample.csproj", "{8E413C4B-ECB2-43A9-9AD2-56CF32B96C7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskSample", "Task\TaskSample\TaskSample.csproj", "{8E413C4B-ECB2-43A9-9AD2-56CF32B96C7F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Process", "Process", "{8B798FFD-C7A3-4488-B9DC-68032F34026F}"
 EndProject
