@@ -35,11 +35,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldJsonPlugin", "Plugin\Old
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginBase", "Plugin\PluginBase\PluginBase.csproj", "{24361530-B990-4F0C-B054-5DF02C61D9EC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Timers", "Timers", "{88503AF2-B447-4DCB-9EEC-7BFD060D532C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Timer", "Timer", "{88503AF2-B447-4DCB-9EEC-7BFD060D532C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemTimer", "Timers\SystemTimer\SystemTimer.csproj", "{E8161CE4-1535-4630-A1EC-A03B2E2A2EAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemTimer", "Timer\SystemTimer\SystemTimer.csproj", "{E8161CE4-1535-4630-A1EC-A03B2E2A2EAE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadTimer", "Timers\ThreadTimer\ThreadTimer.csproj", "{ED215A18-2B85-45FB-8879-3ADE61BE49D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadTimer", "Timer\ThreadTimer\ThreadTimer.csproj", "{ED215A18-2B85-45FB-8879-3ADE61BE49D5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{6140EE31-9271-4D28-A5A3-9521F01D5BD1}"
 EndProject
