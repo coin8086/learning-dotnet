@@ -23,17 +23,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmptyWorker", "HostedServic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceConfiguration", "HostedService\ServiceConfiguration\ServiceConfiguration.csproj", "{E2780144-2606-490D-9A65-7370168D5C19}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{AF288630-EA0D-40ED-96D3-D4987817BE6B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugin", "Plugin", "{AF288630-EA0D-40ED-96D3-D4987817BE6B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppWithPlugin", "Plugins\AppWithPlugin\AppWithPlugin.csproj", "{0D4318A3-C314-400C-9446-1CB94308E8A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppWithPlugin", "Plugin\AppWithPlugin\AppWithPlugin.csproj", "{0D4318A3-C314-400C-9446-1CB94308E8A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloPlugin", "Plugins\HelloPlugin\HelloPlugin.csproj", "{4C47563C-6542-4857-BD78-DD5F8EF6534B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloPlugin", "Plugin\HelloPlugin\HelloPlugin.csproj", "{4C47563C-6542-4857-BD78-DD5F8EF6534B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonPlugin", "Plugins\JsonPlugin\JsonPlugin.csproj", "{2B807FF1-30FA-462F-93A9-F58CEFF0818D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonPlugin", "Plugin\JsonPlugin\JsonPlugin.csproj", "{2B807FF1-30FA-462F-93A9-F58CEFF0818D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldJsonPlugin", "Plugins\OldJsonPlugin\OldJsonPlugin.csproj", "{C6315A4D-E1FE-4F57-BEAB-703C3325B69E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldJsonPlugin", "Plugin\OldJsonPlugin\OldJsonPlugin.csproj", "{C6315A4D-E1FE-4F57-BEAB-703C3325B69E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginBase", "Plugins\PluginBase\PluginBase.csproj", "{24361530-B990-4F0C-B054-5DF02C61D9EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginBase", "Plugin\PluginBase\PluginBase.csproj", "{24361530-B990-4F0C-B054-5DF02C61D9EC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Timers", "Timers", "{88503AF2-B447-4DCB-9EEC-7BFD060D532C}"
 EndProject
