@@ -1,4 +1,4 @@
-﻿//See https://learn.microsoft.com/en-us/dotnet/core/diagnostics/distributed-tracing-instrumentation-walkthroughs
+﻿//See https://learn.microsoft.com/en-us/dotnet/core/diagnostics/distributed-tracing-collection-walkthroughs#collect-traces-using-opentelemetry
 
 using MyLib;
 using OpenTelemetry;

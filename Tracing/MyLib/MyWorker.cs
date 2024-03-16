@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿//See https://learn.microsoft.com/en-us/dotnet/core/diagnostics/distributed-tracing-instrumentation-walkthroughs
+
+using System.Diagnostics;
 
 namespace MyLib;
 

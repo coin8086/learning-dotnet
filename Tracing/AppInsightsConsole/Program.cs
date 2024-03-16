@@ -57,6 +57,12 @@ class Program
 
             try
             {
+                //NOTE: For the relationship between System.Diagnostics.Activity and ApplicationInsights operations, refer to
+                //https://learn.microsoft.com/en-us/azure/azure-monitor/app/custom-operations-tracking#applicationinsights-operations-vs-systemdiagnosticsactivity
+                //"If you created Activity in your application, it wouldn't result in Application Insights telemetry being created.
+                //Application Insights needs to receive DiagnosticSource events and know the events names and payloads to translate
+                //Activity into telemetry."
+
                 // Replace with a name which makes sense for this operation.
                 using (telemetryClient.StartOperation<RequestTelemetry>("operation"))
                 {
