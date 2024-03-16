@@ -63,6 +63,8 @@ class Program
                 //Application Insights needs to receive DiagnosticSource events and know the events names and payloads to translate
                 //Activity into telemetry."
 
+                logger.LogWarning("A sample warning message outside of an operation.");
+
                 // Replace with a name which makes sense for this operation.
                 using (telemetryClient.StartOperation<RequestTelemetry>("operation"))
                 {
