@@ -2,16 +2,24 @@
 using System;
 
 
-namespace LoggingSample
+namespace LogProvider
 {
-    class ConsoleLogger : ILogger
+    interface IFileLogWriter
     {
+        void WriteMessage(string msg);
+    }
+
+    class FileLogger : ILogger
+    {
+        IFileLogWriter _logWriter;
+
         string _name;
 
         LogLevel _logLevel;
 
-        public ConsoleLogger(string name, LogLevel logLevel)
+        public FileLogger(IFileLogWriter logWriter, string name, LogLevel logLevel)
         {
+            _logWriter = logWriter;
             _name = name;
             _logLevel = logLevel;
         }
@@ -30,12 +38,12 @@ namespace LoggingSample
         {
             if (IsEnabled(logLevel))
             {
-                var msg = $"[{DateTimeOffset.UtcNow.ToString("o")}][{_name}][{logLevel}][{eventId}]: {formatter(state, exception)}";
+                var msg = $"[{DateTimeOffset.UtcNow.ToString("o")}][{_name}][{logLevel}][{eventId}]: {formatter(state, exception)}\n";
                 if (exception != null)
                 {
-                    msg += $"\n{exception}";
+                    msg += $"{exception}\n";
                 }
-                Console.Error.WriteLine(msg);
+                _logWriter.WriteMessage(msg);
             }
         }
     }

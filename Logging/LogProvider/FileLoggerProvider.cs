@@ -4,7 +4,7 @@ using System;
 using System.Collections.Concurrent;
 using System.IO;
 
-namespace LoggingSample
+namespace LogProvider
 {
     [ProviderAlias("FileLogger")]
     class FileLoggerProvider : ILoggerProvider, IFileLogWriter

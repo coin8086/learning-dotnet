@@ -79,7 +79,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncEnumeration", "Enumera
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{599EC204-AA11-47D0-BC6D-E37F71486D91}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingSample", "Logging\LoggingSample\LoggingSample.csproj", "{41DB2289-20A6-4F69-9D50-9F71186DE790}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogProvider", "Logging\LogProvider\LogProvider.csproj", "{41DB2289-20A6-4F69-9D50-9F71186DE790}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleLogFormat", "Logging\ConsoleLogFormat\ConsoleLogFormat.csproj", "{BC13119F-1AE6-4576-AE9B-FFEE84ACBD86}"
 EndProject

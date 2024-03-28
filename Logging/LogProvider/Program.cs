@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
 
-namespace LoggingSample
+namespace LogProvider
 {
     class Program
     {
@@ -11,7 +11,7 @@ namespace LoggingSample
             {
                 builder
                     .ClearProviders()
-                    .AddFilter("LoggingSample.Program", LogLevel.Information)
+                    .AddFilter("LogProvider.Program", LogLevel.Information)
                     //.AddConsole()
                     .AddConsoleLogger()
                     //NOTE: the cusomt file logger doesn't pick up log settings from appsettings.json.
