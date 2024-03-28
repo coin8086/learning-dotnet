@@ -59,55 +59,55 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finalizer", "GC\Finalizer\F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Disposable", "GC\Disposable\Disposable.csproj", "{E057FAAB-3936-45F5-87EE-5A557FB9502B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiSample", "HostedService\WebApiSample\WebApiSample.csproj", "{12C2D7EE-4797-4645-BFAF-D6B185EB2F68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiSample", "HostedService\WebApiSample\WebApiSample.csproj", "{12C2D7EE-4797-4645-BFAF-D6B185EB2F68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHostSample", "HostedService\WebHostSample\WebHostSample.csproj", "{2E15B56B-9FAC-4988-904B-71EF7135CFC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebHostSample", "HostedService\WebHostSample\WebHostSample.csproj", "{2E15B56B-9FAC-4988-904B-71EF7135CFC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GRpc", "GRpc", "{DAB02522-56A0-462D-89B7-854985E57B07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRpcClientSample", "GRpc\GRpcClientSample\GRpcClientSample.csproj", "{E6FA484B-5152-4CB8-A67C-88F0FD70E677}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcNet5Client", "GRpc\GRpcNet5Client\GRpcNet5Client.csproj", "{E6FA484B-5152-4CB8-A67C-88F0FD70E677}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRpcSample", "GRpc\GRpcSample\GRpcSample.csproj", "{AC15D4F2-6415-4DF6-AEC2-72842418A24C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcNet5", "GRpc\GRpcNet5\GRpcNet5.csproj", "{AC15D4F2-6415-4DF6-AEC2-72842418A24C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncDisposable", "GC\AsyncDisposable\AsyncDisposable.csproj", "{21CDD863-5E35-4F2A-B14D-B16D15B40CA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncDisposable", "GC\AsyncDisposable\AsyncDisposable.csproj", "{21CDD863-5E35-4F2A-B14D-B16D15B40CA9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enumeration", "Enumeration", "{4FB99D76-5293-4428-9450-9213351ED9BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enumerable", "Enumeration\Enumerable\Enumerable.csproj", "{4CA9BC1E-6368-401A-9128-E8FD490232D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enumerable", "Enumeration\Enumerable\Enumerable.csproj", "{4CA9BC1E-6368-401A-9128-E8FD490232D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncEnumeration", "Enumeration\AsyncEnumeration\AsyncEnumeration.csproj", "{87D7A290-4D7E-4CAA-B669-F89A6AF0AC0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncEnumeration", "Enumeration\AsyncEnumeration\AsyncEnumeration.csproj", "{87D7A290-4D7E-4CAA-B669-F89A6AF0AC0C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{599EC204-AA11-47D0-BC6D-E37F71486D91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingSample", "Logging\LoggingSample\LoggingSample.csproj", "{41DB2289-20A6-4F69-9D50-9F71186DE790}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingSample", "Logging\LoggingSample\LoggingSample.csproj", "{41DB2289-20A6-4F69-9D50-9F71186DE790}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleLogFormat", "Logging\ConsoleLogFormat\ConsoleLogFormat.csproj", "{BC13119F-1AE6-4576-AE9B-FFEE84ACBD86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleLogFormat", "Logging\ConsoleLogFormat\ConsoleLogFormat.csproj", "{BC13119F-1AE6-4576-AE9B-FFEE84ACBD86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleLogFormatByConfig", "Logging\ConsoleLogFormatByConfig\ConsoleLogFormatByConfig.csproj", "{6D23585D-250C-4C56-ADB6-BE61C1C831F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleLogFormatByConfig", "Logging\ConsoleLogFormatByConfig\ConsoleLogFormatByConfig.csproj", "{6D23585D-250C-4C56-ADB6-BE61C1C831F2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tracing", "Tracing", "{0B1FC8EE-951B-4732-9D14-9BAEC12F781B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLib", "Tracing\MyLib\MyLib.csproj", "{72AF8B02-C9A3-48DD-A996-D19F72D29E33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLib", "Tracing\MyLib\MyLib.csproj", "{72AF8B02-C9A3-48DD-A996-D19F72D29E33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTelemetryConsole", "Tracing\OpenTelemetryConsole\OpenTelemetryConsole.csproj", "{A48340B9-2D91-43F6-826B-3CDC0040059B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenTelemetryConsole", "Tracing\OpenTelemetryConsole\OpenTelemetryConsole.csproj", "{A48340B9-2D91-43F6-826B-3CDC0040059B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomCollectionConsole", "Tracing\CustomCollectionConsole\CustomCollectionConsole.csproj", "{08F974C2-CD9F-4718-A56A-B305B4CFB41D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomCollectionConsole", "Tracing\CustomCollectionConsole\CustomCollectionConsole.csproj", "{08F974C2-CD9F-4718-A56A-B305B4CFB41D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppInsightsConsole", "Tracing\AppInsightsConsole\AppInsightsConsole.csproj", "{AF7374E1-9E77-4522-9324-DDB8E34164FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppInsightsConsole", "Tracing\AppInsightsConsole\AppInsightsConsole.csproj", "{AF7374E1-9E77-4522-9324-DDB8E34164FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteSharedFile", "Process\WriteSharedFile\WriteSharedFile.csproj", "{3CBDE9B7-CED3-4EEA-BB25-023557C5F5C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteSharedFile", "Process\WriteSharedFile\WriteSharedFile.csproj", "{3CBDE9B7-CED3-4EEA-BB25-023557C5F5C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutexSample", "Process\MutexSample\MutexSample.csproj", "{AC0C5740-7C53-460B-BA9E-1F8257199498}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MutexSample", "Process\MutexSample\MutexSample.csproj", "{AC0C5740-7C53-460B-BA9E-1F8257199498}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceConfiguration", "Configuration\ServiceConfiguration\ServiceConfiguration.csproj", "{8678A6EB-3F5F-4792-9170-EBDE57403A7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceConfiguration", "Configuration\ServiceConfiguration\ServiceConfiguration.csproj", "{8678A6EB-3F5F-4792-9170-EBDE57403A7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRpcHello", "GRpc\GRpcHello\GRpcHello.csproj", "{84D7F80C-66A4-488B-B628-5714E078E386}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcHello", "GRpc\GRpcHello\GRpcHello.csproj", "{84D7F80C-66A4-488B-B628-5714E078E386}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRpcHelloClient", "GRpc\GRpcHelloClient\GRpcHelloClient.csproj", "{D87058C0-A3FF-4641-9283-A208B8B7210F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcHelloClient", "GRpc\GRpcHelloClient\GRpcHelloClient.csproj", "{D87058C0-A3FF-4641-9283-A208B8B7210F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRpcMethods", "GRpc\GRpcMethods\GRpcMethods.csproj", "{4C176189-42A6-4250-A370-452810879DF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcMethods", "GRpc\GRpcMethods\GRpcMethods.csproj", "{4C176189-42A6-4250-A370-452810879DF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRpcMethodsClient", "GRpc\GRpcMethodsClient\GRpcMethodsClient.csproj", "{349EEAB1-2029-4D07-8703-7180E9621C9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcMethodsClient", "GRpc\GRpcMethodsClient\GRpcMethodsClient.csproj", "{349EEAB1-2029-4D07-8703-7180E9621C9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

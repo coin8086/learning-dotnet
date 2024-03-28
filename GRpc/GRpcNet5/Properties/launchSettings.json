@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "GRpcSample": {
+    "GRpcNet5": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": false,
