@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "GRpcMethods";
+
+package apackage;
+
+//See https://learn.microsoft.com/en-us/aspnet/core/grpc/services?view=aspnetcore-8.0
+
+service Example {
+  // Unary
+  rpc UnaryCall (ExampleRequest) returns (ExampleResponse);
+
+  // Server streaming
+  rpc StreamingFromServer (ExampleRequest) returns (stream ExampleResponse);
+
+  // Client streaming
+  rpc StreamingFromClient (stream ExampleRequest) returns (ExampleResponse);
+
+  // Bi-directional streaming
+  rpc StreamingBothWays (stream ExampleRequest) returns (stream ExampleResponse);
+}
+
+message ExampleRequest {
+	string content = 1;
+}
+
+message ExampleResponse {
+	string content = 1;
+}
