@@ -11,7 +11,12 @@ public class Program
         // Add services to the container.
         builder.Services.AddGrpc();
 
+        //See https://learn.microsoft.com/en-us/aspnet/core/grpc/test-tools?view=aspnetcore-8.0#set-up-grpc-reflection
+        builder.Services.AddGrpcReflection();
+
         var app = builder.Build();
+
+        app.MapGrpcReflectionService();
 
         // Configure the HTTP request pipeline.
         app.MapGrpcService<GreeterService>();
