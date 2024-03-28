@@ -13,7 +13,7 @@ namespace JsonPlugin
 
         private struct Info
         {
-            public string JsonVersion;
+            public string? JsonVersion;
             public string JsonLocation;
             public string Machine;
             public DateTime Date;

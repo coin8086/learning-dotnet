@@ -15,12 +15,12 @@ class Program
         Console.ReadKey(false);
     }
 
-    static void TimerCallback(object _)
+    static void TimerCallback(object? _)
     {
         Console.WriteLine($"Timer 1: {DateTimeOffset.Now}");
     }
 
-    static async void TimerCallbackAsync(object _)
+    static async void TimerCallbackAsync(object? _)
     {
         await Task.Delay(1000);
         Console.WriteLine($"Timer 2: {DateTimeOffset.Now}");

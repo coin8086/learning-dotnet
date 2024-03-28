@@ -58,6 +58,7 @@ namespace TaskSample
                     throw new NotImplementedException("This operation has not been implemented.");
                 }));
 
+#pragma warning disable CS0168 // Variable is declared but never used
                 try
                 {
                     Task.WaitAll(tasks.ToArray());
@@ -68,6 +69,7 @@ namespace TaskSample
                     //throw ae.Flatten();
                     throw;
                 }
+#pragma warning restore CS0168 // Variable is declared but never used
             }
             catch (AggregateException ae)
             {
