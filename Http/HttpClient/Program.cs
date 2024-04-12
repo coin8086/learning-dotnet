@@ -6,7 +6,7 @@ namespace HttpClientSample;
 
 static class HttpResponseMessageExtensions
 {
-    internal static void WriteToConsole(this HttpResponseMessage response)
+    internal static async Task WriteToConsole(this HttpResponseMessage response)
     {
         if (response is null)
         {
@@ -18,6 +18,17 @@ static class HttpResponseMessageExtensions
         Console.Write($"{request?.RequestUri} ");
         Console.Write($"HTTP/{request?.Version} ");
         Console.WriteLine((int)response.StatusCode);
+
+        var body = await response.Content.ReadAsStringAsync();
+        if (body != null)
+        {
+            var maxLength = 1024;
+            if (body.Length > maxLength)
+            {
+                body = body.Substring(0, maxLength) + "...";
+            }
+            Console.WriteLine(body);
+        }
     }
 }
 
@@ -37,9 +48,7 @@ class Program
             //Get
             using (var response = await client.GetAsync(url))
             {
-                response.WriteToConsole();
-                var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
+                await response.WriteToConsole();
             }
         }
         catch (HttpRequestException ex)
@@ -50,12 +59,10 @@ class Program
         try
         {
             //Send
-            var request = new HttpRequestMessage(HttpMethod.Options, url);
+            var request = new HttpRequestMessage(HttpMethod.Head, url);
             using (var response = await client.SendAsync(request))
             {
-                response.WriteToConsole();
-                var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
+                await response.WriteToConsole();
             }
         }
         catch (HttpRequestException ex)
