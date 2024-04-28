@@ -55,7 +55,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finalizer", "GC\Finalizer\F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Disposable", "GC\Disposable\Disposable.csproj", "{E057FAAB-3936-45F5-87EE-5A557FB9502B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebHostSample", "HostedService\WebHostSample\WebHostSample.csproj", "{2E15B56B-9FAC-4988-904B-71EF7135CFC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebHostNet5", "HostedService\WebHostNet5\WebHostNet5.csproj", "{2E15B56B-9FAC-4988-904B-71EF7135CFC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GRpc", "GRpc", "{DAB02522-56A0-462D-89B7-854985E57B07}"
 EndProject
