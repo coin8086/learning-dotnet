@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace JsonSample
+namespace BasicOperations
 {
     public class WeatherForecast
     {
@@ -33,8 +33,8 @@ namespace JsonSample
             };
             var array = new WeatherForecast[] { weatherForecast };
 
-            var options = new JsonSerializerOptions 
-            { 
+            var options = new JsonSerializerOptions
+            {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) },
                 WriteIndented = true,
