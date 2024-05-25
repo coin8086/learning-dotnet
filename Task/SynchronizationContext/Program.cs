@@ -41,6 +41,7 @@ class Program
     static async Task Main(string[] args)
     {
         Console.WriteLine(SynchronizationContext.Current);
+        //NOTE: Comment out SetSynchronizationContext and see the different output
         SynchronizationContext.SetSynchronizationContext(new MySynchronizationContext());
         Console.WriteLine(SynchronizationContext.Current);
 
@@ -51,7 +52,8 @@ class Program
             Console.WriteLine($"I'm running at thread {Thread.CurrentThread.ManagedThreadId}.");
         });
 
-        //NOTE: Compare the output of "await task" with task.Wait();
+        //NOTE: Compare the outputs of await vs synchronous Wait().
+        //task.Wait();
         await task;
 
         Console.WriteLine($"Main ends at thread {Thread.CurrentThread.ManagedThreadId}.");
