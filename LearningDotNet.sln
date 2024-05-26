@@ -127,6 +127,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncCallback", "Task\Async
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureVariablesInLoop", "Task\CaptureVariablesInLoop\CaptureVariablesInLoop.csproj", "{3D89BC25-A672-4446-BD65-F1FA579C9FA4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPoolAndTask", "Task\ThreadPoolAndTask\ThreadPoolAndTask.csproj", "{94402D19-1AC5-460C-A94F-5DB4CDC1D020}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -713,6 +715,18 @@ Global
 		{3D89BC25-A672-4446-BD65-F1FA579C9FA4}.Release|x64.Build.0 = Release|Any CPU
 		{3D89BC25-A672-4446-BD65-F1FA579C9FA4}.Release|x86.ActiveCfg = Release|Any CPU
 		{3D89BC25-A672-4446-BD65-F1FA579C9FA4}.Release|x86.Build.0 = Release|Any CPU
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020}.Debug|x64.Build.0 = Debug|Any CPU
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020}.Debug|x86.Build.0 = Debug|Any CPU
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020}.Release|x64.ActiveCfg = Release|Any CPU
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020}.Release|x64.Build.0 = Release|Any CPU
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020}.Release|x86.ActiveCfg = Release|Any CPU
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -764,6 +778,7 @@ Global
 		{566AC871-E211-4FA0-954D-16A28FFF6859} = {97E8AA03-D5F5-44A6-8BF0-D6EF68653C20}
 		{E94663BD-4B5D-4C6D-991E-FBEB755D7611} = {97E8AA03-D5F5-44A6-8BF0-D6EF68653C20}
 		{3D89BC25-A672-4446-BD65-F1FA579C9FA4} = {97E8AA03-D5F5-44A6-8BF0-D6EF68653C20}
+		{94402D19-1AC5-460C-A94F-5DB4CDC1D020} = {97E8AA03-D5F5-44A6-8BF0-D6EF68653C20}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F48E9A7-1366-4AD7-B870-5DC3C142DDBE}
