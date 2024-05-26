@@ -60,6 +60,8 @@ class Program
         IncrementAsync(0).ContinueWith(t => IncrementAsync(t.Result))
             .Unwrap().ContinueWith(t => IncrementAsync(t.Result)).Wait();
 
+        Console.WriteLine("-----------------------------");
+
         //Antecedent is faulted
         ErrorAsync(0).ContinueWith(t => CheckTask(t)).Wait();
 
@@ -69,7 +71,18 @@ class Program
         //Continue only when not faulted
         ErrorAsync(0).ContinueWith(t =>
         {
-            Console.WriteLine("This line should not be executed.");
+            Console.WriteLine("This line should not be reached.");
         }, TaskContinuationOptions.NotOnFaulted).ContinueWith(t => CheckTask(t)).Wait();
+
+        Console.WriteLine("-----------------------------");
+
+        //Last but not least, Task.ContinueWith expects a synchronous delegate. It doesn't wait for an asynchronous one!
+        //This is different from Task.Run!
+        Task.Delay(100).ContinueWith(async task =>
+        {
+            Console.WriteLine("You see this.");
+            await Task.Delay(100);
+            Console.WriteLine("You don't see this.");
+        }).Wait();
     }
 }
