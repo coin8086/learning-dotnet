@@ -1,7 +1,7 @@
 ﻿//See https://devblogs.microsoft.com/dotnet/configureawait-faq/
 //and https://learn.microsoft.com/en-us/archive/msdn-magazine/2011/february/msdn-magazine-parallel-computing-it-s-all-about-the-synchronizationcontext
 
-namespace SynchronizationContextSample;
+namespace SynchronizationContextAndTask;
 
 class MySynchronizationContext : SynchronizationContext
 {
