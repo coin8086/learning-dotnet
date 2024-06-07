@@ -1,3 +1,3 @@
 # Learning .NET
 
-Learn .NET by simple samples.
+Learn .NET by simple examples.
