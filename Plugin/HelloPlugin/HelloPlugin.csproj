@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PluginInterface\PluginInterface.csproj">
-      <!-- NOTE: Do not miss the following two settings! -->
-      <Private>false</Private>
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </ProjectReference>
+    <ProjectReference Include="..\PluginInterface\PluginInterface.csproj" />
   </ItemGroup>
 
   <ItemGroup>

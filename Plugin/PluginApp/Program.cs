@@ -6,7 +6,7 @@ namespace PluginApp;
 
 class Program
 {
-    static Type[] SharedTypes = [typeof(ILogger)];
+    static Type[] SharedTypes = [typeof(IPlugin), typeof(ILogger)];
 
     static void Main(string[] args)
     {
