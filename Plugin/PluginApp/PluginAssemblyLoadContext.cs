@@ -28,7 +28,7 @@ class PluginAssemblyLoadContext : AssemblyLoadContext
 
         if (_sharedAssemblyNames != null && _sharedAssemblyNames.Contains(assemblyName.Name!))
         {
-            _logger?.LogDebug("Skip shared assembly '{name}'", assemblyName.Name);
+            _logger?.LogInformation("Skip shared assembly '{name}'", assemblyName.Name);
             return null;
         }
 
