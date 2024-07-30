@@ -11,11 +11,12 @@ namespace LogProvider
             {
                 builder
                     .ClearProviders()
+                    //NOTE: The log level here for AddFilter is like the value/level for System.Diagnostics.SourceSwitch,
+                    //which affects all TraceSources having the Switch.
                     .AddFilter("LogProvider.Program", LogLevel.Information)
-                    //.AddConsole()
                     .AddConsoleLogger()
-                    //NOTE: the cusomt file logger doesn't pick up log settings from appsettings.json.
-                    //And, its log level is only determined by the argument passed in here.
+                    //NOTE: The log level here set on the logger (which determines the result of IsEnabled()) is like
+                    //the TraceListener's Filter property, which is just another layer of screening beyond the Filter on category.
                     .AddFileLogger("LogFile.txt", LogLevel.Error);
             });
 
@@ -24,7 +25,7 @@ namespace LogProvider
             logger.LogInformation("Example info message");
             logger.LogWarning("Example warning message");
             logger.LogError("Example error message");
-            logger.LogError(100, new ArgumentNullException(), "Example exception {msg}", "This is bad!");
+            logger.LogError(100, new NotSupportedException("some error"), "Example exception {msg}", "This is bad!");
         }
     }
 }
