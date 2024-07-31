@@ -18,9 +18,11 @@ namespace LogProvider
 
         public IDisposable BeginScope<TState>(TState state)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
+        //NOTE: This method is just another layer of screening beyond (and after) the log filter
+        //(set by the ILoggingBuilder::AddFilter). It's like the Filter property of System.Diagnostics.TraceListener.
         public bool IsEnabled(LogLevel logLevel)
         {
             return logLevel >= _logLevel && logLevel != LogLevel.None;

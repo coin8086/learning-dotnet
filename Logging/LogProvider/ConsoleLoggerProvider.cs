@@ -31,6 +31,7 @@ namespace LogProvider
     {
         public static ILoggingBuilder AddConsoleLogger(this ILoggingBuilder builder, LogLevel logLevel = LogLevel.Trace)
         {
+            //TODO: some better/other way to add the provider with parameters?
             var service = ServiceDescriptor.Singleton<ILoggerProvider, ConsoleLoggerProvider>(_ => new ConsoleLoggerProvider(logLevel));
             builder.Services.Add(service);
             return builder;

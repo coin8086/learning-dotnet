@@ -26,9 +26,10 @@ namespace LogProvider
 
         public IDisposable BeginScope<TState>(TState state)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
 
+        //See NOTE on the same method of ConsoleLogger
         public bool IsEnabled(LogLevel logLevel)
         {
             return logLevel >= _logLevel && logLevel != LogLevel.None;
