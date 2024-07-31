@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 
 namespace Disposable;
 
+//TODO: Add some unmanaged resources to this class for demo
 class Sample : IDisposable
 {
     private bool _disposed = false;
@@ -14,14 +15,14 @@ class Sample : IDisposable
 
     public Sample()
     {
-        Console.WriteLine("Sample()");
+        Console.Error.WriteLine("Sample()");
         _stopwatch = Stopwatch.StartNew();
         _handle = new SafeFileHandle(IntPtr.Zero, true);
     }
 
     public void Dispose()
     {
-        Console.WriteLine($"Dispose(): Time elapsed: {_stopwatch.Elapsed}");
+        Console.Error.WriteLine($"Dispose(): Time elapsed: {_stopwatch.Elapsed}");
 
         // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
         Dispose(disposing: true);
@@ -32,20 +33,20 @@ class Sample : IDisposable
     // when it has a class member of IDisposable, or when it directly owns unmanaged resources.
     protected virtual void Dispose(bool disposing)
     {
-        Console.WriteLine($"Dispose(bool disposing): Time elapsed: {_stopwatch.Elapsed}");
+        Console.Error.WriteLine($"Dispose(bool disposing): Time elapsed: {_stopwatch.Elapsed}");
 
         if (!_disposed)
         {
             if (disposing)
             {
-                Console.WriteLine("disposing = true");
+                Console.Error.WriteLine("disposing = true");
                 // Dispose managed state (managed objects)
                 _handle?.Dispose();
                 _handle = null;
             }
             else
             {
-                Console.WriteLine("disposing = false");
+                Console.Error.WriteLine("disposing = false");
             }
 
             // TODO: free unmanaged resources (unmanaged objects) and override finalizer
@@ -54,7 +55,7 @@ class Sample : IDisposable
         }
         else
         {
-            Console.WriteLine("Disposed already!");
+            Console.Error.WriteLine("Disposed already!");
         }
     }
 
@@ -65,11 +66,11 @@ class Sample : IDisposable
         try
         {
             // Here _stopwatch may already have been destroyed. So catch exception by it.
-            Console.WriteLine($"~Sample(): Time elapsed: {_stopwatch.Elapsed}");
+            Console.Error.WriteLine($"~Sample(): Time elapsed: {_stopwatch.Elapsed}");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"~Sample(): {ex}");
+            Console.Error.WriteLine($"~Sample(): {ex}");
         }
 
         // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
