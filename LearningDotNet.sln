@@ -81,55 +81,57 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcMethods", "GRpc\GRpcMet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcMethodsClient", "GRpc\GRpcMethodsClient\GRpcMethodsClient.csproj", "{349EEAB1-2029-4D07-8703-7180E9621C9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRpcHelloClientLB", "GRpc\GRpcHelloClientLB\GRpcHelloClientLB.csproj", "{D6CB3E0D-D556-41C2-A764-4564AA23A8DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GRpcHelloClientLB", "GRpc\GRpcHelloClientLB\GRpcHelloClientLB.csproj", "{D6CB3E0D-D556-41C2-A764-4564AA23A8DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopProcess", "Process\StopProcess\StopProcess.csproj", "{24980C78-6A69-44E3-9CE4-339297770167}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopProcess", "Process\StopProcess\StopProcess.csproj", "{24980C78-6A69-44E3-9CE4-339297770167}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Http", "Http", "{F684EC45-347F-40EC-8541-343B3FD6EAD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClient", "Http\HttpClient\HttpClient.csproj", "{28420975-A77A-470B-82B1-4E488884CEFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpClient", "Http\HttpClient\HttpClient.csproj", "{28420975-A77A-470B-82B1-4E488884CEFC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Json", "Json", "{416246D2-967F-4176-B3BB-726D31661DEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicOperations", "Json\BasicOperations\BasicOperations.csproj", "{7EE39E13-5528-4872-88EB-2253FB0DFB4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicOperations", "Json\BasicOperations\BasicOperations.csproj", "{7EE39E13-5528-4872-88EB-2253FB0DFB4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomConverter", "Json\CustomConverter\CustomConverter.csproj", "{9A21F099-DC42-4A0B-849E-C542D8039F86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomConverter", "Json\CustomConverter\CustomConverter.csproj", "{9A21F099-DC42-4A0B-849E-C542D8039F86}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class", "Class", "{BC592FCA-70D5-43B5-8084-A14FFE64ABD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceMethod", "Class\InterfaceMethod\InterfaceMethod.csproj", "{E7FCD370-8C0D-43E3-922E-F711E7EA1C6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceMethod", "Class\InterfaceMethod\InterfaceMethod.csproj", "{E7FCD370-8C0D-43E3-922E-F711E7EA1C6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCancellation", "Task\TaskCancellation\TaskCancellation.csproj", "{B6361380-27A8-4CBE-BF1F-B9AB4114E1EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCancellation", "Task\TaskCancellation\TaskCancellation.csproj", "{B6361380-27A8-4CBE-BF1F-B9AB4114E1EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskContinuation", "Task\TaskContinuation\TaskContinuation.csproj", "{DCF795A3-BB5A-4BD1-B3D6-9DF9FF673AAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskContinuation", "Task\TaskContinuation\TaskContinuation.csproj", "{DCF795A3-BB5A-4BD1-B3D6-9DF9FF673AAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSchedulerSample", "Task\TaskScheduler\TaskSchedulerSample.csproj", "{566AC871-E211-4FA0-954D-16A28FFF6859}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskSchedulerSample", "Task\TaskScheduler\TaskSchedulerSample.csproj", "{566AC871-E211-4FA0-954D-16A28FFF6859}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncCallback", "Task\AsyncCallback\AsyncCallback.csproj", "{E94663BD-4B5D-4C6D-991E-FBEB755D7611}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncCallback", "Task\AsyncCallback\AsyncCallback.csproj", "{E94663BD-4B5D-4C6D-991E-FBEB755D7611}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureVariablesInLoop", "Task\CaptureVariablesInLoop\CaptureVariablesInLoop.csproj", "{3D89BC25-A672-4446-BD65-F1FA579C9FA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaptureVariablesInLoop", "Task\CaptureVariablesInLoop\CaptureVariablesInLoop.csproj", "{3D89BC25-A672-4446-BD65-F1FA579C9FA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPoolAndTask", "Task\ThreadPoolAndTask\ThreadPoolAndTask.csproj", "{94402D19-1AC5-460C-A94F-5DB4CDC1D020}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadPoolAndTask", "Task\ThreadPoolAndTask\ThreadPoolAndTask.csproj", "{94402D19-1AC5-460C-A94F-5DB4CDC1D020}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynchronizationContextAndTask", "Task\SynchronizationContextAndTask\SynchronizationContextAndTask.csproj", "{160C016C-EDC0-44D9-BEEC-A5336822C513}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SynchronizationContextAndTask", "Task\SynchronizationContextAndTask\SynchronizationContextAndTask.csproj", "{160C016C-EDC0-44D9-BEEC-A5336822C513}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptyWeb", "HostedService\EmptyWeb\EmptyWeb.csproj", "{B6B909D2-30E0-4426-B44B-7E1174FA19E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmptyWeb", "HostedService\EmptyWeb\EmptyWeb.csproj", "{B6B909D2-30E0-4426-B44B-7E1174FA19E1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugin", "Plugin", "{0DE51CFF-7326-4BAA-AB53-3E37B5D44792}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloPlugin", "Plugin\HelloPlugin\HelloPlugin.csproj", "{56CE075C-50A4-4303-8AB6-469124B4D78B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloPlugin", "Plugin\HelloPlugin\HelloPlugin.csproj", "{56CE075C-50A4-4303-8AB6-469124B4D78B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginApp", "Plugin\PluginApp\PluginApp.csproj", "{A4F6FA33-54CD-491D-A8BA-BB16240A12BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginApp", "Plugin\PluginApp\PluginApp.csproj", "{A4F6FA33-54CD-491D-A8BA-BB16240A12BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginInterface", "Plugin\PluginInterface\PluginInterface.csproj", "{22B5FE82-2FFB-4143-BD74-7118146B2B5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginInterface", "Plugin\PluginInterface\PluginInterface.csproj", "{22B5FE82-2FFB-4143-BD74-7118146B2B5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogFormat", "Logging\LogFormat\LogFormat.csproj", "{C2E4C9F2-514A-4E2A-876C-286BBC190869}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogFormat", "Logging\LogFormat\LogFormat.csproj", "{C2E4C9F2-514A-4E2A-876C-286BBC190869}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogFormatByConfigFile", "Logging\LogFormatByConfigFile\LogFormatByConfigFile.csproj", "{5447F9BA-1C88-4143-8D8B-4478B3116BBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogFormatByConfigFile", "Logging\LogFormatByConfigFile\LogFormatByConfigFile.csproj", "{5447F9BA-1C88-4143-8D8B-4478B3116BBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameOf", "Class\NameOf\NameOf.csproj", "{162CFBBF-BC87-44E0-90B1-DC502864DC3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NameOf", "Class\NameOf\NameOf.csproj", "{162CFBBF-BC87-44E0-90B1-DC502864DC3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeOf", "Class\TypeOf\TypeOf.csproj", "{D7430B3B-6DDC-4352-AC06-318D26A29C18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypeOf", "Class\TypeOf\TypeOf.csproj", "{D7430B3B-6DDC-4352-AC06-318D26A29C18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtwLog", "Logging\EtwLog\EtwLog.csproj", "{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -741,6 +743,18 @@ Global
 		{D7430B3B-6DDC-4352-AC06-318D26A29C18}.Release|x64.Build.0 = Release|Any CPU
 		{D7430B3B-6DDC-4352-AC06-318D26A29C18}.Release|x86.ActiveCfg = Release|Any CPU
 		{D7430B3B-6DDC-4352-AC06-318D26A29C18}.Release|x86.Build.0 = Release|Any CPU
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}.Debug|x64.Build.0 = Debug|Any CPU
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}.Debug|x86.Build.0 = Debug|Any CPU
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}.Release|x64.ActiveCfg = Release|Any CPU
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}.Release|x64.Build.0 = Release|Any CPU
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}.Release|x86.ActiveCfg = Release|Any CPU
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -794,6 +808,7 @@ Global
 		{5447F9BA-1C88-4143-8D8B-4478B3116BBE} = {599EC204-AA11-47D0-BC6D-E37F71486D91}
 		{162CFBBF-BC87-44E0-90B1-DC502864DC3E} = {BC592FCA-70D5-43B5-8084-A14FFE64ABD5}
 		{D7430B3B-6DDC-4352-AC06-318D26A29C18} = {BC592FCA-70D5-43B5-8084-A14FFE64ABD5}
+		{F2F28325-3CE2-4C8B-8E5C-DB1F2AE95FB6} = {599EC204-AA11-47D0-BC6D-E37F71486D91}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F48E9A7-1366-4AD7-B870-5DC3C142DDBE}
