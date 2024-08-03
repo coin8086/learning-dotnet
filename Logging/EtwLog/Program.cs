@@ -32,5 +32,8 @@ class Program
         // Write an informational entry to the event log.
         myLog.WriteEntry("some log");
         myLog.WriteEntry("some error", EventLogEntryType.Error);
+
+        EventLog.WriteEntry(EtwSource, "some log 2");
+        EventLog.WriteEntry(EtwSource, "some error 2", EventLogEntryType.Error);
     }
 }
