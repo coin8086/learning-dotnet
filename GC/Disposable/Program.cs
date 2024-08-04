@@ -84,5 +84,8 @@ class Program
     static void Main(string[] args)
     {
         using var obj = new Sample();
+
+        //NOTE: Compare the output with the following code
+        //var obj = new Sample();
     }
 }
