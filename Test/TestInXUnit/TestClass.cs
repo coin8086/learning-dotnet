@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace XUnitTest;
+namespace TestInXUnit;
 
 //See more in https://xunit.net/docs/shared-context#constructor
 public class TestClass : IDisposable

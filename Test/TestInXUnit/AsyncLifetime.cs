@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Xunit;
 
-namespace XUnitTest;
+namespace TestInXUnit;
 
 public class AsyncLifetime : IAsyncLifetime
 {

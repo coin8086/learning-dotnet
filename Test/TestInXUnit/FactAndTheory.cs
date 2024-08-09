@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace XUnitTest;
+namespace TestInXUnit;
 
 public class FactAndTheory
 {

@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace XUnitTest;
+namespace TestInXUnit;
 
 public class CollectionFixtureData : ClassFixtureData, IAsyncLifetime
 {

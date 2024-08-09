@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace XUnitTest;
+namespace TestInXUnit;
 
 //See more in https://xunit.net/docs/shared-context#class-fixture
 public class TestClassFixture : IClassFixture<ClassFixtureData>
