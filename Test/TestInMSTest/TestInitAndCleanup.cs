@@ -3,11 +3,11 @@
 [TestClass]
 public class TestInitAndCleanup
 {
-    private static TestContext _testContext;
+    private static TestContext? _testContext;
 
     public TestInitAndCleanup()
     {
-        _testContext.WriteLine("CTOR");
+        _testContext?.WriteLine("CTOR");
     }
 
     [ClassInitialize]
@@ -15,28 +15,28 @@ public class TestInitAndCleanup
     public static void ClassInit(TestContext testContext)
     {
         _testContext = testContext;
-        _testContext.WriteLine("Test class init");
+        _testContext?.WriteLine("Test class init");
     }
 
     [ClassCleanup]
     //Or: public static async Task TestCleanup()
     public static void ClassCleanup()
     {
-        _testContext.WriteLine("Test class cleanup");
+        _testContext?.WriteLine("Test class cleanup");
     }
 
     [TestInitialize]
     //Or: public async Task TestInit()
     public void TestInit()
     {
-        _testContext.WriteLine("Test init");
+        _testContext?.WriteLine("Test init");
     }
 
     [TestCleanup]
     //Or: public async Task TestCleanup()
     public void TestCleanup()
     {
-        _testContext.WriteLine("Test cleanup");
+        _testContext?.WriteLine("Test cleanup");
     }
 
     [TestMethod]
