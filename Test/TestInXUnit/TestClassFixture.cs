@@ -1,10 +1,45 @@
-using System;
+//See more in https://xunit.net/docs/shared-context#class-fixture
+
 using System.Threading.Tasks;
 using Xunit;
+using Xunit.Abstractions;
+using Xunit.Sdk;
 
 namespace TestInXUnit;
 
-//See more in https://xunit.net/docs/shared-context#class-fixture
+public class ClassFixtureData : IAsyncLifetime
+{
+    //See https://xunit.net/docs/capturing-output
+    private readonly IMessageSink _messageSink;
+
+    private int _num = 0;
+
+    public int Num => _num++;
+
+    public ClassFixtureData(IMessageSink messageSink)
+    {
+        _messageSink = messageSink;
+    }
+
+    protected virtual void Output(string msg)
+    {
+        var diagMsg = new DiagnosticMessage($"[{this.GetType().Name}]: {msg}");
+        _messageSink.OnMessage(diagMsg);
+    }
+
+    public virtual Task DisposeAsync()
+    {
+        Output("Clean up.");
+        return Task.CompletedTask;
+    }
+
+    public virtual Task InitializeAsync()
+    {
+        Output("Initialize.");
+        return Task.CompletedTask;
+    }
+}
+
 public class TestClassFixture : IClassFixture<ClassFixtureData>
 {
     private ClassFixtureData _data;
@@ -27,27 +62,5 @@ public class TestClassFixture : IClassFixture<ClassFixtureData>
     public void Test2()
     {
         Assert.Equal(0, _data.Num);
-    }
-}
-
-public class ClassFixtureData : IAsyncLifetime
-{
-    private int _num = 0;
-
-    public int Num
-    {
-        get { return _num++; }
-    }
-
-    public Task DisposeAsync()
-    {
-        Console.WriteLine("[ClassFixtureData]: Cleaning up resource for test...");
-        return Task.CompletedTask;
-    }
-
-    public Task InitializeAsync()
-    {
-        Console.WriteLine("[ClassFixtureData]: Preparing resource for test...");
-        return Task.CompletedTask;
     }
 }

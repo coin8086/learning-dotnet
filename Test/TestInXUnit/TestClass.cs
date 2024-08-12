@@ -1,9 +1,10 @@
+//See more in https://xunit.net/docs/shared-context#constructor
+
 using System;
 using Xunit;
 
 namespace TestInXUnit;
 
-//See more in https://xunit.net/docs/shared-context#constructor
 public class TestClass : IDisposable
 {
     private int _num = 0;

@@ -1,22 +1,25 @@
-using System;
-using System.Threading.Tasks;
+//See more in https://xunit.net/docs/shared-context#collection-fixture
+
 using Xunit;
+using Xunit.Abstractions;
 
 namespace TestInXUnit;
 
 public class CollectionFixtureData : ClassFixtureData, IAsyncLifetime
 {
-    public new Task DisposeAsync()
+    public CollectionFixtureData(IMessageSink messageSink) : base(messageSink)
     {
-        Console.WriteLine("[CollectionFixtureData]: Cleaning up resource for test...");
-        return Task.CompletedTask;
     }
 
-    public new Task InitializeAsync()
-    {
-        Console.WriteLine("[CollectionFixtureData]: Preparing resource for test...");
-        return Task.CompletedTask;
-    }
+    //public override Task DisposeAsync()
+    //{
+    //    return Task.CompletedTask;
+    //}
+
+    //public override Task InitializeAsync()
+    //{
+    //    return Task.CompletedTask;
+    //}
 }
 
 [CollectionDefinition("Some Collection")]
@@ -29,7 +32,6 @@ public class CollectionDefinition : ICollectionFixture<CollectionFixtureData>
 
 //One and only one Test in TestCollectionFixture and TestCollectionFixture2 should pass, and the other should fail. 
 //The run order decides which one should pass.
-//See more in https://xunit.net/docs/shared-context#collection-fixture
 
 [Collection("Some Collection")]
 public class TestCollectionFixture

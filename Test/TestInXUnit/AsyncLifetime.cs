@@ -1,42 +1,48 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace TestInXUnit;
 
 public class AsyncLifetime : IAsyncLifetime
 {
-    public AsyncLifetime()
+    //See https://xunit.net/docs/capturing-output
+    private readonly ITestOutputHelper _output;
+
+    public AsyncLifetime(ITestOutputHelper output)
     {
-        Console.WriteLine("[AsyncLifetime]: CTOR");
+        _output = output;
+        _output.WriteLine("[AsyncLifetime]: CTOR");
+    }
+
+    private void Output(string msg)
+    {
+        _output.WriteLine($"[{nameof(AsyncLifetime)}]: {msg}");
     }
 
     public Task DisposeAsync()
     {
-        Console.WriteLine("[AsyncLifetime]: Cleaning up resource for test...");
+        Output("Clean up test");
         return Task.CompletedTask;
     }
 
     public Task InitializeAsync()
     {
-        Console.WriteLine("[AsyncLifetime]: Preparing resource for test...");
+        Output("Prepare for test");
         return Task.CompletedTask;
     }
 
     [Fact]
-    public void PassingTest()
+    public void Test1()
     {
-        Assert.Equal(4, Add(2, 2));
+        Output("Test1");
+        Assert.True(true);
     }
 
     [Fact]
-    public void FailingTest()
+    public void Test2()
     {
-        Assert.Equal(5, Add(2, 2));
-    }
-
-    int Add(int x, int y)
-    {
-        return x + y;
+        Output("Test2");
+        Assert.True(true);
     }
 }
