@@ -1,10 +1,11 @@
 namespace TestInMSTest;
 
 [TestClass]
-public class UnitTest1
+public class TestClassAndTestMethod
 {
     [TestMethod]
     public void TestMethod1()
     {
+        Assert.IsTrue(true, "This is true.");
     }
 }
