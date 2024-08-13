@@ -3,11 +3,16 @@
 [TestClass]
 public class TestInitAndCleanup
 {
-    private static TestContext? _testContext;
+    protected static TestContext? _testContext;
+
+    protected static void Output(string msg)
+    {
+        _testContext?.WriteLine($"[{_testContext?.FullyQualifiedTestClassName}] {msg}");
+    }
 
     public TestInitAndCleanup()
     {
-        _testContext?.WriteLine("CTOR");
+        Output("CTOR");
     }
 
     [ClassInitialize]
@@ -15,39 +20,41 @@ public class TestInitAndCleanup
     public static void ClassInit(TestContext testContext)
     {
         _testContext = testContext;
-        _testContext?.WriteLine("Test class init");
+        Output("Test class init");
     }
 
     [ClassCleanup]
     //Or: public static async Task TestCleanup()
     public static void ClassCleanup()
     {
-        _testContext?.WriteLine("Test class cleanup");
+        Output("Test class cleanup");
     }
 
     [TestInitialize]
     //Or: public async Task TestInit()
-    public void TestInit()
+    public virtual void TestInit()
     {
-        _testContext?.WriteLine("Test init");
+        Output("Test init");
     }
 
     [TestCleanup]
     //Or: public async Task TestCleanup()
-    public void TestCleanup()
+    public virtual void TestCleanup()
     {
-        _testContext?.WriteLine("Test cleanup");
+        Output("Test cleanup");
     }
 
     [TestMethod]
     public void TestMethod1()
     {
+        Output("Test1");
         Assert.IsTrue(true, "This is true.");
     }
 
     [TestMethod]
     public void TestMethod2()
     {
+        Output("Test2");
         Assert.IsTrue(true, "This is also true.");
     }
 
