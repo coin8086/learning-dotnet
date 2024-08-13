@@ -12,23 +12,23 @@ public class AsyncLifetime : IAsyncLifetime
     public AsyncLifetime(ITestOutputHelper output)
     {
         _output = output;
-        _output.WriteLine("[AsyncLifetime]: CTOR");
+        Output("CTOR");
     }
 
     private void Output(string msg)
     {
-        _output.WriteLine($"[{nameof(AsyncLifetime)}]: {msg}");
+        _output.WriteLine($"[{nameof(AsyncLifetime)}] {msg}");
     }
 
     public Task DisposeAsync()
     {
-        Output("Clean up test");
+        Output("Test cleanup");
         return Task.CompletedTask;
     }
 
     public Task InitializeAsync()
     {
-        Output("Prepare for test");
+        Output("Test setup");
         return Task.CompletedTask;
     }
 

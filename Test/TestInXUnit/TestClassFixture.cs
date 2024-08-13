@@ -23,19 +23,19 @@ public class ClassFixtureData : IAsyncLifetime
 
     protected virtual void Output(string msg)
     {
-        var diagMsg = new DiagnosticMessage($"[{this.GetType().Name}]: {msg}");
+        var diagMsg = new DiagnosticMessage($"[{this.GetType().Name}] {msg}");
         _messageSink.OnMessage(diagMsg);
     }
 
     public virtual Task DisposeAsync()
     {
-        Output("Clean up.");
+        Output("Fixture cleanup");
         return Task.CompletedTask;
     }
 
     public virtual Task InitializeAsync()
     {
-        Output("Initialize.");
+        Output("Fixture setup");
         return Task.CompletedTask;
     }
 }
