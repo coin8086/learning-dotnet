@@ -1,6 +1,6 @@
-using WebApp.Components;
+using BlazorApp.Components;
 
-namespace WebApp;
+namespace BlazorApp;
 
 public class Program
 {
