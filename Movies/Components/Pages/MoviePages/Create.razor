@@ -36,6 +36,11 @@
                 <InputNumber id="price" @bind-Value="Movie.Price" class="form-control" /> 
                 <ValidationMessage For="() => Movie.Price" class="text-danger" /> 
             </div>        
+            <div class="mb-3">
+                <label for="rating" class="form-label">Rating:</label>
+                <InputText id="rating" @bind-Value="Movie.Rating" class="form-control" />
+                <ValidationMessage For="() => Movie.Rating" class="text-danger" />
+            </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </EditForm>
     </div>
