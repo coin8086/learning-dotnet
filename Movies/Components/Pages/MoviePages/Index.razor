@@ -6,24 +6,22 @@
 @using Movies.Data
 @inject IDbContextFactory<Movies.Data.MoviesContext> DbFactory
 @implements IAsyncDisposable
+@rendermode InteractiveServer
 
 <PageTitle>Index</PageTitle>
 
 <h1>Index</h1>
 
 <p>
-    <form action="/movies" data-enhance data-permanent>
-        <input type="search" name="titleFilter" />
-        <input type="submit" value="Search" />
-    </form>
+    <input type="search" @bind="titleFilter" @bind:event="oninput" />
 </p>
 
 <p>
     <a href="movies/create">Create New</a>
 </p>
 
-<QuickGrid Class="table" Items="FilteredMovies">
-    <PropertyColumn Property="movie => movie.Title" />
+<QuickGrid Class="table" Items="FilteredMovies" Pagination="pagination">
+    <PropertyColumn Property="movie => movie.Title" Sortable="true" />
     <PropertyColumn Property="movie => movie.ReleaseDate" Title="Release Date" />
     <PropertyColumn Property="movie => movie.Genre" />
     <PropertyColumn Property="movie => movie.Price" />
@@ -36,14 +34,17 @@
     </TemplateColumn>
 </QuickGrid>
 
+<Paginator State="pagination" />
+
 @code {
     MoviesContext context = default!;
 
-    [SupplyParameterFromQuery]
-    private string? TitleFilter { get; set; }
+    private string titleFilter = string.Empty;
 
     private IQueryable<Movie> FilteredMovies =>
-        context.Movie.Where(m => m.Title!.Contains(TitleFilter ?? string.Empty));
+        context.Movie.Where(m => m.Title!.Contains(titleFilter));
+
+    private PaginationState pagination = new PaginationState { ItemsPerPage = 5 };
 
     protected override void OnInitialized()
     {
