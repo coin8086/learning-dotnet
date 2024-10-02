@@ -1,0 +1,9 @@
+﻿@HybridCaching_HostAddress = http://localhost:5082
+
+GET {{HybridCaching_HostAddress}}/data
+
+###
+
+DELETE {{HybridCaching_HostAddress}}/data
+
+###

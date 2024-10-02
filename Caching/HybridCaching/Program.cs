@@ -13,20 +13,16 @@ public class Program
 
         var app = builder.Build();
 
-        app.UseHttpsRedirection();
-
-        app.MapGet("/data", async () =>
+        app.MapGet("/data", async (HybridCache cache) =>
         {
-            var cache = app.Services.GetRequiredService<HybridCache>();
             return await cache.GetOrCreateAsync("data", (token) =>
             {
                 return ValueTask.FromResult(DateTimeOffset.UtcNow.ToString());
             });
         });
 
-        app.MapDelete("/data", async () =>
+        app.MapDelete("/data", async (HybridCache cache) =>
         {
-            var cache = app.Services.GetRequiredService<HybridCache>();
             await cache.RemoveAsync("data");
         });
 
