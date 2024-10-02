@@ -1,5 +1,6 @@
 //See https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-8.0&preserve-view=true
 
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 
 namespace DistributedCaching;
@@ -22,21 +23,15 @@ public class Program
 
         var app = builder.Build();
 
-        app.UseHttpsRedirection();
-
-        app.MapGet("/data", async () =>
+        app.MapGet("/data", async (IDistributedCache cache) =>
         {
-            var cache = app.Services.GetRequiredService<IDistributedCache>();
             var data = await cache.GetStringAsync("data");
             return data ?? string.Empty;
         });
 
-        app.MapPost("/data", async (HttpContext context) =>
+        app.MapPost("/data", async (IDistributedCache cache, [FromBody]string data) =>
         {
-            var cache = app.Services.GetRequiredService<IDistributedCache>();
-            var reader = new StreamReader(context.Request.Body);
-            var data = await reader.ReadToEndAsync();
-            cache.SetString("data", data);
+            await cache.SetStringAsync("data", data);
         });
 
         app.Run();

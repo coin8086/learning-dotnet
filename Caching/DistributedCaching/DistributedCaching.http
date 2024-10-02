@@ -1,0 +1,11 @@
+﻿@DistributedCaching_HostAddress = http://localhost:5051
+
+POST {{DistributedCaching_HostAddress}}/data
+Content-Type: application/json
+
+"abc"
+###
+
+GET {{DistributedCaching_HostAddress}}/data
+
+###
