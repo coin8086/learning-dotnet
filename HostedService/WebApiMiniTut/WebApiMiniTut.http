@@ -1,0 +1,40 @@
+﻿@WebApiMiniTut_HostAddress = http://localhost:5290
+
+POST {{WebApiMiniTut_HostAddress}}/todoitems
+Content-Type: application/json
+
+{
+  "name":"walk dog",
+  "isComplete":true
+}
+
+###
+
+GET {{WebApiMiniTut_HostAddress}}/todoitems
+
+###
+
+GET {{WebApiMiniTut_HostAddress}}/todoitems/1
+
+###
+
+GET {{WebApiMiniTut_HostAddress}}/todoitems/0
+
+###
+
+GET {{WebApiMiniTut_HostAddress}}/todoitems/complete
+
+###
+
+PUT {{WebApiMiniTut_HostAddress}}/todoitems/1
+Content-Type: application/json
+
+{
+  "name": "feed fish",
+  "isComplete": false
+}
+###
+
+DELETE {{WebApiMiniTut_HostAddress}}/todoitems/1
+
+###
