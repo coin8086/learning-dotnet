@@ -1,0 +1,13 @@
+﻿@HostAddress = http://localhost:5237
+
+GET {{HostAddress}}/
+
+###
+
+GET {{HostAddress}}/abc
+
+###
+
+GET {{HostAddress}}/term
+
+###
