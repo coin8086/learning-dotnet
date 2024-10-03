@@ -1,0 +1,41 @@
+﻿@HostAddress = http://localhost:5171
+
+GET {{HostAddress}}/
+
+###
+
+GET {{HostAddress}}/?check=1
+
+###
+
+GET {{HostAddress}}/?branch=1
+
+###
+
+GET {{HostAddress}}/?branch=1&check=1
+
+###
+
+GET {{HostAddress}}/abc
+
+###
+
+GET {{HostAddress}}/branch
+
+###
+
+GET {{HostAddress}}/branch?check=1
+
+###
+
+GET {{HostAddress}}/branch?branch=1
+
+###
+
+GET {{HostAddress}}/branch?branch=1&check=1
+
+###
+
+GET {{HostAddress}}/branch/abc
+
+###
