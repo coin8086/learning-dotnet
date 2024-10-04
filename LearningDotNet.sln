@@ -115,6 +115,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppMiddleware", "HostedS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppRouting", "HostedService\WebAppRouting\WebAppRouting.csproj", "{5638BB18-94C8-493A-81C9-23C243C563E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiControllerTut", "HostedService\WebApiControllerTut\WebApiControllerTut.csproj", "{8C989C33-447A-4FEC-A9DD-1E8114962AEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -653,6 +655,18 @@ Global
 		{5638BB18-94C8-493A-81C9-23C243C563E0}.Release|x64.Build.0 = Release|Any CPU
 		{5638BB18-94C8-493A-81C9-23C243C563E0}.Release|x86.ActiveCfg = Release|Any CPU
 		{5638BB18-94C8-493A-81C9-23C243C563E0}.Release|x86.Build.0 = Release|Any CPU
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE}.Debug|x64.Build.0 = Debug|Any CPU
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE}.Debug|x86.Build.0 = Debug|Any CPU
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE}.Release|x64.ActiveCfg = Release|Any CPU
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE}.Release|x64.Build.0 = Release|Any CPU
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE}.Release|x86.ActiveCfg = Release|Any CPU
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -701,6 +715,7 @@ Global
 		{E1E0C69F-5741-482F-AB7B-ECD9502869F9} = {18A66334-599D-4740-9E8D-86AD0799DC7E}
 		{12F4E7C2-E7C3-4B20-9EE1-8213D90EC226} = {18A66334-599D-4740-9E8D-86AD0799DC7E}
 		{5638BB18-94C8-493A-81C9-23C243C563E0} = {18A66334-599D-4740-9E8D-86AD0799DC7E}
+		{8C989C33-447A-4FEC-A9DD-1E8114962AEE} = {18A66334-599D-4740-9E8D-86AD0799DC7E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F48E9A7-1366-4AD7-B870-5DC3C142DDBE}
