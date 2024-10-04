@@ -12,7 +12,7 @@ public class Program
         builder.Services.AddDbContext<TodoDb>(opt => opt.UseInMemoryDatabase("TodoList"));
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
         var app = builder.Build();
-        app.AddTodoApi("/todoitems");
+        app.MapTodoApi("/todoitems");
         app.Run();
     }
 }

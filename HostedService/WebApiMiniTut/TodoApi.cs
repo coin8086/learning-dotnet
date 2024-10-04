@@ -75,7 +75,7 @@ class TodoApi
 
 static class TodoApiWebApplicationExtensions
 {
-    public static WebApplication AddTodoApi(this WebApplication app, string path)
+    public static WebApplication MapTodoApi(this WebApplication app, string path)
     {
         //NOTE: TodoDb is a scoped service so it cannot be get like this
         //var db = app.Services.GetRequiredService<TodoDb>();
