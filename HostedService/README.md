@@ -1,22 +1,50 @@
 # Memo
 
+## WebApplication and WebApplicationBuilder
+
 ```mermaid
 flowchart BT
-  IAppBuilder[IApplicationBuilder]
-  IEpBuilder[IEndpointRouteBuilder]
-  IHost[IHost]
-  webApp[WebApplication]
+  subgraph WebApplication
+    IAppBuilder[/IApplicationBuilder/]
+    IEpBuilder[/IEndpointRouteBuilder/]
+    IHost[/IHost/]
+    webApp[WebApplication]
 
-  webAppBuilder[WebApplicationBuilder]
-  IHostAppBuilder[IHostApplicationBuilder]
+    webApp --> IAppBuilder
+    webApp --> IEpBuilder
+    webApp --> IHost
+  end
 
-  webApp --> IAppBuilder
-  webApp --> IEpBuilder
-  webApp --> IHost
+  IAppBuilder .-> |Use| Middlewares(Middlewares)
+  IEpBuilder .-> |Map| Routes(Routes)
 
   IAppBuilder .-> |New| IAppBuilder
   IEpBuilder .-> |CreateApplicationBuilder| IAppBuilder
 
-  webAppBuilder --> IHostAppBuilder
+  subgraph WebApplicationBuilder
+    webAppBuilder[WebApplicationBuilder]
+    IHostAppBuilder[/IHostApplicationBuilder/]
+
+    webAppBuilder --> IHostAppBuilder
+  end
+
+  webAppBuilder .-> |Build| WebApplication
+  webApp .-> |CreateBuilder| WebApplicationBuilder
+```
+
+## Generic host application (in IHost) and HostApplicationBuilder
+
+```mermaid
+flowchart BT
+  subgraph HostApplicationBuilder
+    IAppBuilder[/IHostApplicationBuilder/]
+    appBuilder[HostApplicationBuilder]
+
+    appBuilder --> IAppBuilder
+  end
+
+  appBuilder .-> |Build| IHost[/IHost/]
+
+  host[Host] .-> |CreateApplicationBuilder| HostApplicationBuilder
 
 ```
