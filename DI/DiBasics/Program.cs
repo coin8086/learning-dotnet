@@ -4,97 +4,22 @@ namespace DiBasics;
 
 class Program
 {
-    static void BasicTest()
+    static void Main(string[] args)
     {
-        Console.WriteLine("================= BasicTest Start =================");
         var services = new ServiceCollection();
+        services.AddSingleton(typeof(IServiceX<>), typeof(ServiceX<>));
         services.AddSingleton<IServiceA, ServiceA>();
         services.AddTransient<IServiceB, ServiceB>();
-        services.AddSingleton(typeof(IServiceX<>), typeof(ServiceX<>));
 
         var provider = services.BuildServiceProvider();
 
         var sb = provider.GetRequiredService<IServiceB>();
-        sb.Say();
+        sb.Check();
 
         sb = provider.GetRequiredService<IServiceB>();
-        sb.Say();
+        sb.Check();
 
         var sx = provider.GetRequiredService<IServiceX<Program>>();
-        sx.Log();
-        Console.WriteLine("================= BasicTest End =================");
-    }
-
-    interface IBase
-    {
-        void Speak();
-    }
-
-    class Base : IBase
-    {
-        public void Speak()
-        {
-            Console.WriteLine($"{ToString()}: {this.GetHashCode()}");
-        }
-    }
-
-    interface ISub : IBase
-    {
-        void Say();
-    }
-
-    class Sub : Base, ISub
-    {
-        public void Say()
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    static void SubclassingTest()
-    {
-        Console.WriteLine("================= SubclassingTest Start =================");
-        var services = new ServiceCollection();
-        services.AddSingleton<ISub, Sub>();
-
-        var provider = services.BuildServiceProvider();
-
-        //This will cause the following error though ISub, who is the descendent of IBase, is registered.
-        //Unhandled exception. System.InvalidOperationException: No service for type 'DiBasics.Program+IBase' has been registered.
-        var sb = provider.GetRequiredService<IBase>();
-
-
-
-        sb.Speak();
-        Console.WriteLine("================= SubclassingTest End =================");
-    }
-
-    static void MultipleClassesOfTheSameInterface()
-    {
-        Console.WriteLine("================= MultipleClassesOfTheSameInterface Start =================");
-        var services = new ServiceCollection();
-
-        //The order matters for GetRequiredService: the latter will override the former.
-        services.AddSingleton<IBase, Base>();
-        services.AddSingleton<IBase, Sub>();
-
-        var provider = services.BuildServiceProvider();
-
-        var sb = provider.GetRequiredService<IBase>();
-        sb.Speak();
-
-        Console.WriteLine("Enumerating IBase instances...");
-        foreach (var s in provider.GetServices<IBase>())
-        {
-            s.Speak();
-        }
-        Console.WriteLine("================= MultipleClassesOfTheSameInterface End =================");
-    }
-
-    static void Main(string[] args)
-    {
-        BasicTest();
-        //SubclassingTest();
-        MultipleClassesOfTheSameInterface();
+        sx.Check();
     }
 }

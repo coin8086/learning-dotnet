@@ -1,14 +1,14 @@
 ﻿namespace DiBasics;
 
-interface IServiceX<T>
+interface IServiceX<T> : IChecker
 {
-    void Log();
 }
 
-class ServiceX<T> : IServiceX<T>
+class ServiceX<T> : Checker, IServiceX<T>
 {
-    public void Log()
+    public override void Check(int indent = 0)
     {
-        Console.WriteLine($"{ToString()}: {this.GetHashCode()}");
+        var leading = new string(' ', indent);
+        Console.WriteLine($"{leading}{GetType().Name}<{typeof(T).Name}>: {this.GetHashCode()}");
     }
 }

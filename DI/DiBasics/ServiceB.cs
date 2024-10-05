@@ -1,14 +1,12 @@
 ﻿namespace DiBasics;
 
-interface IServiceB
+interface IServiceB : IChecker
 {
-    void Say();
 }
 
-class ServiceB : IServiceB
+class ServiceB : Checker, IServiceB
 {
     IServiceA _sa;
-
     IServiceX<ServiceB> _sx;
 
     public ServiceB(IServiceA serviceA, IServiceX<ServiceB> sx)
@@ -17,10 +15,10 @@ class ServiceB : IServiceB
         _sx = sx;
     }
 
-    public void Say()
+    public override void Check(int indent = 0)
     {
-        Console.WriteLine($"{ToString()}: {this.GetHashCode()}");
-        _sa.Speak();
-        _sx.Log();
+        base.Check(indent);
+        _sa.Check(2);
+        _sx.Check(2);
     }
 }

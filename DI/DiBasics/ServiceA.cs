@@ -1,14 +1,9 @@
 ﻿namespace DiBasics;
 
-interface IServiceA
+interface IServiceA : IChecker
 {
-    void Speak();
 }
 
-class ServiceA : IServiceA
+class ServiceA : Checker, IServiceA
 {
-    public void Speak()
-    {
-        Console.WriteLine($"{ToString()}: {this.GetHashCode()}");
-    }
 }
