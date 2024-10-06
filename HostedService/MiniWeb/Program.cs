@@ -1,4 +1,4 @@
-namespace EmptyWeb;
+namespace MiniWeb;
 
 public class Program
 {

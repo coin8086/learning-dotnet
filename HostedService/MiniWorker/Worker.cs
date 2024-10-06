@@ -1,4 +1,4 @@
-namespace EmptyWorker;
+namespace MiniWorker;
 
 public class Worker : BackgroundService
 {
