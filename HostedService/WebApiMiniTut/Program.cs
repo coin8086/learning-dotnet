@@ -11,6 +11,8 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddDbContext<TodoDb>(opt => opt.UseInMemoryDatabase("TodoList"));
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+        builder.Services.AddSingleton<TodoApi>();
+
         var app = builder.Build();
         app.MapTodoApi("/todoitems");
         app.Run();

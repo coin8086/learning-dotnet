@@ -12,6 +12,15 @@ class TodoApi
         _logger?.LogInformation("TodoApi is created.");
     }
 
+    /*
+     * NOTE
+     *
+     * TodoDb is a scoped service while TodoApi is singlton. So TodoDb cannot be injected in a constructor,
+     * but in a method. An alternative is to register TodoApi as a scoped service, then TodoDb can be
+     * injected in a constructor, like a controller class. But TodoApi as a scoped service requires more
+     * code in implementing MapTodoApi. Considering the cost, it may be better to use a controller instead,
+     * for TodoApi as a scoped service.
+     */
     public async Task<IResult> GetAllTodos(TodoDb db)
     {
         return TypedResults.Ok(await db.Todos.Select(x => new TodoItemDTO(x)).ToArrayAsync());
@@ -75,22 +84,16 @@ class TodoApi
 
 static class TodoApiWebApplicationExtensions
 {
-    public static WebApplication MapTodoApi(this WebApplication app, string path)
+    public static IEndpointRouteBuilder MapTodoApi(this IEndpointRouteBuilder builder, string path)
     {
-        //NOTE: TodoDb is a scoped service so it cannot be get like this
-        //var db = app.Services.GetRequiredService<TodoDb>();
-
-        var logger = app.Services.GetService<ILogger<TodoApi>>();
-        var apiInstance = new TodoApi(logger);
-
-        var routeBuilder = app.MapGroup(path);
-        routeBuilder.MapGet("/", apiInstance.GetAllTodos);
-        routeBuilder.MapGet("/complete", apiInstance.GetCompleteTodos);
-        routeBuilder.MapGet("/{id}", apiInstance.GetTodo);
-        routeBuilder.MapPost("/", apiInstance.CreateTodo);
-        routeBuilder.MapPut("/{id}", apiInstance.UpdateTodo);
-        routeBuilder.MapDelete("/{id}", apiInstance.DeleteTodo);
-
-        return app;
+        var apiInstance = builder.ServiceProvider.GetRequiredService<TodoApi>();
+        var group = builder.MapGroup(path);
+        group.MapGet("/", apiInstance.GetAllTodos);
+        group.MapGet("/complete", apiInstance.GetCompleteTodos);
+        group.MapGet("/{id}", apiInstance.GetTodo);
+        group.MapPost("/", apiInstance.CreateTodo);
+        group.MapPut("/{id}", apiInstance.UpdateTodo);
+        group.MapDelete("/{id}", apiInstance.DeleteTodo);
+        return builder;
     }
 }
