@@ -1,6 +1,40 @@
 @WebApiControllerTut_HostAddress = http://localhost:5163
 
-GET {{WebApiControllerTut_HostAddress}}/weatherforecast/
+POST {{WebApiControllerTut_HostAddress}}/api/TodoItems
+Content-Type: application/json
+
+{
+  "name":"walk dog",
+  "isComplete":true
+}
+
+###
+
+GET {{WebApiControllerTut_HostAddress}}/api/todoitems
 Accept: application/json
+
+###
+
+GET {{WebApiControllerTut_HostAddress}}/api/TodoItems/1
+Accept: application/json
+
+###
+
+GET {{WebApiControllerTut_HostAddress}}/api/TodoItems/0
+Accept: application/json
+
+###
+
+PUT {{WebApiControllerTut_HostAddress}}/api/TodoItems/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "feed fish",
+  "isComplete": false
+}
+###
+
+DELETE {{WebApiControllerTut_HostAddress}}/api/TodoItems/1
 
 ###
