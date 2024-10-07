@@ -101,13 +101,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistributedCaching", "Cachi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HybridCaching", "Caching\HybridCaching\HybridCaching.csproj", "{C6BB6BF4-8291-42F2-8F6C-99E6C39DE199}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiMiniTut", "HostedService\WebApiMiniTut\WebApiMiniTut.csproj", "{E1E0C69F-5741-482F-AB7B-ECD9502869F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiMiniTodo", "HostedService\WebApiMiniTodo\WebApiMiniTodo.csproj", "{E1E0C69F-5741-482F-AB7B-ECD9502869F9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppMiddleware", "HostedService\WebAppMiddleware\WebAppMiddleware.csproj", "{12F4E7C2-E7C3-4B20-9EE1-8213D90EC226}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppRouting", "HostedService\WebAppRouting\WebAppRouting.csproj", "{5638BB18-94C8-493A-81C9-23C243C563E0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiControllerTut", "HostedService\WebApiControllerTut\WebApiControllerTut.csproj", "{8C989C33-447A-4FEC-A9DD-1E8114962AEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiControllerTodo", "HostedService\WebApiControllerTodo\WebApiControllerTodo.csproj", "{8C989C33-447A-4FEC-A9DD-1E8114962AEE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DI", "DI", "{5D1F1EC4-9D36-4A40-A016-B381647EEBA6}"
 EndProject
@@ -119,9 +119,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiShare", "DI\DiShare\DiSha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiServiceLifetime", "DI\DiServiceLifetime\DiServiceLifetime.csproj", "{D672D2F3-7CC8-477C-9406-969AB7509B4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniWeb", "HostedService\MiniWeb\MiniWeb.csproj", "{78F262A9-1EA2-4678-A681-B95BF2B887FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniWeb", "HostedService\MiniWeb\MiniWeb.csproj", "{78F262A9-1EA2-4678-A681-B95BF2B887FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniWorker", "HostedService\MiniWorker\MiniWorker.csproj", "{5B51A58E-A82E-4F4F-A041-229AA75B5D91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniWorker", "HostedService\MiniWorker\MiniWorker.csproj", "{5B51A58E-A82E-4F4F-A041-229AA75B5D91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

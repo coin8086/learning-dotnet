@@ -2,9 +2,9 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebApiControllerTut.Models;
+using WebApiControllerTodo.Models;
 
-namespace WebApiControllerTut.Controllers;
+namespace WebApiControllerTodo.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

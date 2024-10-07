@@ -1,4 +1,4 @@
-﻿namespace WebApiControllerTut.Models;
+﻿namespace WebApiControllerTodo.Models;
 
 public class TodoItem
 {

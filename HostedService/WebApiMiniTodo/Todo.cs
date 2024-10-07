@@ -1,4 +1,4 @@
-﻿namespace WebApiMiniTut;
+﻿namespace WebApiMiniTodo;
 
 public class Todo
 {

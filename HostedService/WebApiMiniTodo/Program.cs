@@ -2,7 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 
-namespace WebApiMiniTut;
+namespace WebApiMiniTodo;
 
 public class Program
 {

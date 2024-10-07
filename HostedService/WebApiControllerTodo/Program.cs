@@ -2,9 +2,9 @@
 //See https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&tabs=visual-studio
 
 using Microsoft.EntityFrameworkCore;
-using WebApiControllerTut.Models;
+using WebApiControllerTodo.Models;
 
-namespace WebApiControllerTut;
+namespace WebApiControllerTodo;
 
 public class Program
 {

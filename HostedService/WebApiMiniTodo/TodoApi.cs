@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace WebApiMiniTut;
+namespace WebApiMiniTodo;
 
 class TodoApi
 {
