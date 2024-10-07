@@ -1,6 +1,0 @@
-<Project>
-  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
-  <PropertyGroup>
-    <DefaultItemExcludes>$(DefaultItemExcludes);*.swp;*.db;*.db-shm;*.db-wal;.gitignore</DefaultItemExcludes>
-  </PropertyGroup>
-</Project>
