@@ -1,11 +1,11 @@
 //See https://learn.microsoft.com/en-us/aspnet/core/blazor/tutorials/movie-database-app/?view=aspnetcore-8.0
 
-using Movies.Components;
+using BlazorMovie.Components;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Movies.Data;
+using BlazorMovie.Data;
 
-namespace Movies;
+namespace BlazorMovie;
 
 public class Program
 {

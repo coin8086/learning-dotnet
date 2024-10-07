@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Movies.Data;
+using BlazorMovie.Data;
 
 #nullable disable
 
-namespace Movies.Migrations
+namespace BlazorMovie.Migrations
 {
     [DbContext(typeof(MoviesContext))]
-    [Migration("20240908032422_NewMovieDataAnnotations")]
-    partial class NewMovieDataAnnotations
+    [Migration("20240908072528_AddRatingField")]
+    partial class AddRatingField
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,7 +20,7 @@ namespace Movies.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
 
-            modelBuilder.Entity("Movies.Models.Movie", b =>
+            modelBuilder.Entity("BlazorMovie.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -33,6 +33,10 @@ namespace Movies.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18, 2)");
+
+                    b.Property<string>("Rating")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<DateOnly>("ReleaseDate")
                         .HasColumnType("TEXT");

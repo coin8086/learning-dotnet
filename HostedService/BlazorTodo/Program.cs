@@ -1,8 +1,8 @@
 //See https://learn.microsoft.com/en-us/aspnet/core/blazor/tutorials/build-a-blazor-app?view=aspnetcore-8.0
 
-using TodoList.Components;
+using BlazorTodo.Components;
 
-namespace TodoList;
+namespace BlazorTodo;
 
 public class Program
 {

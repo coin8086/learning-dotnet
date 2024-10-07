@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Movies.Models;
+using BlazorMovie.Models;
 
-namespace Movies.Data;
+namespace BlazorMovie.Data;
 
 public class MoviesContext : DbContext
 {
@@ -14,5 +14,5 @@ public class MoviesContext : DbContext
     {
     }
 
-    public DbSet<Movies.Models.Movie> Movie { get; set; } = default!;
+    public DbSet<BlazorMovie.Models.Movie> Movie { get; set; } = default!;
 }

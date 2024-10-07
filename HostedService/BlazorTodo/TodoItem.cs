@@ -1,4 +1,4 @@
-﻿namespace TodoList;
+﻿namespace BlazorTodo;
 
 public class TodoItem
 {

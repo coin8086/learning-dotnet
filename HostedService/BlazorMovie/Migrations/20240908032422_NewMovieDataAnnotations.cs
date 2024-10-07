@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Movies.Migrations
+namespace BlazorMovie.Migrations
 {
     /// <inheritdoc />
     public partial class NewMovieDataAnnotations : Migration

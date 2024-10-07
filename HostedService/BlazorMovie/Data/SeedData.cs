@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Movies.Models;
+using BlazorMovie.Models;
 
-namespace Movies.Data;
+namespace BlazorMovie.Data;
 
 public class SeedData
 {
