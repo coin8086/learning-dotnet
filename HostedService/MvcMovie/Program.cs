@@ -1,5 +1,8 @@
 //See https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-8.0&tabs=visual-studio-code
 
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Data;
+
 namespace MvcMovie;
 
 public class Program
@@ -7,6 +10,9 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
+        builder.Services.AddDbContext<MvcMovieContext>(options =>
+            options.UseSqlite(builder.Configuration.GetConnectionString("MvcMovieContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
