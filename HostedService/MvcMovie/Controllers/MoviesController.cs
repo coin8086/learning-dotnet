@@ -47,10 +47,12 @@ public class MoviesController : Controller
             movies = movies.Where(x => x.Genre == movieGenre);
         }
 
+        var genreList = new SelectList(await genres.Distinct().ToListAsync());
+        var movieList = await movies.ToListAsync();
         var movieGenreVM = new MovieGenreViewModel
         {
-            Genres = new SelectList(await genres.Distinct().ToListAsync()),
-            Movies = await movies.ToListAsync()
+            Genres = genreList,
+            Movies = movieList
         };
 
         return View(movieGenreVM);

@@ -22,7 +22,8 @@ namespace MvcMovie.Migrations
                 name: "Rating",
                 table: "Movie",
                 type: "TEXT",
-                nullable: true);
+                nullable: true,
+                defaultValue: "R");
         }
 
         /// <inheritdoc />
