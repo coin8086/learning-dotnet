@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApiMiniTodo;
 
@@ -21,17 +22,19 @@ class TodoApi
      * code in implementing MapTodoApi. Considering the cost, it may be better to use a controller instead,
      * for TodoApi as a scoped service.
      */
-    public async Task<IResult> GetAllTodos(TodoDb db)
+    public async Task<Ok<TodoItemDTO[]>> GetAllTodos(TodoDb db)
     {
-        return TypedResults.Ok(await db.Todos.Select(x => new TodoItemDTO(x)).ToArrayAsync());
+        var todos = await db.Todos.Select(x => new TodoItemDTO(x)).ToArrayAsync();
+        return TypedResults.Ok(todos);
     }
 
-    public async Task<IResult> GetCompleteTodos(TodoDb db)
+    public async Task<Ok<TodoItemDTO[]>> GetCompleteTodos(TodoDb db)
     {
-        return TypedResults.Ok(await db.Todos.Where(t => t.IsComplete).Select(x => new TodoItemDTO(x)).ToListAsync());
+        var todos = await db.Todos.Where(t => t.IsComplete).Select(x => new TodoItemDTO(x)).ToArrayAsync();
+        return TypedResults.Ok(todos);
     }
 
-    public async Task<IResult> GetTodo(int id, TodoDb db)
+    public async Task<Results<Ok<TodoItemDTO>, NotFound>> GetTodo(int id, TodoDb db)
     {
         return await db.Todos.FindAsync(id)
             is Todo todo
@@ -39,7 +42,7 @@ class TodoApi
                 : TypedResults.NotFound();
     }
 
-    public async Task<IResult> CreateTodo(TodoItemDTO todoItemDTO, TodoDb db)
+    public async Task<Created<TodoItemDTO>> CreateTodo(TodoItemDTO todoItemDTO, TodoDb db)
     {
         var todoItem = new Todo
         {
@@ -55,7 +58,7 @@ class TodoApi
         return TypedResults.Created($"/todoitems/{todoItem.Id}", todoItemDTO);
     }
 
-    public async Task<IResult> UpdateTodo(int id, TodoItemDTO todoItemDTO, TodoDb db)
+    public async Task<Results<NoContent, NotFound>> UpdateTodo(int id, TodoItemDTO todoItemDTO, TodoDb db)
     {
         var todo = await db.Todos.FindAsync(id);
 
@@ -69,7 +72,7 @@ class TodoApi
         return TypedResults.NoContent();
     }
 
-    public async Task<IResult> DeleteTodo(int id, TodoDb db)
+    public async Task<Results<NoContent, NotFound>> DeleteTodo(int id, TodoDb db)
     {
         if (await db.Todos.FindAsync(id) is Todo todo)
         {
