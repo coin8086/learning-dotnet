@@ -1,0 +1,35 @@
+﻿@HostAddress = http://localhost:5083
+
+Get {{HostAddress}}/search/100?query=something%2Fto%2Fquery
+Content-Type: application/json
+X-Data: header data
+
+{
+  "Id": 1,
+  "Summary": "some summary"
+}
+
+###
+Get {{HostAddress}}/search2/100?query=something%2Fto%2Fquery
+
+###
+Get {{HostAddress}}/search2/100
+
+###
+POST {{HostAddress}}/notes
+Content-Type: application/json
+
+{
+  "id": 1,
+  "summary": "some summary",
+  "time": "1990-10-01T12:12:12Z"
+}
+
+###
+Get {{HostAddress}}/search3
+
+###
+Get {{HostAddress}}/search3/100
+
+###
+Get {{HostAddress}}/search4
