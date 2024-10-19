@@ -1,7 +1,7 @@
 //See https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-8.0
 //and https://learn.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-8.0
 
-namespace MvcRouting;
+namespace ControllerRouting;
 
 public class Program
 {

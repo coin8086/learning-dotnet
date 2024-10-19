@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace MvcRouting.Controllers;
+namespace ControllerRouting.Controllers;
 
 public class BlogController : Controller
 {

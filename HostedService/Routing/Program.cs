@@ -1,6 +1,6 @@
 //See https://learn.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-8.0
 
-namespace WebAppRouting;
+namespace Routing;
 
 public class Program
 {

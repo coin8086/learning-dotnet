@@ -1,4 +1,4 @@
-﻿namespace WebAppParamBinding;
+﻿namespace ParamBinding;
 
 public class SearchService
 {

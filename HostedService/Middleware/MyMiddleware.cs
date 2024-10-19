@@ -1,6 +1,6 @@
 ﻿//See https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?view=aspnetcore-8.0
 
-namespace WebAppMiddleware;
+namespace Middleware;
 
 class MyMiddleware
 {

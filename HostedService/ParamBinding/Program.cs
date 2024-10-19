@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using System.Diagnostics;
 
-namespace WebAppParamBinding;
+namespace ParamBinding;
 
 
 public class Program

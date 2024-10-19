@@ -1,4 +1,4 @@
-namespace MvcRouting.Models;
+namespace ControllerRouting.Models;
 
 public class ErrorViewModel
 {

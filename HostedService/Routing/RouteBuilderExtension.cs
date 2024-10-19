@@ -1,4 +1,4 @@
-﻿namespace WebAppRouting;
+﻿namespace Routing;
 
 static class RouteBuilderExtension
 {
