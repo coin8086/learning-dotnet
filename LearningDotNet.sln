@@ -111,29 +111,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiServiceLifetime", "DI\DiS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker", "HostedService\Worker\Worker.csproj", "{5B51A58E-A82E-4F4F-A041-229AA75B5D91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerRouting", "HostedService\ControllerRouting\ControllerRouting.csproj", "{F436322B-9AF0-47E8-8DB6-5FCAD007B626}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControllerRouting", "HostedService\ControllerRouting\ControllerRouting.csproj", "{F436322B-9AF0-47E8-8DB6-5FCAD007B626}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebWithWorker", "HostedService\WebWithWorker\WebWithWorker.csproj", "{E4949A70-7A6E-4D1E-8D86-399FF8198FDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebWithWorker", "HostedService\WebWithWorker\WebWithWorker.csproj", "{E4949A70-7A6E-4D1E-8D86-399FF8198FDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParamBinding", "HostedService\ParamBinding\ParamBinding.csproj", "{FDEB7253-0230-4C2D-9F53-DB433937858B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParamBinding", "HostedService\ParamBinding\ParamBinding.csproj", "{FDEB7253-0230-4C2D-9F53-DB433937858B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApp", "WebApp", "{6F90922C-5178-48A7-BB44-A87533FD728A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorMovie", "HostedService\WebApp\BlazorMovie\BlazorMovie.csproj", "{5DDCB99A-F83D-4CAE-A812-6B6483F896E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorMovie", "HostedService\WebApp\BlazorMovie\BlazorMovie.csproj", "{5DDCB99A-F83D-4CAE-A812-6B6483F896E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTodo", "HostedService\WebApp\BlazorTodo\BlazorTodo.csproj", "{9CB6082F-728E-4AF7-8793-C685790E9D51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTodo", "HostedService\WebApp\BlazorTodo\BlazorTodo.csproj", "{9CB6082F-728E-4AF7-8793-C685790E9D51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWasmApp", "HostedService\WebApp\BlazorWasmApp\BlazorWasmApp.csproj", "{C6A7183C-C148-4385-A0C3-7284F01AE842}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWasmApp", "HostedService\WebApp\BlazorWasmApp\BlazorWasmApp.csproj", "{C6A7183C-C148-4385-A0C3-7284F01AE842}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "HostedService\WebApp\MvcMovie\MvcMovie.csproj", "{2D907BAD-ED08-4487-871D-C82A26C1E280}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcMovie", "HostedService\WebApp\MvcMovie\MvcMovie.csproj", "{2D907BAD-ED08-4487-871D-C82A26C1E280}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesMovie", "HostedService\WebApp\RazorPagesMovie\RazorPagesMovie.csproj", "{B2EB3C7F-6320-421F-B014-BF16530E1141}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPagesMovie", "HostedService\WebApp\RazorPagesMovie\RazorPagesMovie.csproj", "{B2EB3C7F-6320-421F-B014-BF16530E1141}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{A65B1491-DB86-43F7-81E2-A2C9CD59BC01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiControllerTodo", "HostedService\WebApi\WebApiControllerTodo\WebApiControllerTodo.csproj", "{572AC1D9-0665-4A64-B457-391BCEE364DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiControllerTodo", "HostedService\WebApi\WebApiControllerTodo\WebApiControllerTodo.csproj", "{572AC1D9-0665-4A64-B457-391BCEE364DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiMiniTodo", "HostedService\WebApi\WebApiMiniTodo\WebApiMiniTodo.csproj", "{29EEB8E5-5B39-41B6-AEFA-525F0926CBD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiMiniTodo", "HostedService\WebApi\WebApiMiniTodo\WebApiMiniTodo.csproj", "{29EEB8E5-5B39-41B6-AEFA-525F0926CBD0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErrorHandling", "HostedService\ErrorHandling\ErrorHandling.csproj", "{67984B54-2789-4E19-9419-0DAFDEEA01A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -757,6 +759,18 @@ Global
 		{29EEB8E5-5B39-41B6-AEFA-525F0926CBD0}.Release|x64.Build.0 = Release|Any CPU
 		{29EEB8E5-5B39-41B6-AEFA-525F0926CBD0}.Release|x86.ActiveCfg = Release|Any CPU
 		{29EEB8E5-5B39-41B6-AEFA-525F0926CBD0}.Release|x86.Build.0 = Release|Any CPU
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3}.Debug|x64.Build.0 = Debug|Any CPU
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3}.Debug|x86.Build.0 = Debug|Any CPU
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3}.Release|x64.ActiveCfg = Release|Any CPU
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3}.Release|x64.Build.0 = Release|Any CPU
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3}.Release|x86.ActiveCfg = Release|Any CPU
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -815,6 +829,7 @@ Global
 		{A65B1491-DB86-43F7-81E2-A2C9CD59BC01} = {18A66334-599D-4740-9E8D-86AD0799DC7E}
 		{572AC1D9-0665-4A64-B457-391BCEE364DB} = {A65B1491-DB86-43F7-81E2-A2C9CD59BC01}
 		{29EEB8E5-5B39-41B6-AEFA-525F0926CBD0} = {A65B1491-DB86-43F7-81E2-A2C9CD59BC01}
+		{67984B54-2789-4E19-9419-0DAFDEEA01A3} = {18A66334-599D-4740-9E8D-86AD0799DC7E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F48E9A7-1366-4AD7-B870-5DC3C142DDBE}
