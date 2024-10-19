@@ -109,7 +109,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiShare", "DI\DiShare\DiSha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiServiceLifetime", "DI\DiServiceLifetime\DiServiceLifetime.csproj", "{D672D2F3-7CC8-477C-9406-969AB7509B4A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniWorker", "HostedService\MiniWorker\MiniWorker.csproj", "{5B51A58E-A82E-4F4F-A041-229AA75B5D91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker", "HostedService\Worker\Worker.csproj", "{5B51A58E-A82E-4F4F-A041-229AA75B5D91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerRouting", "HostedService\ControllerRouting\ControllerRouting.csproj", "{F436322B-9AF0-47E8-8DB6-5FCAD007B626}"
 EndProject

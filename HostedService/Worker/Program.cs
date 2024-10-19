@@ -1,4 +1,4 @@
-namespace MiniWorker;
+namespace Worker;
 
 public class Program
 {
