@@ -1,0 +1,14 @@
+@HostAddress = http://localhost:5133
+
+GET {{HostAddress}}/basic
+
+###
+GET {{HostAddress}}/named
+
+###
+GET {{HostAddress}}/typed
+
+###
+GET {{HostAddress}}/tracked
+
+###
