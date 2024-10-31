@@ -133,6 +133,16 @@ where options are:
             var stderr = new StringBuilder();
             if (captureOuput)
             {
+                /*
+                * NOTE
+                *
+                * The args.Data doesn't include the EOL if any. So you cannot tell if there's an EOL for
+                * a line of output. Here an EOL is always appended by "AppendLine" to our stdout/stderr 
+                * variable. That means if the original output doesn't end with an EOL, our stdout/stderr
+                * still ends with it. That is by design. See more at
+                *
+                * https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.datareceivedeventargs?view=net-8.0
+                */
                 process.OutputDataReceived += (sender, args) => {
                     if (args.Data != null)
                     {
