@@ -149,6 +149,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorBasics", "Synchroniz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderWriterLockBasics", "Synchronization\ReaderWriterLockBasics\ReaderWriterLockBasics.csproj", "{F8ED0472-C1DC-4623-99CD-6737E2166B94}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Collections", "Collections", "{B78A4FEC-D743-4D76-8075-7A1D7D7718D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryTypes", "Collections\DictionaryTypes\DictionaryTypes.csproj", "{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -843,6 +847,18 @@ Global
 		{F8ED0472-C1DC-4623-99CD-6737E2166B94}.Release|x64.Build.0 = Release|Any CPU
 		{F8ED0472-C1DC-4623-99CD-6737E2166B94}.Release|x86.ActiveCfg = Release|Any CPU
 		{F8ED0472-C1DC-4623-99CD-6737E2166B94}.Release|x86.Build.0 = Release|Any CPU
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}.Debug|x64.Build.0 = Debug|Any CPU
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}.Debug|x86.Build.0 = Debug|Any CPU
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}.Release|x64.ActiveCfg = Release|Any CPU
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}.Release|x64.Build.0 = Release|Any CPU
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}.Release|x86.ActiveCfg = Release|Any CPU
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -907,6 +923,7 @@ Global
 		{BAEC1BD5-04CA-446E-A186-8C1407140B37} = {599EC204-AA11-47D0-BC6D-E37F71486D91}
 		{C40407CF-7A5B-4714-888A-1493E9EDD60B} = {50B45ED2-22C0-48C5-970E-050DC4CF47D6}
 		{F8ED0472-C1DC-4623-99CD-6737E2166B94} = {50B45ED2-22C0-48C5-970E-050DC4CF47D6}
+		{36F0AEE1-01F0-4966-AE31-30EEC32AA05B} = {B78A4FEC-D743-4D76-8075-7A1D7D7718D3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F48E9A7-1366-4AD7-B870-5DC3C142DDBE}
