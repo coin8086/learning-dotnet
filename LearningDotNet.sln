@@ -137,85 +137,85 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiMiniTodo", "HostedSer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErrorHandling", "HostedService\ErrorHandling\ErrorHandling.csproj", "{67984B54-2789-4E19-9419-0DAFDEEA01A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientFactory", "Http\HttpClientFactory\HttpClientFactory.csproj", "{937E5822-E919-4A71-A98C-A8010C2069B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpClientFactory", "Http\HttpClientFactory\HttpClientFactory.csproj", "{937E5822-E919-4A71-A98C-A8010C2069B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TupleInJson", "Json\TupleInJson\TupleInJson.csproj", "{8A69EA77-7049-4789-8085-7184AF65A3F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TupleInJson", "Json\TupleInJson\TupleInJson.csproj", "{8A69EA77-7049-4789-8085-7184AF65A3F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingSrcGen", "Logging\LoggingSrcGen\LoggingSrcGen.csproj", "{BAEC1BD5-04CA-446E-A186-8C1407140B37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingSrcGen", "Logging\LoggingSrcGen\LoggingSrcGen.csproj", "{BAEC1BD5-04CA-446E-A186-8C1407140B37}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Synchronization", "Synchronization", "{50B45ED2-22C0-48C5-970E-050DC4CF47D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorBasics", "Synchronization\MonitorBasics\MonitorBasics.csproj", "{C40407CF-7A5B-4714-888A-1493E9EDD60B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitorBasics", "Synchronization\MonitorBasics\MonitorBasics.csproj", "{C40407CF-7A5B-4714-888A-1493E9EDD60B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderWriterLockBasics", "Synchronization\ReaderWriterLockBasics\ReaderWriterLockBasics.csproj", "{F8ED0472-C1DC-4623-99CD-6737E2166B94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReaderWriterLockBasics", "Synchronization\ReaderWriterLockBasics\ReaderWriterLockBasics.csproj", "{F8ED0472-C1DC-4623-99CD-6737E2166B94}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Collections", "Collections", "{B78A4FEC-D743-4D76-8075-7A1D7D7718D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryTypes", "Collections\DictionaryTypes\DictionaryTypes.csproj", "{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DictionaryTypes", "Collections\DictionaryTypes\DictionaryTypes.csproj", "{36F0AEE1-01F0-4966-AE31-30EEC32AA05B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enumeration", "Enumeration", "{607C0AEF-9A4B-41FB-B5AE-093332EBDC4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncEnumeration", "Enumeration\AsyncEnumeration\AsyncEnumeration.csproj", "{FA56612C-E7CB-4524-A69D-E531F928943B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncEnumeration", "Enumeration\AsyncEnumeration\AsyncEnumeration.csproj", "{FA56612C-E7CB-4524-A69D-E531F928943B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enumerable", "Enumeration\Enumerable\Enumerable.csproj", "{3F3FE17F-0705-48E3-B16E-84A5E2223A0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enumerable", "Enumeration\Enumerable\Enumerable.csproj", "{3F3FE17F-0705-48E3-B16E-84A5E2223A0C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GC", "GC", "{3205F1D2-C23B-492A-BD0E-A8049C8FBCEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncDisposable", "GC\AsyncDisposable\AsyncDisposable.csproj", "{FA4F4404-6937-4CFF-A6A6-0316DECF45FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncDisposable", "GC\AsyncDisposable\AsyncDisposable.csproj", "{FA4F4404-6937-4CFF-A6A6-0316DECF45FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Disposable", "GC\Disposable\Disposable.csproj", "{7D48D055-C80D-4DA0-9A6A-B4712CF33EBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Disposable", "GC\Disposable\Disposable.csproj", "{7D48D055-C80D-4DA0-9A6A-B4712CF33EBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finalizer", "GC\Finalizer\Finalizer.csproj", "{D2241119-7A09-47E6-95D1-986FC77AED08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finalizer", "GC\Finalizer\Finalizer.csproj", "{D2241119-7A09-47E6-95D1-986FC77AED08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeepAlive", "GC\KeepAlive\KeepAlive.csproj", "{342ED30F-2D09-4A5E-95A1-6236DFE3214A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeepAlive", "GC\KeepAlive\KeepAlive.csproj", "{342ED30F-2D09-4A5E-95A1-6236DFE3214A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lang", "Lang", "{B9BABAEB-EF84-4193-A4DF-81841FC35394}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contravariance", "Lang\Contravariance\Contravariance.csproj", "{FDE79385-EA00-486E-9137-F341374C365B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contravariance", "Lang\Contravariance\Contravariance.csproj", "{FDE79385-EA00-486E-9137-F341374C365B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covariance", "Lang\Covariance\Covariance.csproj", "{57904417-B9E2-4E84-918C-E88E93A41874}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Covariance", "Lang\Covariance\Covariance.csproj", "{57904417-B9E2-4E84-918C-E88E93A41874}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TypeBasics", "TypeBasics", "{B681AB42-2700-4D42-B1F8-31EB13C35E31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonymousType", "Lang\TypeBasics\AnonymousType\AnonymousType.csproj", "{B4C5390A-F091-4B0A-ADF0-C172EA96D120}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnonymousType", "Lang\TypeBasics\AnonymousType\AnonymousType.csproj", "{B4C5390A-F091-4B0A-ADF0-C172EA96D120}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceToClass", "Lang\TypeBasics\InterfaceToClass\InterfaceToClass.csproj", "{2828BECC-DBF0-4139-9500-C14809D235B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfaceToClass", "Lang\TypeBasics\InterfaceToClass\InterfaceToClass.csproj", "{2828BECC-DBF0-4139-9500-C14809D235B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordType", "Lang\TypeBasics\RecordType\RecordType.csproj", "{83746270-D2DD-43D6-BAB0-18A71229AAA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecordType", "Lang\TypeBasics\RecordType\RecordType.csproj", "{83746270-D2DD-43D6-BAB0-18A71229AAA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Linq", "Linq", "{A8B1029A-AFED-4AE9-A890-EFB489E579B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqBasics", "Linq\LinqBasics\LinqBasics.csproj", "{A98D9C8C-8813-4159-8922-742F0274965D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqBasics", "Linq\LinqBasics\LinqBasics.csproj", "{A98D9C8C-8813-4159-8922-742F0274965D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task", "Task", "{4DF1F498-A4DF-4C55-B27B-6C799D057DD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncCallback", "Task\AsyncCallback\AsyncCallback.csproj", "{DE8B85F4-8E98-41CA-B4D7-CBF05612BC2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncCallback", "Task\AsyncCallback\AsyncCallback.csproj", "{DE8B85F4-8E98-41CA-B4D7-CBF05612BC2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureVariablesInLoop", "Task\CaptureVariablesInLoop\CaptureVariablesInLoop.csproj", "{996237B8-E67B-4174-9FFC-7AF8AAD9768E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaptureVariablesInLoop", "Task\CaptureVariablesInLoop\CaptureVariablesInLoop.csproj", "{996237B8-E67B-4174-9FFC-7AF8AAD9768E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynchronizationContextAndTask", "Task\SynchronizationContextAndTask\SynchronizationContextAndTask.csproj", "{75EEF650-41D6-4C7B-9185-43FFC14C8480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SynchronizationContextAndTask", "Task\SynchronizationContextAndTask\SynchronizationContextAndTask.csproj", "{75EEF650-41D6-4C7B-9185-43FFC14C8480}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskAndEvent", "Task\TaskAndEvent\TaskAndEvent.csproj", "{404DA943-1621-4607-BDA3-2EB755F5EE5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskAndEvent", "Task\TaskAndEvent\TaskAndEvent.csproj", "{404DA943-1621-4607-BDA3-2EB755F5EE5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskAndEventInWPF", "Task\TaskAndEventInWPF\TaskAndEventInWPF.csproj", "{02B0505C-EE45-454C-882B-A2C1C806D01C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskAndEventInWPF", "Task\TaskAndEventInWPF\TaskAndEventInWPF.csproj", "{02B0505C-EE45-454C-882B-A2C1C806D01C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCancellation", "Task\TaskCancellation\TaskCancellation.csproj", "{B038E7C5-519E-48F1-B23B-E0D48A55E17C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCancellation", "Task\TaskCancellation\TaskCancellation.csproj", "{B038E7C5-519E-48F1-B23B-E0D48A55E17C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskContinuation", "Task\TaskContinuation\TaskContinuation.csproj", "{A42AABDC-3DFB-49C3-A2AB-CD4CC0A537D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskContinuation", "Task\TaskContinuation\TaskContinuation.csproj", "{A42AABDC-3DFB-49C3-A2AB-CD4CC0A537D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSchedulerSample", "Task\TaskScheduler\TaskSchedulerSample.csproj", "{54867990-83C2-4964-9C11-17C450D0D3FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskSchedulerSample", "Task\TaskScheduler\TaskSchedulerSample.csproj", "{54867990-83C2-4964-9C11-17C450D0D3FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskYield", "Task\TaskYield\TaskYield.csproj", "{96A44F1F-FEB2-4B1D-AD1B-A119E3701926}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskYield", "Task\TaskYield\TaskYield.csproj", "{96A44F1F-FEB2-4B1D-AD1B-A119E3701926}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPoolAndTask", "Task\ThreadPoolAndTask\ThreadPoolAndTask.csproj", "{BC2D8BA7-3139-41CA-983F-325D63A9CDB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadPoolAndTask", "Task\ThreadPoolAndTask\ThreadPoolAndTask.csproj", "{BC2D8BA7-3139-41CA-983F-325D63A9CDB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockHttpClient", "Test\MockHttpClient\MockHttpClient.csproj", "{BD378852-1D30-4327-A4BE-2350C902496A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockHttpClient", "Test\MockHttpClient\MockHttpClient.csproj", "{BD378852-1D30-4327-A4BE-2350C902496A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAnnotations", "DataAnnotations", "{A27FBA49-E712-447A-93C3-A72CA1638312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataValidation", "DataAnnotations\DataValidation\DataValidation.csproj", "{FB8AF7B6-7D99-41BA-9DF2-9DDC4D186508}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataValidation", "DataAnnotations\DataValidation\DataValidation.csproj", "{FB8AF7B6-7D99-41BA-9DF2-9DDC4D186508}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomValidator", "DataAnnotations\CustomValidator\CustomValidator.csproj", "{4BCBB86A-1EFB-4CE9-8E2D-502AF06BB801}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomValidator", "DataAnnotations\CustomValidator\CustomValidator.csproj", "{4BCBB86A-1EFB-4CE9-8E2D-502AF06BB801}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

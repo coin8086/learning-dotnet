@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MockHttpClient.Mocks;
 using MockHttpClient.SUT;
 using System.Net;
 using System.Net.Http.Json;
@@ -15,19 +15,8 @@ public class UserServiceOnHttpClientFactoryTest
             Id = 1,
             Name = "Test",
         };
-        var services = new ServiceCollection();
-        services.ConfigureHttpClientDefaults(clientBuilder =>
-        {
-            clientBuilder.AddHttpMessageHandler<TestHttpHandler>();
-        });
-        services.AddTransient<TestHttpHandler>((_) =>
-        {
-            var response = new HttpResponseMessage(HttpStatusCode.OK) { Content = JsonContent.Create(user) };
-            return new TestHttpHandler(response);
-        });
-        var provider = services.BuildServiceProvider();
-        var httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
-
+        var response = new HttpResponseMessage(HttpStatusCode.OK) { Content = JsonContent.Create(user) };
+        var httpClientFactory = MockHttpClientFactory.Create(response);
         var service = new UserServiceOnHttpClientFactory(httpClientFactory);
         var result = await service.GetUserAsync(1);
         Assert.Equal(1, result.Id);
@@ -37,19 +26,8 @@ public class UserServiceOnHttpClientFactoryTest
     [Fact]
     public async Task TestGetUserAsyncError()
     {
-        var services = new ServiceCollection();
-        services.ConfigureHttpClientDefaults(clientBuilder =>
-        {
-            clientBuilder.AddHttpMessageHandler<TestHttpHandler>();
-        });
-        services.AddTransient<TestHttpHandler>((_) =>
-        {
-            var response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
-            return new TestHttpHandler(response);
-        });
-        var provider = services.BuildServiceProvider();
-        var httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
-
+        var response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+        var httpClientFactory = MockHttpClientFactory.Create(response);
         var service = new UserServiceOnHttpClientFactory(httpClientFactory);
         await Assert.ThrowsAsync<HttpRequestException>(async () =>
         {

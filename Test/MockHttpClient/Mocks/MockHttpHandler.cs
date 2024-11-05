@@ -1,10 +1,10 @@
-﻿namespace MockHttpClient;
+﻿namespace MockHttpClient.Mocks;
 
-public class TestHttpHandler : DelegatingHandler
+public class MockHttpHandler : DelegatingHandler
 {
     private HttpResponseMessage _response;
 
-    public TestHttpHandler(HttpResponseMessage response)
+    public MockHttpHandler(HttpResponseMessage response)
     {
         _response = response;
     }
