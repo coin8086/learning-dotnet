@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Copy files in DirA recursively to DirA in the output dir, which has the same directory structure. -->
+    <!-- Empty directories are excluded. -->
+    <Content Include="DirA/**/*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+
+    <!-- Copy files in DirA recursively to the output dir. Put them directly in the output dir. -->
+    <Content Include="DirA/**/*">
+      <TargetPath>%(Filename)%(Extension)</TargetPath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+
+    <!-- Copy DirB/FileB1.txt to DirB/FileB1.txt in the output dir. -->
+    <!-- Also note that CopyToOutputDirectory can be set as an attribute. -->
+    <Content Include="DirB/FileB1.txt" CopyToOutputDirectory="PreserveNewest"/>
+
+    <!-- Copy DirB/FileB2.txt to FileB2.txt in the output dir. -->
+    <Content Include="DirB/FileB2.txt" TargetPath="FileB2.txt" CopyToOutputDirectory="PreserveNewest" />
+
+  </ItemGroup>
+</Project>
