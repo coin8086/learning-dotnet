@@ -5,6 +5,11 @@ namespace DataValidation;
 
 class User
 {
+    /*
+     * NOTE
+     *
+     * The property must be public, otherwise it's ineligible for validation by the Validator!
+     */
     [Required]
     public string? Name { get; set; }
 

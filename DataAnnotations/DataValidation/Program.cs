@@ -6,13 +6,15 @@ namespace DataValidation;
 
 class Program
 {
-    static void TryValidateUser(User user)
+    static void TryValidateObject(object user)
     {
         //The variable results as parameter to TryValidateObject is optional. It can be null.
         var results = new List<ValidationResult>();
         if (!Validator.TryValidateObject(user, new ValidationContext(user), results, true))
         {
             Console.WriteLine($"Invalid {user}");
+
+            //Check each returned ValidationResult
             foreach (var result in results)
             {
                 Console.WriteLine(result);
@@ -24,7 +26,7 @@ class Program
         }
     }
 
-    static void ValidateUser(User user)
+    static void ValidateObject(object user)
     {
         try
         {
@@ -34,6 +36,8 @@ class Program
         catch (ValidationException ex)
         {
             Console.WriteLine($"Invalid {user}");
+
+            //Note that there's only one ValidationResult is returned by the exception.
             Console.WriteLine(ex.ValidationResult);
         }
     }
@@ -44,10 +48,10 @@ class Program
         {
             Email = "xxx"
         };
-        TryValidateUser(user);
+        TryValidateObject(user);
 
         Console.WriteLine("-----------------");
 
-        ValidateUser(user);
+        ValidateObject(user);
     }
 }
