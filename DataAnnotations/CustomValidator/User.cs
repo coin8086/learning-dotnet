@@ -12,9 +12,13 @@ public class User : IValidatableObject
     public string? Email { get; set; }
 
     //Note: Either attribute is OK for validation. Here both are used for demo purpose.
-    [Description]
-    [CustomValidation(typeof(User), nameof(User.ValidDescription))]
+    //[Description]
+    //[CustomValidation(typeof(User), nameof(User.ValidDescription))]
     public string? Description { get; set; }
+
+    [Required]
+    [RecursiveValidation]
+    public Address Address { get; set; } = default!;
 
     /*
      * NOTE

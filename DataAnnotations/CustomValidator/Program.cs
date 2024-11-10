@@ -6,7 +6,7 @@ namespace CustomValidator;
 
 class Program
 {
-    static void TryValidateUser(User user)
+    static void TryValidateObject(object user)
     {
         //The variable results as parameter to TryValidateObject is optional. It can be null.
         var results = new List<ValidationResult>();
@@ -29,9 +29,12 @@ class Program
         var user = new User()
         {
             Name = "Rob",
-            Email = "xxx@xxx",
-            Description = "Some description"
+            Email = "rob@xxx",
+            Description = "Some description",
+            Address = new Address()
         };
-        TryValidateUser(user);
+        TryValidateObject(user);
+
+        TryValidateObject(user.Address);
     }
 }
