@@ -1,31 +1,38 @@
-﻿using System;
-
-namespace TaskAndEvent
+﻿namespace TaskAndEvent
 {
     public class CustomEventArgs : EventArgs
     {
-        public CustomEventArgs(string message)
+        public CustomEventArgs(string message, DateTime ts)
         {
             Message = message;
+            Timestamp = ts;
         }
 
-        public string Message { get; set; }
+        public string Message { get; }
+
+        public DateTime Timestamp { get; }
+
+        public override string ToString()
+        {
+            return $"{{ Message: \"{Message}\", Timestamp: \"{Timestamp}\" }}";
+        }
     }
 
     class Publisher
     {
         public event EventHandler<CustomEventArgs>? RaiseCustomEvent;
 
-        public void FireEvent()
+        public void FireEvent(string msg)
         {
             EventHandler<CustomEventArgs>? raiseEvent = RaiseCustomEvent;
             if (raiseEvent != null)
             {
                 var ts = DateTime.Now;
-                Console.WriteLine($"[Thread {Thread.CurrentThread.ManagedThreadId}]: Fire event at {ts}.");
+                var evt = new CustomEventArgs(msg, ts);
 
-                var e = new CustomEventArgs($"Event triggered at {ts}");
-                raiseEvent(this, e);
+                Console.WriteLine($"[Thread {Thread.CurrentThread.ManagedThreadId,2}]: Fire event {evt}");
+
+                raiseEvent(this, evt);
             }
         }
     }
@@ -40,9 +47,9 @@ namespace TaskAndEvent
             pub.RaiseCustomEvent += HandleCustomEvent;
         }
 
-        void HandleCustomEvent(object? sender, CustomEventArgs e)
+        void HandleCustomEvent(object? sender, CustomEventArgs evt)
         {
-            Console.WriteLine($"[Thread {Thread.CurrentThread.ManagedThreadId}]: {_id} received message: at {DateTime.Now}\nSynchronizationContext.Current = {SynchronizationContext.Current}\nTaskScheduler.Current = {TaskScheduler.Current}");
+            Console.WriteLine($"[Thread {Thread.CurrentThread.ManagedThreadId,2}][{_id}]: Received event {evt}");
         }
     }
 
@@ -57,11 +64,16 @@ namespace TaskAndEvent
         }
 
         //NOTE the async modifier, compare this handler with the RaiseCustomEvent type and how that event is triggered.
-        async void HandleCustomEvent(object? sender, CustomEventArgs e)
+        async void HandleCustomEvent(object? sender, CustomEventArgs evt)
         {
-            Console.WriteLine($"[Thread {Thread.CurrentThread.ManagedThreadId}]: + {_id} received message: at {DateTime.Now}\nSynchronizationContext.Current = {SynchronizationContext.Current}\nTaskScheduler.Current = {TaskScheduler.Current}");
+            Console.WriteLine($"[Thread {Thread.CurrentThread.ManagedThreadId,2}][{_id}]: + Received event {evt}");
+
             await Task.Delay(2000);
-            Console.WriteLine($"[Thread {Thread.CurrentThread.ManagedThreadId}]: - {_id} continued at {DateTime.Now}\nSynchronizationContext.Current = {SynchronizationContext.Current}\nTaskScheduler.Current = {TaskScheduler.Current}");
+
+            //Try this
+            //Task.Delay(2000).Wait();
+
+            Console.WriteLine($"[Thread {Thread.CurrentThread.ManagedThreadId,2}][{_id}]: - Continued event {evt} at {DateTime.Now}");
         }
     }
 
@@ -70,24 +82,34 @@ namespace TaskAndEvent
         static void Main()
         {
             Console.WriteLine($"Main thread id: {Thread.CurrentThread.ManagedThreadId}");
-            Console.WriteLine($"SynchronizationContext.Current = {SynchronizationContext.Current}");
-            Console.WriteLine($"TaskScheduler.Current = {TaskScheduler.Current}");
+
+            Console.WriteLine("------------");
 
             var pub = new Publisher();
             var sub1 = new Subscriber("sub1", pub);
             var sub2 = new Subscriber("sub2", pub);
             var sub3 = new AsyncSubscriber("sub3", pub);
             var sub4 = new AsyncSubscriber("sub4", pub);
-            Subscriber sub5;
-            Task.Run(() => sub5 = new Subscriber("sub5", pub));
-            AsyncSubscriber sub6;
-            Task.Run(() => sub6 = new AsyncSubscriber("sub6", pub));
+            Task.Run(async () =>
+            {
+                var sub5 = new Subscriber("sub5", pub);
+                await Task.Delay(5000);
+            });
+            Task.Run(async () =>
+            {
+                var sub6 = new AsyncSubscriber("sub6", pub);
+                await Task.Delay(5000);
+            });
 
-            pub.FireEvent();
+            pub.FireEvent("event 1");
+
+            Console.WriteLine("------------");
+
+            pub.FireEvent("event 2");
 
             // Keep the console window open
             Console.WriteLine("Press any key to continue...");
-            Console.ReadLine();
+            Console.ReadKey(false);
         }
     }
 }
