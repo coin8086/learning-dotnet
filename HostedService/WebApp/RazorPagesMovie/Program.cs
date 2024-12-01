@@ -11,7 +11,8 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddDbContext<MovieContext>(options =>
-            options.UseSqlite(builder.Configuration.GetConnectionString("MovieContext") ?? throw new InvalidOperationException("Connection string 'MovieContext' not found.")));
+            options.UseSqlite(builder.Configuration.GetConnectionString("MovieContext")
+                ?? throw new InvalidOperationException("Connection string 'MovieContext' not found.")));
 
         // Add services to the container.
         builder.Services.AddRazorPages();

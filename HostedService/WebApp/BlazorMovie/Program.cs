@@ -15,8 +15,8 @@ public class Program
 
         #region generated code by dotnet aspnet-codegenerator blazor CRUD
         builder.Services.AddDbContextFactory<MoviesContext>(options =>
-            options.UseSqlite(builder.Configuration.GetConnectionString("MoviesContext") ?? 
-                throw new InvalidOperationException("Connection string 'MoviesContext' not found.")));
+            options.UseSqlite(builder.Configuration.GetConnectionString("MoviesContext")
+                ?? throw new InvalidOperationException("Connection string 'MoviesContext' not found.")));
 
         builder.Services.AddQuickGridEntityFrameworkAdapter();
 
