@@ -7,17 +7,17 @@ public class DataContext : DbContext
 {
     public DbSet<Blog> Blogs { get; set; }
 
-    public string DbPath { get; }
+    public string DbFilePath { get; }
 
     public DataContext()
     {
         var folder = Environment.SpecialFolder.LocalApplicationData;
         var path = Environment.GetFolderPath(folder);
-        DbPath = Path.Join(path, "blogging2.db");
+        DbFilePath = Path.Join(path, $"{nameof(EFMigration)}.db");
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        options.UseSqlite($"Data Source={DbPath}");
+        options.UseSqlite($"Data Source={DbFilePath}");
     }
 }

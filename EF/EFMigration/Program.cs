@@ -10,7 +10,6 @@ class Program
     static void Main(string[] args)
     {
         using var db = new DataContext();
-
-        Console.WriteLine($"DB file: {db.DbPath}");
+        Console.WriteLine($"DB file: {db.DbFilePath}");
     }
 }
