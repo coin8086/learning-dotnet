@@ -1,0 +1,49 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/any.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option csharp_namespace = "GRpcMessages";
+
+package messages;
+
+message Person {
+	int32 id = 1;
+	string first_name = 2;
+	string last_name = 3;
+	google.protobuf.Timestamp birthday = 4;
+	google.protobuf.Int32Value age = 5;
+	repeated string roles = 6;
+	map<string, string> attributes = 7;
+}
+
+message Status {
+    string message = 1;
+    google.protobuf.Any detail = 2;
+	google.protobuf.Value data = 3;
+}
+
+message Result {
+	int32 code = 1;
+	oneof result {
+		Status status = 2;
+		Person person = 3;
+	}
+}
+
+service Check {
+	rpc Echo (Person) returns (Person);
+
+	rpc Get (google.protobuf.Empty) returns (Person);
+
+	rpc EchoStatus (Status) returns (Status);
+
+	rpc GetStatus (google.protobuf.Empty) returns (Status);
+
+	rpc EchoResult (Result) returns (Result);
+
+	rpc GetResult (google.protobuf.Empty) returns (Result);
+}
