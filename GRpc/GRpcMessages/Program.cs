@@ -1,4 +1,7 @@
 //See https://learn.microsoft.com/en-us/aspnet/core/grpc/protobuf?view=aspnetcore-8.0
+//and https://protobuf.dev/programming-guides/proto3/
+//and https://protobuf.dev/programming-guides/field_presence/
+//and https://protobuf.dev/reference/protobuf/google.protobuf/
 
 using GRpcMessages.Services;
 

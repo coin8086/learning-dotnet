@@ -11,7 +11,14 @@ option csharp_namespace = "GRpcMessages";
 package messages;
 
 message Person {
-	int32 id = 1;
+	/*
+	 * NOTE
+	 * Try turning on "optional" on the field "id" and see the differences of the generated code for it.
+	 * See https://protobuf.dev/programming-guides/proto3/#field-labels for the "optional" modifier.
+	 * Try setting default valule (0) to the "id" filed and show the containing message for differences.
+	 * Also compare them with the nullable field "age" of type google.protobuf.Int32Value.
+	 */
+	/* optional */ int32 id = 1;
 	string first_name = 2;
 	string last_name = 3;
 	google.protobuf.Timestamp birthday = 4;
