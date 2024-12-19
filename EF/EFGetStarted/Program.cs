@@ -10,8 +10,6 @@ class Program
     static void Main(string[] args)
     {
         using var db = new BloggingContext();
-
-        // Note: This sample requires the database to be created before running.
         Console.WriteLine($"Database path: {db.DbPath}.");
 
         // Create
