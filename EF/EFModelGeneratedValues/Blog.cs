@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json;
 
-namespace EFModelGeneratedValues.Models;
+namespace EFModelGeneratedValues;
 
 public class Blog
 {
@@ -9,13 +9,16 @@ public class Blog
 
     public string? Name { get; set; }
 
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public DateTime CreatedAt { get; set; }
+    //Computed property from DB. Will never be null.
+    public string? InternalName { get; }
 
-    //NOTE: The there's a bug on the value "Computed" for the SQLite provider.
-    //Change it to "Identity" for a workaround.
+    //The SQLite provider doesn't support Identity.
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public DateTime? CreatedAt { get; set; }
+
+    //The SQLite provider doesn't support Computed.
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public DateTime UpdatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; }
 
     public override string ToString()
     {

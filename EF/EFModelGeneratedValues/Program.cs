@@ -1,29 +1,26 @@
 ﻿//See https://learn.microsoft.com/en-us/ef/core/modeling/generated-properties?tabs=data-annotations
 
-using EFModelGeneratedValues.Data;
-using EFModelGeneratedValues.Models;
-
 namespace EFModelGeneratedValues;
 
 class Program
 {
     static void Main(string[] args)
     {
-        using var db = new DataContext();
+        using var db = new SqliteContext();
         Console.WriteLine($"DB file: {db.DbFilePath}");
 
-        //db.Database.EnsureDeleted();
-        //db.Database.EnsureCreated();
-
-        var ts = DateTime.Now;
-        //NOTE: For the SQLite provider, CreatedAt and UpdatedAt have to be set manually.
-        var blog = new Blog() { Name = "Blog 1", CreatedAt = ts, UpdatedAt = ts };
-        var blogEntity = db.Add(blog);
-        Console.WriteLine(blogEntity);
+        //var ts = DateTime.Now;
+        var blog = new Blog() { /* CreatedAt = ts, UpdatedAt = ts */};
+        var blogEntry = db.Add(blog);
+        Console.WriteLine(blogEntry);
+        Console.WriteLine(blog);
 
         db.SaveChanges();
 
         Console.WriteLine("----------------");
-        Console.WriteLine(blogEntity);
+        Console.WriteLine(blogEntry);
+
+        var blog2 = db.Blogs.Where(b => b.Id == blogEntry.Entity.Id).First();
+        Console.WriteLine(blog2);
     }
 }
