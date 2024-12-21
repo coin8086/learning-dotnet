@@ -12,15 +12,29 @@ class Program
         //var ts = DateTime.Now;
         var blog = new Blog() { /* CreatedAt = ts, UpdatedAt = ts */};
         var blogEntry = db.Add(blog);
-        Console.WriteLine(blogEntry);
+
+        Console.WriteLine("Before save:");
         Console.WriteLine(blog);
+        Console.WriteLine(blogEntry);
 
         db.SaveChanges();
 
-        Console.WriteLine("----------------");
+        Console.WriteLine("After save:");
+        Console.WriteLine(blog);
         Console.WriteLine(blogEntry);
 
-        var blog2 = db.Blogs.Where(b => b.Id == blogEntry.Entity.Id).First();
-        Console.WriteLine(blog2);
+        Console.WriteLine("----------------");
+
+        blog.Name = "A blog";
+
+        Console.WriteLine("Before save:");
+        Console.WriteLine(blog);
+        Console.WriteLine(blogEntry);
+
+        db.SaveChanges();
+
+        Console.WriteLine("After save:");
+        Console.WriteLine(blog);
+        Console.WriteLine(blogEntry);
     }
 }
