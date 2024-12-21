@@ -10,7 +10,7 @@ public class Blog
     public string? Name { get; set; }
 
     //Computed property from DB. Will never be null.
-    public string? InternalName { get; }
+    public string InternalName { get; } = default!;
 
     //The SQLite provider doesn't support Identity.
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
