@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFModelInFluentApi.Migrations
 {
-    [DbContext(typeof(BloggingContext))]
+    [DbContext(typeof(SqliteContext))]
     [Migration("20241219233104_InitialCreate")]
     partial class InitialCreate
     {

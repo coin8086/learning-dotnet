@@ -2,13 +2,13 @@
 
 namespace EFModelInFluentApi;
 
-public class BloggingContext : DbContext
+public class SqliteContext : DbContext
 {
     public DbSet<Blog> Blogs { get; set; }
 
     public string DbPath { get; }
 
-    public BloggingContext()
+    public SqliteContext()
     {
         var folder = Environment.SpecialFolder.LocalApplicationData;
         var path = Environment.GetFolderPath(folder);

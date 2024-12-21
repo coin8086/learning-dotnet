@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFModelInFluentApi.Migrations
 {
-    [DbContext(typeof(BloggingContext))]
+    [DbContext(typeof(SqliteContext))]
     partial class BloggingContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

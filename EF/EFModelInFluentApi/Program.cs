@@ -8,7 +8,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        using var db = new BloggingContext();
+        using var db = new SqliteContext();
         
         Console.WriteLine($"DB path: {db.DbPath}.");
 
