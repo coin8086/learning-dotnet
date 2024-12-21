@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFMigration.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(SqliteContext))]
     [Migration("20241201091830_RenameBlogCreatedTimestamp")]
     partial class RenameBlogCreatedTimestamp
     {

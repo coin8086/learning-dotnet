@@ -3,13 +3,13 @@ using EFMigration.Models;
 
 namespace EFMigration.Data;
 
-public class DataContext : DbContext
+public class SqliteContext : DbContext
 {
     public DbSet<Blog> Blogs { get; set; }
 
     public string DbFilePath { get; }
 
-    public DataContext()
+    public SqliteContext()
     {
         var folder = Environment.SpecialFolder.LocalApplicationData;
         var path = Environment.GetFolderPath(folder);
