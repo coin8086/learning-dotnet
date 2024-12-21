@@ -1,7 +1,7 @@
-﻿using EFModelRelation.Models;
+﻿using EFModelRelationships.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFModelRelation;
+namespace EFModelRelationships;
 
 public class SqliteContext : DbContext
 {
@@ -15,7 +15,7 @@ public class SqliteContext : DbContext
     {
         var folder = Environment.SpecialFolder.LocalApplicationData;
         var path = Environment.GetFolderPath(folder);
-        DbPath = Path.Join(path, $"{nameof(EFModelRelation)}.db");
+        DbPath = Path.Join(path, $"{nameof(EFModelRelationships)}.db");
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)

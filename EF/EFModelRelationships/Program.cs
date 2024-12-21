@@ -3,7 +3,7 @@
 
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace EFModelRelation;
+namespace EFModelRelationships;
 
 class Program
 {

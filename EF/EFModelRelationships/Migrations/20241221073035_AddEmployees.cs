@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace EFModelRelation.Migrations
+namespace EFModelRelationships.Migrations
 {
     /// <inheritdoc />
     public partial class AddEmployees : Migration

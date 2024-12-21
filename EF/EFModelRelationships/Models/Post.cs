@@ -1,4 +1,4 @@
-﻿namespace EFModelRelation.Models;
+﻿namespace EFModelRelationships.Models;
 
 public class Post
 {
