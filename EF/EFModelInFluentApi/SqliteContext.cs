@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using System.Text;
 
 namespace EFModelInFluentApi;
 
@@ -38,5 +40,13 @@ public class SqliteContext : DbContext
         //
         // Also note that any entities or entity properties that are configured here
         // will also be added to the model if they're not already.
+    }
+
+    public override string ToString()
+    {
+        var builder = new StringBuilder();
+        builder.AppendLine($"DB path: {DbPath}.");
+        builder.AppendLine(Model.ToDebugString(MetadataDebugStringOptions.LongDefault));
+        return builder.ToString();
     }
 }

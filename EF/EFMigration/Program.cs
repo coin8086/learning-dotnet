@@ -10,6 +10,6 @@ class Program
     static void Main(string[] args)
     {
         using var db = new SqliteContext();
-        Console.WriteLine($"DB file: {db.DbFilePath}");
+        Console.WriteLine(db);
     }
 }

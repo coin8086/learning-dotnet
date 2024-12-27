@@ -1,5 +1,7 @@
 ﻿using EFModelRelationships.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using System.Text;
 
 namespace EFModelRelationships;
 
@@ -21,5 +23,13 @@ public class SqliteContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
         options.UseSqlite($"Data Source={DbPath}");
+    }
+
+    public override string ToString()
+    {
+        var builder = new StringBuilder();
+        builder.AppendLine($"DB path: {DbPath}.");
+        builder.AppendLine(Model.ToDebugString(MetadataDebugStringOptions.LongDefault));
+        return builder.ToString();
     }
 }
