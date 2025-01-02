@@ -1,5 +1,6 @@
 ﻿//See https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/projection-operations
 //and https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/join-operations
+//and https://learn.microsoft.com/en-us/dotnet/csharp/linq/standard-query-operators/grouping-data
 
 namespace LinqOperators;
 
@@ -245,6 +246,34 @@ class Program
         }
     }
 
+    static void Group()
+    {
+        IEnumerable<IGrouping<int, Student>> query;
+
+        if (!_useMethod)
+        {
+            query =
+                from student in Student.Collection
+                group student by student.DepartmentID into sgroup
+                orderby sgroup.Key
+                select sgroup;
+        }
+        else
+        {
+            query = Student.Collection.GroupBy(student => student.DepartmentID).OrderBy(group => group.Key);
+        }
+
+        foreach (var group in query)
+        {
+            Console.WriteLine($"Department: {group.Key}");
+
+            foreach (var student in group)
+            {
+                Console.WriteLine($"  {student}");
+            }
+        }
+    }
+
     static void Main(string[] args)
     {
         if (args.Length > 0 && "-m".Equals(args[0]))
@@ -283,5 +312,9 @@ class Program
         Console.WriteLine("\n---------- LeftJoin ----------");
 
         LeftJoin();
+
+        Console.WriteLine("\n---------- Group ----------");
+
+        Group();
     }
 }
