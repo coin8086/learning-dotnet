@@ -54,6 +54,74 @@ class Program
         }
     }
 
+    /*
+     * NOTE
+     *
+     * SelectMany operator can behave as a "CROSS JOIN" (as in SelectMany2), an "INNER JOIN" (as in SelectMany3),
+     * or a "LEFT JOIN" (as in SelectMany4). And it is translated into one of the SQL joins by EF Core. See
+     * https://learn.microsoft.com/en-us/ef/core/querying/complex-query-operators#selectmany
+     */
+    static void SelectMany3()
+    {
+        dynamic query;
+
+        if (!_useMethod)
+        {
+            query =
+                from student in Student.Collection
+                from department in Department.Collection.Where(dep => dep.ID == student.DepartmentID)
+                select new { student.Name, Department = department.Name };
+        }
+        else
+        {
+            query =
+                Student.Collection.SelectMany(
+                    student => Department.Collection.Where(dep => dep.ID == student.DepartmentID),
+                    (student, department) => new { student.Name, Department = department.Name });
+        }
+
+        foreach (var item in query)
+        {
+            Console.WriteLine(item);
+        }
+    }
+
+    /*
+     * NOTE
+     *
+     * The only difference between SelectMany3 and SelectMany4 is the call to "DefaultIfEmpty()".
+     */
+    static void SelectMany4()
+    {
+        dynamic query;
+
+        if (!_useMethod)
+        {
+            query =
+                from student in Student.Collection
+                from department in Department.Collection.Where(dep => dep.ID == student.DepartmentID).DefaultIfEmpty()
+                    /*
+                     * NOTE
+                     *
+                     * The compiler can not deduce that department is nullable here, while it can do when using SelectMany
+                     * method. So it seems the method way is better than clause in compiler checking.
+                     */
+                select new { student.Name, Department = department?.Name ?? "(null)" };
+        }
+        else
+        {
+            query =
+                Student.Collection.SelectMany(
+                    student => Department.Collection.Where(dep => dep.ID == student.DepartmentID).DefaultIfEmpty(),
+                    (student, department) => new { student.Name, Department = department?.Name ?? "(null)" });
+        }
+
+        foreach (var item in query)
+        {
+            Console.WriteLine(item);
+        }
+    }
+
     static void Join()
     {
         dynamic query;
@@ -143,7 +211,7 @@ class Program
     /*
      * NOTE
      *
-     * This is a "mandatory" pattern to generate "left join" SQL in EF. See more about it at
+     * This is a pattern to generate "left join" SQL in EF. See more about it at
      * https://learn.microsoft.com/en-us/ef/core/querying/complex-query-operators#left-join
      */
     static void LeftJoin()
@@ -191,6 +259,14 @@ class Program
         Console.WriteLine("\n---------- SelectMany2 ----------");
 
         SelectMany2();
+
+        Console.WriteLine("\n---------- SelectMany3 ----------");
+
+        SelectMany3();
+
+        Console.WriteLine("\n---------- SelectMany4 ----------");
+
+        SelectMany4();
 
         Console.WriteLine("\n---------- Join ----------");
 
