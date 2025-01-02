@@ -33,7 +33,7 @@ class Program
     static void SelectMany2()
     {
         var numbers = new int[] { 1, 2, 3 };
-        var letters = new char[] { 'a', 'b', 'c' };
+        var letters = new char[] { 'a', 'b' };
         IEnumerable<(int, char)> query;
 
         if (!_useMethod)
@@ -61,23 +61,23 @@ class Program
         if (!_useMethod)
         {
             query =
-                from s in Student.Collection
-                join d in Department.Collection on s.DepartmentID equals d.ID
-                select new { s.Name, Department = d.Name };
+                from student in Student.Collection
+                join department in Department.Collection on student.DepartmentID equals department.ID
+                select new { student.Name, Department = department.Name };
         }
         else
         {
             query = 
                 Student.Collection.Join(
                     Department.Collection,
-                    s => s.DepartmentID,
-                    d => d.ID, 
-                    (s, d) => new { s.Name, Department = d.Name });
+                    student => student.DepartmentID,
+                    department => department.ID,
+                    (student, department) => new { student.Name, Department = department.Name });
         }
 
-        foreach (var s in query)
+        foreach (var item in query)
         {
-            Console.WriteLine(s);
+            Console.WriteLine(item);
         }
     }
 
@@ -88,27 +88,27 @@ class Program
         if (!_useMethod)
         {
             query =
-                from d in Department.Collection
-                join s in Student.Collection on d.ID equals s.DepartmentID into sgroup
-                select new { d.Name, Students = sgroup };
+                from department in Department.Collection
+                join student in Student.Collection on department.ID equals student.DepartmentID into sgroup
+                select new { department.Name, Students = sgroup };
         }
         else
         {
             query = 
                 Department.Collection.GroupJoin(
                     Student.Collection,
-                    d => d.ID,
-                    s => s.DepartmentID,
-                    (d, sgroup) => new { d.Name, Students = sgroup });
+                    department => department.ID,
+                    student => student.DepartmentID,
+                    (department, sgroup) => new { department.Name, Students = sgroup });
         }
 
         foreach (var item in query)
         {
             Console.WriteLine(item.Name);
 
-            foreach (var s in item.Students)
+            foreach (var student in item.Students)
             {
-                Console.WriteLine($"  {s}");
+                Console.WriteLine($"  {student}");
             }
         }
     }
@@ -120,18 +120,18 @@ class Program
         if (!_useMethod)
         {
             query =
-                from s in Student.Collection
-                join d in Department.Collection on s.DepartmentID equals d.ID into dgroup
-                select new { s.Name, Department = dgroup.SingleOrDefault() };
+                from student in Student.Collection
+                join department in Department.Collection on student.DepartmentID equals department.ID into dgroup
+                select new { student.Name, Department = dgroup.SingleOrDefault()?.Name ?? "(null)" };
         }
         else
         {
             query = 
                 Student.Collection.GroupJoin(
                     Department.Collection,
-                    s => s.DepartmentID,
-                    d => d.ID,
-                    (s, dgroup) => new { s.Name, Department = dgroup.SingleOrDefault() });
+                    student => student.DepartmentID,
+                    department => department.ID,
+                    (student, dgroup) => new { student.Name, Department = dgroup.SingleOrDefault()?.Name ?? "(null)" });
         }
 
         foreach (var item in query)
@@ -143,8 +143,8 @@ class Program
     /*
      * NOTE
      *
-     * This is a mandatory pattern to generate "left join" SQL in EF.
-     * See more at https://learn.microsoft.com/en-us/ef/core/querying/complex-query-operators#left-join
+     * This is a "mandatory" pattern to generate "left join" SQL in EF. See more about it at
+     * https://learn.microsoft.com/en-us/ef/core/querying/complex-query-operators#left-join
      */
     static void LeftJoin()
     {
@@ -153,27 +153,27 @@ class Program
         if (!_useMethod)
         {
             query =
-                from s in Student.Collection
-                join d in Department.Collection on s.DepartmentID equals d.ID into dgroup
+                from student in Student.Collection
+                join department in Department.Collection on student.DepartmentID equals department.ID into dgroup
                 from dep in dgroup.DefaultIfEmpty()
-                select new { s.Name, Department = dep?.Name ?? "(null)" };
+                select new { student.Name, Department = dep?.Name ?? "(null)" };
         }
         else
         {
             query = 
                 Student.Collection.GroupJoin(
                     Department.Collection,
-                    s => s.DepartmentID,
-                    d => d.ID,
-                    (s, dgroup) => new { Student = s, Group = dgroup })
+                    student => student.DepartmentID,
+                    department => department.ID,
+                    (student, dgroup) => new { Student = student, Group = dgroup })
                 .SelectMany(
                     item => item.Group.DefaultIfEmpty(),
-                    (item, d) => new { Name = item.Student.Name, Department = d?.Name ?? "(null)" });
+                    (item, department) => new { Name = item.Student.Name, Department = department?.Name ?? "(null)" });
         }
 
-        foreach (var s in query)
+        foreach (var item in query)
         {
-            Console.WriteLine(s);
+            Console.WriteLine(item);
         }
     }
 
@@ -184,25 +184,27 @@ class Program
             _useMethod = true;
         }
 
+        Console.WriteLine("\n---------- SelectMany ----------");
+
         SelectMany();
 
-        Console.WriteLine("--------------------");
+        Console.WriteLine("\n---------- SelectMany2 ----------");
 
         SelectMany2();
 
-        Console.WriteLine("--------------------");
+        Console.WriteLine("\n---------- Join ----------");
 
         Join();
 
-        Console.WriteLine("--------------------");
+        Console.WriteLine("\n---------- GroupJoin ----------");
 
         GroupJoin();
 
-        Console.WriteLine("--------------------");
+        Console.WriteLine("\n---------- GroupJoin2 ----------");
 
         GroupJoin2();
 
-        Console.WriteLine("--------------------");
+        Console.WriteLine("\n---------- LeftJoin ----------");
 
         LeftJoin();
     }
