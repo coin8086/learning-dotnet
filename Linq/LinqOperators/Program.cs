@@ -215,7 +215,7 @@ class Program
      * This is a pattern to generate "left join" SQL in EF. See more about it at
      * https://learn.microsoft.com/en-us/ef/core/querying/complex-query-operators#left-join
      */
-    static void LeftJoin()
+    static void GroupJoin3()
     {
         dynamic query;
 
@@ -246,7 +246,7 @@ class Program
         }
     }
 
-    static void Group()
+    static void GroupBy()
     {
         IEnumerable<IGrouping<int, Student>> query;
 
@@ -285,19 +285,19 @@ class Program
 
         SelectMany();
 
-        Console.WriteLine("\n---------- SelectMany2 ----------");
+        Console.WriteLine("\n---------- SelectMany2 (Cross Join) ----------");
 
         SelectMany2();
 
-        Console.WriteLine("\n---------- SelectMany3 ----------");
+        Console.WriteLine("\n---------- SelectMany3 (Inner Join) ----------");
 
         SelectMany3();
 
-        Console.WriteLine("\n---------- SelectMany4 ----------");
+        Console.WriteLine("\n---------- SelectMany4 (Left Join Pattern) ----------");
 
         SelectMany4();
 
-        Console.WriteLine("\n---------- Join ----------");
+        Console.WriteLine("\n---------- Join (Inner Join) ----------");
 
         Join();
 
@@ -309,12 +309,12 @@ class Program
 
         GroupJoin2();
 
-        Console.WriteLine("\n---------- LeftJoin ----------");
+        Console.WriteLine("\n---------- GroupJoin3 (Left Join Pattern) ----------");
 
-        LeftJoin();
+        GroupJoin3();
 
-        Console.WriteLine("\n---------- Group ----------");
+        Console.WriteLine("\n---------- GroupBy ----------");
 
-        Group();
+        GroupBy();
     }
 }
