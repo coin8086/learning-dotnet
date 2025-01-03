@@ -1,10 +1,10 @@
-﻿using EFQuery.Models;
+﻿using EFCommon.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Logging;
 using System.Text;
 
-namespace EFQuery;
+namespace EFCommon;
 
 public class SqliteContext : DbContext
 {
@@ -14,11 +14,11 @@ public class SqliteContext : DbContext
 
     public string DbPath { get; }
 
-    public SqliteContext()
+    public SqliteContext(string dbName)
     {
         var folder = Environment.SpecialFolder.LocalApplicationData;
         var path = Environment.GetFolderPath(folder);
-        DbPath = Path.Join(path, $"{nameof(EFQuery)}.db");
+        DbPath = Path.Join(path, $"{dbName}.db");
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)

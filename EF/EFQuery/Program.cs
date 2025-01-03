@@ -1,14 +1,20 @@
 ﻿//See https://learn.microsoft.com/en-us/ef/core/querying/complex-query-operators
 
-using EFQuery.Models;
+using EFCommon;
+using EFCommon.Models;
 
 namespace EFQuery;
 
 class Program
 {
+    static SqliteContext CreateContext()
+    {
+        return new SqliteContext(nameof(EFQuery));
+    }
+
     static void InitDb()
     {
-        using var context = new SqliteContext();
+        using var context = CreateContext();
         context.Database.EnsureDeleted();
         context.Database.EnsureCreated();
 
@@ -35,7 +41,7 @@ class Program
 
     static void InnerJoinByJoin()
     {
-        using var context = new SqliteContext();
+        using var context = CreateContext();
         var query = context.Blogs.Join(
             context.Posts,
             blog => blog.Id,
@@ -50,7 +56,7 @@ class Program
 
     static void InnerJoinBySelectMany()
     {
-        using var context = new SqliteContext();
+        using var context = CreateContext();
         var query = context.Blogs.SelectMany(
             blog => blog.Posts,
             (blog, post) => new { BlogName = blog.Name, PostTitle = post.Title });
@@ -63,7 +69,7 @@ class Program
 
     static void LeftJoinByGroupJoinAndSelectMany()
     {
-        using var context = new SqliteContext();
+        using var context = CreateContext();
         var query =
             context.Blogs.GroupJoin(
                 context.Posts,
@@ -98,7 +104,7 @@ class Program
 
     static void LeftJoinBySelectMany()
     {
-        using var context = new SqliteContext();
+        using var context = CreateContext();
         var query = context.Blogs.SelectMany(
             blog => blog.Posts.DefaultIfEmpty(),
             (blog, post) => new { BlogName = blog.Name, PostTitle = (post == null ? "(null)" : post.Title) });
@@ -111,7 +117,7 @@ class Program
 
     static void Group()
     {
-        using var context = new SqliteContext();
+        using var context = CreateContext();
 
         /*
          * NOTE

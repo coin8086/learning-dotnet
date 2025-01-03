@@ -1,4 +1,4 @@
-﻿namespace EFQuery.Models;
+﻿namespace EFCommon.Models;
 
 public class Blog
 {

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace EFQuery.Models;
+namespace EFCommon.Models;
 
 public class Post
 {
