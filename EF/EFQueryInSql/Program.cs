@@ -4,15 +4,17 @@ using EFCommon;
 using EFCommon.Models;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
+using System.Data.Common;
 
 namespace EFQueryInSql;
 
 class Program
 {
-    //TODO: PostgreSqlContext produces runtime error 42P01 for queries. Fix it.
     static CommonDbContext CreateContext()
     {
         return new SqliteContext(nameof(EFQueryInSql));
+        //return new PostgreSqlContext(nameof(EFQueryInSql), "Host=***;Port=5432;Username=***;Password=***", "10.17");
     }
 
     static void InitDb()
@@ -48,10 +50,13 @@ class Program
         /*
          * NOTE
          * 
-         * Here $"..." is different than "..."! The latter doesn't pass the compiler! See more at
+         * 1) Here $"..." is different than "..."! The latter doesn't pass the compiler! See more at
          * https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.relationalqueryableextensions.fromsql
+         *
+         * 2) For PostgreSQL, the table name must be double quoted and the name is case-sensitive,
+         * while for SQLite, the table name doesn't require quoting and the name is not case-sensitive.
          */
-        var query = context.Blogs.FromSql($"select * from blogs");
+        var query = context.Blogs.FromSql($""" select * from "Blogs" """);
 
         foreach (var item in query)
         {
@@ -63,7 +68,12 @@ class Program
     {
         using var context = CreateContext();
         var id = 1;
-        var query = context.Blogs.FromSql($"select * from blogs where Id = {id}");
+        /*
+         * NOTE
+         *
+         *  Here the same notes apply to the column name "Id" in query, as those for the the table name in BasicQuery.
+         */
+        var query = context.Blogs.FromSql($""" select * from "Blogs" where "Id" = {id} """);
 
         foreach (var item in query)
         {
@@ -75,16 +85,30 @@ class Program
     {
         using var context = CreateContext();
         var columnName = "Id";
+
         /*
          * NOTE
          *
-         * Here a provider-specific type SqliteParameter is required.
+         * A provider-specific type is required for parameter.
          */
-        var columnValue = new SqliteParameter("columnValue", 1);
+        DbParameter columnValue;
+
+        if (context is SqliteContext)
+        {
+            columnValue = new SqliteParameter("columnValue", 1);
+        }
+        else if (context is PostgreSqlContext)
+        {
+            columnValue = new NpgsqlParameter("columnValue", 1);
+        }
+        else
+        {
+            throw new NotSupportedException();
+        }
 
 #pragma warning disable EF1002
         //FromSqlRaw will trigger warning EF1002. Disable it here.
-        var query = context.Blogs.FromSqlRaw($"select * from blogs where {columnName} = @columnValue", columnValue);
+        var query = context.Blogs.FromSqlRaw($""" select * from "Blogs" where "{columnName}" = @columnValue """, columnValue);
 #pragma warning restore
 
         foreach (var item in query)
