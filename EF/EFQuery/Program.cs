@@ -7,7 +7,7 @@ namespace EFQuery;
 
 class Program
 {
-    static SqliteContext CreateContext()
+    static CommonDbContext CreateContext()
     {
         return new SqliteContext(nameof(EFQuery));
     }

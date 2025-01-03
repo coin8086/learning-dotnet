@@ -1,36 +1,19 @@
-﻿using EFCommon.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System.Text;
 
 namespace EFCommon;
 
-public class SqliteContext : DbContext
+public class SqliteContext : CommonDbContext
 {
-    public DbSet<Blog> Blogs { get; set; }
-
-    public DbSet<Post> Posts { get; set; }
-
-    public string DbPath { get; }
-
-    public SqliteContext(string dbName)
+    public SqliteContext(string dbName, LogLevel logLevel = LogLevel.Information) : base(dbName, logLevel)
     {
-        var folder = Environment.SpecialFolder.LocalApplicationData;
-        var path = Environment.GetFolderPath(folder);
-        DbPath = Path.Join(path, $"{dbName}.db");
+        var dir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        var dbFilePath = Path.Join(dir, $"{dbName}.db");
+        ConnectionString = $"Data Source={dbFilePath}";
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        options.UseSqlite($"Data Source={DbPath}").LogTo(Console.WriteLine, LogLevel.Information);
-    }
-
-    public override string ToString()
-    {
-        var builder = new StringBuilder();
-        builder.AppendLine($"DB path: {DbPath}.");
-        builder.AppendLine(Model.ToDebugString(MetadataDebugStringOptions.LongDefault));
-        return builder.ToString();
+        options.UseSqlite(ConnectionString).LogTo(Console.WriteLine, LogLevel);
     }
 }
