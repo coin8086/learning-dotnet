@@ -7,9 +7,11 @@ namespace EFQuery;
 
 class Program
 {
+    static bool _usePostgreSQL = false;
+
     static CommonDbContext CreateContext()
     {
-        return new SqliteContext(nameof(EFQuery));
+        return _usePostgreSQL ? new PostgreSqlContext(nameof(EFQuery)) : new SqliteContext(nameof(EFQuery));
     }
 
     static void InitDb()
@@ -154,6 +156,11 @@ class Program
 
     static void Main(string[] args)
     {
+        if (args.Length > 0 && "-p".Equals(args[0], StringComparison.Ordinal))
+        {
+            _usePostgreSQL = true;
+        }
+
         InitDb();
 
         Console.WriteLine($"\n----------- {nameof(InnerJoinByJoin)} -----------");

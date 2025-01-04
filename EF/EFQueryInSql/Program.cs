@@ -11,10 +11,11 @@ namespace EFQueryInSql;
 
 class Program
 {
+    static bool _usePostgreSQL = false;
+
     static CommonDbContext CreateContext()
     {
-        return new SqliteContext(nameof(EFQueryInSql));
-        //return new PostgreSqlContext(nameof(EFQueryInSql), "Host=***;Port=5432;Username=***;Password=***", "10.17");
+        return _usePostgreSQL ? new PostgreSqlContext(nameof(EFQueryInSql)) : new SqliteContext(nameof(EFQueryInSql));
     }
 
     static void InitDb()
@@ -119,6 +120,11 @@ class Program
 
     static void Main(string[] args)
     {
+        if (args.Length > 0 && "-p".Equals(args[0], StringComparison.Ordinal))
+        {
+            _usePostgreSQL = true;
+        }
+
         InitDb();
 
         Console.WriteLine($"\n---------------- {nameof(BasicQuery)} ----------------");
