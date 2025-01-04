@@ -54,8 +54,9 @@ class Program
          * 1) Here $"..." is different than "..."! The latter doesn't pass the compiler! See more at
          * https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.relationalqueryableextensions.fromsql
          *
-         * 2) For PostgreSQL, the table name must be double quoted and the name is case-sensitive,
-         * while for SQLite, the table name doesn't require quoting and the name is not case-sensitive.
+         * 2) For PostgreSQL, an identifier like a table/field name must be double quoted to preserve its case, otherwise it
+         * will be folded into lowercase and thus produce a runtime error for something is not found by the identifier. See
+         * more at https://stackoverflow.com/questions/43111996/why-postgresql-does-not-like-uppercase-table-names
          */
         var query = context.Blogs.FromSql($""" select * from "Blogs" """);
 
@@ -69,11 +70,6 @@ class Program
     {
         using var context = CreateContext();
         var id = 1;
-        /*
-         * NOTE
-         *
-         *  Here the same notes apply to the column name "Id" in query, as those for the the table name in BasicQuery.
-         */
         var query = context.Blogs.FromSql($""" select * from "Blogs" where "Id" = {id} """);
 
         foreach (var item in query)
