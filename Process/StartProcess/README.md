@@ -1,4 +1,4 @@
-To publish a self contained and "trimed" executable for Windows x64:
+To publish a self contained and "trimed" executable for Linux x64:
 
 1. Have the following in the .csproj file
 
