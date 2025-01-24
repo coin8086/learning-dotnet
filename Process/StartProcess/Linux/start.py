@@ -1,10 +1,15 @@
+#!/usr/bin/env python3
+
+# See a brief about systemd and cgroup at
+# https://gist.github.com/coin8086/d514fee9f96032ab4a5c33d903069d9c
+
 import os
 import sys
 import subprocess
 
 def show_usage():
     usage = '''
-{bin} [options] <command>
+{bin} [options] "command"
 
 Where options are:
 -h Show this help
@@ -36,8 +41,6 @@ def parse_args():
                 slice = args[idx]
             else:
                 command = args[idx]
-            if command:
-                break
             idx += 1
     except IndexError:
         show_usage()
@@ -52,18 +55,23 @@ def parse_args():
 def main():
     wait, run_in_cgroup, scope, slice, command = parse_args()
     if run_in_cgroup:
-        process = subprocess.Popen(
-            "systemd-run --unit={0} --scope --slice={1} {2}".format(scope, slice, command),
-            shell=True,
-            preexec_fn=os.setsid)
+        cmd = "systemd-run --unit={0} --scope --slice={1} {2}".format(scope, slice, command)
     else:
-        process = subprocess.Popen(command, shell=True, preexec_fn=os.setsid)
+        cmd = command
 
-    print(process.pid)
+    print(f"Command to run: {cmd}")
+
+    # For preexec_fn=os.setsid, see
+    # https://stackoverflow.com/questions/45911705/why-use-os-setsid-in-python
+    # https://www.man7.org/linux/man-pages/man2/setsid.2.html
+    process = subprocess.Popen(cmd, shell=True, preexec_fn=os.setsid)
+
+    print(f"Process ID: {process.pid}")
 
     if wait:
+        print("Waiting process for exit...")
         code = process.wait()
-        print(code)
+        print(f"Exit code: {code}")
 
 if __name__ == '__main__':
     main()
