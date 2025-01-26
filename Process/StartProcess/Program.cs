@@ -164,11 +164,6 @@ where options are:
             EnableRaisingEvents = true,
         };
 
-        process.Exited += (sender, args) =>
-        {
-            Console.WriteLine($"Process {process.Id} exited.");
-        };
-
         var stdout = new StringBuilder();
         var stderr = new StringBuilder();
         if (options.CaptureOutput)
@@ -197,7 +192,12 @@ where options are:
             };
         }
 
-        Console.Write($"Process is starting for command `{startInfo.FileName}'");
+        process.Exited += (sender, args) =>
+        {
+            Console.WriteLine($"Process {process.Id} exited.");
+        };
+
+        Console.Write($"Start process for command `{startInfo.FileName}'");
         if (startInfo.ArgumentList.Any())
         {
             Console.WriteLine($" with arguments:");
@@ -216,12 +216,14 @@ where options are:
 
         if (options.CaptureOutput)
         {
+            Console.WriteLine("Start capturing process output.");
             process.BeginOutputReadLine();
             process.BeginErrorReadLine();
         }
 
         if (options.WaitForExit || options.CaptureOutput)
         {
+            Console.WriteLine("Wait for process exit.");
             process.WaitForExit();
             Console.WriteLine($"Process {process.Id} exited with code: {process.ExitCode}.");
         }

@@ -69,7 +69,7 @@ def main():
     print(f"Process ID: {process.pid}")
 
     if wait:
-        print("Waiting process for exit...")
+        print("Wait for process exit.")
         code = process.wait()
         print(f"Exit code: {code}")
 
