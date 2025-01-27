@@ -9,6 +9,7 @@ public class PostgreSqlContext : CommonDbContext
 
     public PostgreSqlContext(string dbName, LogLevel logLevel = LogLevel.Information) : base(dbName, logLevel)
     {
+        //A connection string is like "Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=***"
         var connStr = Environment.GetEnvironmentVariable("PG_CONNECTION");
         if (string.IsNullOrWhiteSpace(connStr))
         {
