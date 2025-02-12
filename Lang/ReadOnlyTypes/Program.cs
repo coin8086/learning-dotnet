@@ -33,6 +33,10 @@ class Program
         }
         return dict2;
     }
+    static IReadOnlyDictionary<int, IReadOnlyEntity> ConvertToReadOnlyDictionary2(IDictionary<int, Entity> dict)
+    {
+        return new ProxyReadOnlyDictionary<int, IReadOnlyEntity, Entity>(dict);
+    }
 
     static void Main(string[] args)
     {
@@ -59,6 +63,19 @@ class Program
         foreach (var (kev, value) in readOnlyDict)
         {
             Console.WriteLine($"{kev}: {value}");
+        }
+
+        Console.WriteLine("------------------------");
+
+        var readOnlyDict2 = ConvertToReadOnlyDictionary2(dict);
+        foreach (var (kev, value) in readOnlyDict2)
+        {
+            Console.WriteLine($"{kev}: {value}");
+        }
+
+        foreach (var value in readOnlyDict2.Values)
+        {
+            Console.WriteLine(value);
         }
     }
 }
