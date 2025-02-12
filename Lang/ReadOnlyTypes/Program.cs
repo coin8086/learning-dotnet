@@ -19,9 +19,9 @@ class Entity : IReadOnlyEntity
 
 class Program
 {
-    static IReadOnlyCollection<IReadOnlyEntity> ConvertToReadOnlyList(List<Entity> list)
+    static IReadOnlyList<IReadOnlyEntity> ConvertToReadOnlyList(List<Entity> list)
     {
-        return list.AsReadOnly();
+        return list;
     }
 
     static IReadOnlyDictionary<int, IReadOnlyEntity> ConvertToReadOnlyDictionary(IEnumerable<KeyValuePair<int, Entity>> dict)
