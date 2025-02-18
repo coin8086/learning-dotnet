@@ -13,6 +13,8 @@ public class Program
         {
             client.BaseAddress = new Uri("http://worldclockapi.com/");
         });
+
+        //The typed client is registered as transient with DI. It can also be configurated like the named client "worldclockapi".
         builder.Services.AddHttpClient<ApiClient>();
 
         //Multiple message handlers (of base type DelegatingHandler) can be added,
