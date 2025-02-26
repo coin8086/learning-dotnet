@@ -14,6 +14,8 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        builder.AddHttpCheckerOptions();
+
         var app = builder.Build();
         app.UseHttpChecker();
 

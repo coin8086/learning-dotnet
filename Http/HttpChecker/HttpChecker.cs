@@ -1,23 +1,38 @@
-﻿using System.Text;
+﻿using Microsoft.Extensions.Options;
+using System.Text;
 
 namespace HttpChecker;
+
+class HttpCheckerOptions
+{
+    public bool Enabled { get; set; } = false;
+}
 
 class HttpChecker
 {
     RequestDelegate _next;
     ILogger _logger;
+    IOptionsMonitor<HttpCheckerOptions> _options;
 
-    public HttpChecker(RequestDelegate next, ILogger<HttpChecker> logger)
+    public HttpChecker(RequestDelegate next, ILogger<HttpChecker> logger, IOptionsMonitor<HttpCheckerOptions> options)
     {
         _next = next;
         _logger = logger;
+        _options = options;
     }
 
     public async Task InvokeAsync(HttpContext context)
     {
-        await CheckRequestAsync(context.Request);
-        await _next(context);
-        await CheckResponseAsync(context.Response);
+        if (_options.CurrentValue.Enabled)
+        {
+            await CheckRequestAsync(context.Request);
+            await _next(context);
+            await CheckResponseAsync(context.Response);
+        }
+        else
+        {
+            await _next(context);
+        }
     }
 
     public static string GetHeadersInString(IHeaderDictionary headers)
@@ -77,6 +92,12 @@ Body:
 
 static class HttpCheckerExtensions
 {
+    public static WebApplicationBuilder AddHttpCheckerOptions(this WebApplicationBuilder builder)
+    {
+        builder.Services.Configure<HttpCheckerOptions>(builder.Configuration.GetSection("HttpChecker"));
+        return builder;
+    }
+
     public static IApplicationBuilder UseHttpChecker(this IApplicationBuilder app)
     {
         return app.UseMiddleware<HttpChecker>();
