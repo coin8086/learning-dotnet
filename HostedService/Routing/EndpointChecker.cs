@@ -1,4 +1,6 @@
-﻿namespace Routing;
+﻿using System.Text;
+
+namespace Routing;
 
 class EndpointChecker
 {
@@ -20,16 +22,24 @@ class EndpointChecker
         var endpoint = context.GetEndpoint();
         if (endpoint is null)
         {
-            _logger.LogInformation("{name}: No endpoint!", _name);
+            var msg = $"[{_name}]: No endpoint.";
+            _logger.LogInformation(msg);
         }
         else
         {
-            _logger.LogInformation("{name}: Endpoint \"{endpoint}\" is found.", _name, endpoint.DisplayName ?? "(unnamed)");
+            var strBuilder = new StringBuilder();
+            strBuilder.AppendLine($"[{_name}]: Endpoint: \"{endpoint.DisplayName ?? "(unnamed)"}\"");
             if (endpoint is RouteEndpoint route)
             {
-                _logger.LogInformation("{name}: Endpoint pattern: {pattern}", _name, route.RoutePattern.RawText);
+                strBuilder.AppendLine($"Endpoint pattern: {route.RoutePattern.RawText}");
             }
-            _logger.LogInformation("{name}: Endpoint metadata: \n{metadata}", _name, string.Join("\n", endpoint.Metadata));
+            //strBuilder.AppendLine($"Endpoint metadata: \n{string.Join("\n", endpoint.Metadata)}");
+            strBuilder.AppendLine($"Endpoint metadata:");
+            foreach (var data in endpoint.Metadata)
+            {
+                strBuilder.AppendLine(data.ToString());
+            }
+            _logger.LogInformation(strBuilder.ToString());
         }
         return _next(context);
     }
