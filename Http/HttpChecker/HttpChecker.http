@@ -1,0 +1,14 @@
+@HttpChecker_HostAddress = http://localhost:5064
+
+GET {{HttpChecker_HostAddress}}/
+Accept: application/json
+
+###
+GET {{HttpChecker_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+GET {{HttpChecker_HostAddress}}/abc
+Accept: application/json
+
+###
