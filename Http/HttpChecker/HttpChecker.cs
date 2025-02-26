@@ -26,7 +26,28 @@ class HttpChecker
         if (_options.CurrentValue.Enabled)
         {
             await CheckRequestAsync(context.Request);
-            await _next(context);
+
+            var originalBody = context.Response.Body;
+            try
+            {
+                using var memStream = new MemoryStream();
+                context.Response.Body = memStream;
+
+                await _next(context);
+
+                memStream.Position = 0;
+                string responseBody = new StreamReader(memStream).ReadToEnd();
+
+                memStream.Position = 0;
+                await memStream.CopyToAsync(originalBody);
+
+            }
+            finally
+            {
+                context.Response.Body = originalBody;
+            }
+
+
             await CheckResponseAsync(context.Response);
         }
         else

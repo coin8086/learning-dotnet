@@ -1,3 +1,8 @@
+#define USE_HTTP_LOGGING
+
+//See https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-logging for more about HTTP logging
+
+using Microsoft.AspNetCore.HttpLogging;
 
 namespace HttpChecker;
 
@@ -7,53 +12,44 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
-        builder.Services.AddAuthorization();
-
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-
+#if USE_HTTP_LOGGING
+        builder.Services.AddHttpLogging(options => {
+            options.LoggingFields = HttpLoggingFields.All;
+            options.CombineLogs = true;
+        });
+#else
         builder.AddHttpCheckerOptions();
+#endif
 
         var app = builder.Build();
+
+#if USE_HTTP_LOGGING
+        app.UseHttpLogging();
+#else
         app.UseHttpChecker();
 
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
+#endif
+
+        app.UseRouting();
+
+        app.MapGet("/", (HttpContext httpContext) =>
         {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
+            return "Welcome to home!";
+        });
 
-        app.UseHttpsRedirection();
-
-        app.UseAuthorization();
-
-        var summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        app.MapGet("/weatherforecast", (HttpContext httpContext) =>
-        {
-            var forecast =  Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                {
-                    Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    TemperatureC = Random.Shared.Next(-20, 55),
-                    Summary = summaries[Random.Shared.Next(summaries.Length)]
-                })
-                .ToArray();
-            return forecast;
-        })
-        .WithName("GetWeatherForecast")
-        .WithOpenApi();
+        app.UseEndpoints(_ => { });
 
         //The terminal middleware will run only when no matching endpoint.
-        app.Run((context) =>
+        app.Run(async (context) =>
         {
-            return context.Response.WriteAsync($"No matching endpoint for \"{context.Request.Path}\".");
+            context.Response.ContentType = "text/plain";
+            using var reader = new StreamReader(context.Request.Body);
+            var request = await reader.ReadToEndAsync();
+            var response = $"""
+Your request: {request}
+What are you looking for?
+""";
+            await context.Response.WriteAsync(response);
         });
 
         app.Run();
