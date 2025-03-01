@@ -1,0 +1,10 @@
+@HttpLogging_HostAddress = http://localhost:5070
+
+GET {{HttpLogging_HostAddress}}/
+
+###
+POST {{HttpLogging_HostAddress}}/
+
+Are you OK?
+
+###
