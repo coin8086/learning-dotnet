@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Options;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
 
 namespace ServiceConfiguration;
 
@@ -10,6 +11,11 @@ class WorkerOptions
 
     [Required]
     public int Id { get; set; }
+
+    public override string ToString()
+    {
+        return JsonSerializer.Serialize(this);
+    }
 }
 
 class Worker : BackgroundService

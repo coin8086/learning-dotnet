@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
+using System.Text.Json;
+
+using static ConfigurationCommon.Utils;
 
 namespace ConsoleConfiguration;
 
@@ -21,6 +24,11 @@ class MyOptions
     public MyProfile? Profile { get; set; }
 
     public string? Id { get; set; }
+
+    public override string ToString()
+    {
+        return JsonSerializer.Serialize(this);
+    }
 }
 
 class Program
@@ -47,44 +55,12 @@ class Program
         Console.WriteLine($"Hello, {Name}!");
 
         //Get options by binding
-        var options = configuration.Get<MyOptions>();
-        Console.WriteLine($"Id={options?.Id}");
-        Console.WriteLine($"Profile.Name={options?.Profile?.Name}");
-        Console.WriteLine($"Profile.Age ={options?.Profile?.Age}");
+        ShowOptions<MyOptions>(configuration);
 
-        //Show the structured configuration
-        Console.WriteLine("Configuration Tree:");
-        ShowConfig(configuration);
+        ShowConfigurationTree(configuration);
 
-        Console.WriteLine("Config Sources:");
-        foreach (var source in builder.Sources)
-        {
-            Console.WriteLine(source.ToString());
-        }
+        ShowConfigurationSources(builder);
 
-        Console.WriteLine("Config Properties:");
-        foreach (var p in builder.Properties)
-        {
-            Console.WriteLine($"{p.Key}={p.Value.ToString()}");
-        }
-    }
-
-    public static void ShowConfig(IConfiguration root)
-    {
-        foreach (var section in root.GetChildren())
-        {
-            ShowConfigSection(section, 1);
-        }
-    }
-
-    public static void ShowConfigSection(IConfigurationSection section, int level)
-    {
-        var indent = new string(' ', level * 2);
-        Console.WriteLine($"{indent}Path={section.Path}, Key={section.Key}, Value={section.Value}");
-
-        foreach (var child in section.GetChildren())
-        {
-            ShowConfigSection(child, level + 1);
-        }
+        ShowConfigurationProperties(builder);
     }
 }

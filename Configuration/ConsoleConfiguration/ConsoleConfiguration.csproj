@@ -21,4 +21,8 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ConfigurationCommon\ConfigurationCommon.csproj" />
+  </ItemGroup>
+
 </Project>
