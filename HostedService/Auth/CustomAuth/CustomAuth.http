@@ -1,0 +1,16 @@
+@CustomAuth_HostAddress = http://localhost:5119
+
+GET {{CustomAuth_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+GET {{CustomAuth_HostAddress}}/weatherforecast/
+Accept: application/json
+AuthenticationKey: my-secret-key
+
+###
+GET {{CustomAuth_HostAddress}}/weatherforecast/
+Accept: application/json
+AuthenticationKey: invalid-key
+
+###
