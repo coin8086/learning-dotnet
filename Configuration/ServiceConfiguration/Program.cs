@@ -22,9 +22,7 @@ public class Program
             Console.WriteLine($"{p.Key}={p.Value.ToString()}");
         }
 
-        builder.Services.AddMyService(builder.Configuration);
-
-        builder.Services.AddWorkerService(builder.Configuration);
+        builder.Services.AddWorkerService();
 
         var host = builder.Build();
         host.Run();
