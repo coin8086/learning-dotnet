@@ -269,6 +269,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingSerilog", "Logging\Usi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuiltinLoggerProviders", "Logging\BuiltinLoggerProviders\BuiltinLoggerProviders.csproj", "{487BC992-7B09-4BEA-8414-4FC940A178F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomLoggerProvider", "Logging\CustomLoggerProvider\CustomLoggerProvider.csproj", "{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1551,6 +1553,18 @@ Global
 		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Release|x64.Build.0 = Release|Any CPU
 		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Release|x86.ActiveCfg = Release|Any CPU
 		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Release|x86.Build.0 = Release|Any CPU
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}.Debug|x64.Build.0 = Debug|Any CPU
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}.Debug|x86.Build.0 = Debug|Any CPU
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}.Release|x64.ActiveCfg = Release|Any CPU
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}.Release|x64.Build.0 = Release|Any CPU
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}.Release|x86.ActiveCfg = Release|Any CPU
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1666,6 +1680,7 @@ Global
 		{179D4D35-3F98-4A19-8E05-1C5FF90C4161} = {6140EE31-9271-4D28-A5A3-9521F01D5BD1}
 		{E8547076-5E57-49B0-B878-D74CC441B758} = {599EC204-AA11-47D0-BC6D-E37F71486D91}
 		{487BC992-7B09-4BEA-8414-4FC940A178F4} = {599EC204-AA11-47D0-BC6D-E37F71486D91}
+		{AA7FE0E7-F653-4C68-8E7B-3516D09E6134} = {599EC204-AA11-47D0-BC6D-E37F71486D91}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F48E9A7-1366-4AD7-B870-5DC3C142DDBE}
