@@ -267,6 +267,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationCommon", "Conf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingSerilog", "Logging\UsingSerilog\UsingSerilog.csproj", "{E8547076-5E57-49B0-B878-D74CC441B758}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuiltinLoggerProviders", "Logging\BuiltinLoggerProviders\BuiltinLoggerProviders.csproj", "{487BC992-7B09-4BEA-8414-4FC940A178F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1537,6 +1539,18 @@ Global
 		{E8547076-5E57-49B0-B878-D74CC441B758}.Release|x64.Build.0 = Release|Any CPU
 		{E8547076-5E57-49B0-B878-D74CC441B758}.Release|x86.ActiveCfg = Release|Any CPU
 		{E8547076-5E57-49B0-B878-D74CC441B758}.Release|x86.Build.0 = Release|Any CPU
+		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Debug|x64.Build.0 = Debug|Any CPU
+		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Debug|x86.Build.0 = Debug|Any CPU
+		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Release|x64.ActiveCfg = Release|Any CPU
+		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Release|x64.Build.0 = Release|Any CPU
+		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Release|x86.ActiveCfg = Release|Any CPU
+		{487BC992-7B09-4BEA-8414-4FC940A178F4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1651,6 +1665,7 @@ Global
 		{6605FC24-821A-444A-947F-B4C9221FDFA5} = {80725186-5FA0-C599-0869-A8A7DA0F2122}
 		{179D4D35-3F98-4A19-8E05-1C5FF90C4161} = {6140EE31-9271-4D28-A5A3-9521F01D5BD1}
 		{E8547076-5E57-49B0-B878-D74CC441B758} = {599EC204-AA11-47D0-BC6D-E37F71486D91}
+		{487BC992-7B09-4BEA-8414-4FC940A178F4} = {599EC204-AA11-47D0-BC6D-E37F71486D91}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F48E9A7-1366-4AD7-B870-5DC3C142DDBE}

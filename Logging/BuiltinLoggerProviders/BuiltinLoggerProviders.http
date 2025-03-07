@@ -1,0 +1,6 @@
+@BuiltinLoggerProviders_HostAddress = http://localhost:5183
+
+GET {{BuiltinLoggerProviders_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
