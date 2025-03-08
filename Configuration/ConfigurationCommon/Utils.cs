@@ -39,7 +39,7 @@ Config Tree
         Console.WriteLine();
     }
 
-    public static void ShowConfigSection(IConfigurationSection section, int level)
+    private static void ShowConfigSection(IConfigurationSection section, int level)
     {
         var indent = new string(' ', level * 2);
         Console.WriteLine($"{indent}Path={section.Path}, Key={section.Key}, Value={section.Value}");
