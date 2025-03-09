@@ -30,6 +30,7 @@ class MyGuids : IAsyncEnumerable<string>
             }
             return true;
         }
+
         public ValueTask DisposeAsync()
         {
             return ValueTask.CompletedTask;
@@ -76,6 +77,7 @@ class MyGuids2 : IAsyncEnumerable<string>
         }
     }
 
+    //NOTE: The return type is not Task, Task<T>, or void, while "async" modifier is used.
     public async IAsyncEnumerator<string> GetAsyncEnumerator(CancellationToken cancellationToken = default)
     {
         foreach (var guid in _guids)
