@@ -4,8 +4,8 @@ namespace ErrorHandling;
 
 public class ErrorHandler
 {
-    RequestDelegate _next;
-    ILogger _logger;
+    private RequestDelegate _next;
+    private ILogger _logger;
 
     public ErrorHandler(RequestDelegate next, ILogger<ErrorHandler> logger)
     {
@@ -19,15 +19,12 @@ public class ErrorHandler
         {
             await _next(context);
         }
-        catch (Exception exception)
+        catch (Exception ex)
         {
-
-            _logger.LogError(exception, "Caught exception!");
-            var result = new { Exception = exception?.GetType().FullName, Message = exception?.ToString() };
-
+            _logger.LogError(ex, "Caught exception!");
             context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-            context.Response.ContentType = MediaTypeNames.Application.Json;
-            await context.Response.WriteAsJsonAsync(result);
+            context.Response.ContentType = MediaTypeNames.Text.Plain;
+            await context.Response.WriteAsync(ex.ToString());
         }
     }
 }
