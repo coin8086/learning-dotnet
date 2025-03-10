@@ -35,6 +35,7 @@ public class MyAuthenticationHandler : AuthenticationHandler<MyAuthenticationOpt
             return Task.FromResult(result);
         }
 
+        //TODO: Add claims of name type and role type.
         var claims = new Claim[]
         {
             new Claim("Name", "AuthenticatedUser")
