@@ -1,4 +1,4 @@
-namespace ConsoleLogFormatByConfig;
+namespace ConsoleLogFormat;
 
 public class Program
 {

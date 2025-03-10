@@ -1,4 +1,4 @@
-namespace ConsoleLogFormatByConfig;
+namespace ConsoleLogFormat;
 
 public class Worker : BackgroundService
 {
@@ -11,14 +11,12 @@ public class Worker : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        using var scope = _logger.BeginScope("ExecuteAsync");
         while (!stoppingToken.IsCancellationRequested)
         {
-            if (_logger.IsEnabled(LogLevel.Information))
-            {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-            }
-            await Task.Delay(1000, stoppingToken);
+            using var scope = _logger.BeginScope("Begin scope");
+            _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+            await Task.Delay(3000, stoppingToken);
+            _logger.LogInformation("End scope");
         }
     }
 }
