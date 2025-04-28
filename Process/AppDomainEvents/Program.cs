@@ -66,7 +66,13 @@ namespace AppDomainEvents
         private static void ProcessExit(object sender, EventArgs e)
         {
             var type = sender == null ? "" : sender.GetType().ToString();
-            Console.Error.WriteLine($"ProcessExit: sender: '{sender}', sender type: '{type}', e: '{e}'");
+            var msg = @"
+ProcessExit:
+- sender: '{0}'
+- sender type: '{1}'
+- e: '{2}'
+";
+            Console.Error.WriteLine(string.Format(msg, sender, type, e));
             Console.Error.Flush();
         }
 
@@ -78,7 +84,15 @@ namespace AppDomainEvents
         private static void UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             var type = sender == null ? "" : sender.GetType().ToString();
-            Console.Error.WriteLine($"UnhandledException: sender: '{sender}', sender type: '{type}', e: '{e}'");
+            var ex = (Exception)e.ExceptionObject;
+            var msg = @"
+UnhandledException:
+- sender: '{0}'
+- sender type: '{1}'
+- exception: '{2}'
+- terminating: {3}
+";
+            Console.Error.WriteLine(string.Format(msg, sender, type, ex, e.IsTerminating));
             Console.Error.Flush();
         }
     }
