@@ -8,7 +8,7 @@ namespace AppDomainEvents
     {
         static async Task Main(string[] args)
         {
-            int timeToWait = -1; //in seconds
+            int timeToWait = 0; //in seconds
             bool raiseException = false;
 
             try
@@ -29,7 +29,7 @@ namespace AppDomainEvents
                 }
                 if (timeToWait < 0)
                 {
-                    timeToWait = 5;
+                    timeToWait = 0;
                 }
             }
             catch (Exception ex)
@@ -46,13 +46,11 @@ namespace AppDomainEvents
 #pragma warning restore
             AppDomain.CurrentDomain.UnhandledException += UnhandledException;
 
+            await Task.Delay(timeToWait * 1000);
+
             if (raiseException)
             {
                 throw new ApplicationException("App exception.");
-            }
-            else
-            {
-                await Task.Delay(timeToWait * 1000);
             }
 
             Console.WriteLine("Bye, AppDomain!");
