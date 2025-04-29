@@ -5,4 +5,8 @@
     <TargetFrameworks>net8.0;net471</TargetFrameworks>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AppDomainEventsDep\AppDomainEventsDep.csproj" />
+  </ItemGroup>
+
 </Project>

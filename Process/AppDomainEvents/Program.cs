@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System;
+using AppDomainEventsDep;
 
 namespace AppDomainEvents
 {
@@ -52,6 +53,8 @@ namespace AppDomainEvents
             {
                 throw new ApplicationException("App exception.");
             }
+
+            Hello.Say();
 
             Console.WriteLine("Bye, AppDomain!");
         }
