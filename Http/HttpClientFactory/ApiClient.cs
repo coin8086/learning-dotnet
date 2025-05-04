@@ -1,6 +1,6 @@
-﻿namespace HttpClientFactory;
+namespace HttpClientFactory;
 
-public class ApiClient
+public class ApiClient : IDisposable
 {
     private HttpClient _client;
     private ILogger _logger;
@@ -10,6 +10,11 @@ public class ApiClient
         _client = client;
         _client.BaseAddress = new Uri("http://worldclockapi.com/");
         _logger = logger;
+    }
+
+    public void Dispose()
+    {
+        _client.Dispose();
     }
 
     public async Task<ApiResult?> GetResultAsync()

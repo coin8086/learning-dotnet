@@ -27,7 +27,7 @@ public class Program
         app.MapGet("/basic", async (IHttpClientFactory httpClientFactory, ILogger<Program> logger) =>
         {
             logger.LogInformation($"Get default client. httpClientFactory hashcode: {httpClientFactory.GetHashCode()}");
-            var client = httpClientFactory.CreateClient();
+            using var client = httpClientFactory.CreateClient();
             var result = await client.GetFromJsonAsync<ApiResult>("http://worldclockapi.com/api/json/utc/now");
             return result;
         });
@@ -35,7 +35,7 @@ public class Program
         app.MapGet("/named", async (IHttpClientFactory httpClientFactory, ILogger<Program> logger) =>
         {
             logger.LogInformation($"Get named client. httpClientFactory hashcode: {httpClientFactory.GetHashCode()}");
-            var client = httpClientFactory.CreateClient("worldclockapi");
+            using var client = httpClientFactory.CreateClient("worldclockapi");
             var result = await client.GetFromJsonAsync<ApiResult>("api/json/utc/now");
             return result;
         });
@@ -50,7 +50,7 @@ public class Program
         app.MapGet("/tracked", async (IHttpClientFactory httpClientFactory, ILogger<Program> logger) =>
         {
             logger.LogInformation($"Get tracked client. httpClientFactory hashcode: {httpClientFactory.GetHashCode()}");
-            var client = httpClientFactory.CreateClient("tracker");
+            using var client = httpClientFactory.CreateClient("tracker");
             var result = await client.GetFromJsonAsync<ApiResult>("http://worldclockapi.com/xyz");
             return result;
         });
