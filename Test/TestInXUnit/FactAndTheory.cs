@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Xunit;
 
 namespace TestInXUnit;
@@ -34,4 +35,18 @@ public class FactAndTheory
     {
         return value % 2 == 1;
     }
+
+    [Theory]
+    [MemberData(nameof(MemberData))]
+    public void MyTheoryOfMemberData(int x, int y, int expected)
+    {
+        Assert.Equal(expected, Add(x, y));
+    }
+
+    //The MemberData must be static and must be of type IEnumerable<object[]>.
+    public static IEnumerable<object[]> MemberData => new List<object[]>
+    {
+        new object[] { 1, 2, 3 },
+        new object[] { 1, 1, 2 },
+    };
 }
