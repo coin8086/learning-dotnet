@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 
 namespace ConfigurationCommon;
 
@@ -42,7 +42,8 @@ Config Tree
     private static void ShowConfigSection(IConfigurationSection section, int level)
     {
         var indent = new string(' ', level * 2);
-        Console.WriteLine($"{indent}Path={section.Path}, Key={section.Key}, Value={section.Value}");
+        var valueType = section.Value?.GetType().ToString() ?? "(null)";
+        Console.WriteLine($"{indent}Path='{section.Path}', Key='{section.Key}', Value='{section.Value}' ValueType='{valueType}'");
 
         foreach (var child in section.GetChildren())
         {
