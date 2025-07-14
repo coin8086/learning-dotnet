@@ -10,7 +10,9 @@
   </PropertyGroup>
 
   <!-- NOTE: Some target names are reserved, such as "Pack", "Run", etc.. Custom target of a reserved name is invalid. -->
+  <!-- For BeforeTargets and AfterBuild, see https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process?view=vs-2022 -->
   <Target Name="Execute" BeforeTargets="AfterBuild">
+    <!-- For a list of tasks, see https://learn.microsoft.com/en-us/visualstudio/msbuild/msbuild-task-reference?view=vs-2022 -->
     <Exec Command="$(PowerShellExe) -NonInteractive -ExecutionPolicy Unrestricted -File $(MSBuildProjectDirectory)\Cmd.ps1 $(Name)" />
   </Target>
 </Project>
