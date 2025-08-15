@@ -3,7 +3,7 @@
 
   <PropertyGroup>
     <!-- TargetFramework is required even when no assembly is to be built. -->
-    <TargetFramework>net9.0</TargetFramework>
+
   </PropertyGroup>
 
   <!-- For BeforeTargets, .etc, see https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process?view=vs-2022 -->

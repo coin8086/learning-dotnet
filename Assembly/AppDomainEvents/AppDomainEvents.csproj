@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
+
+    <!-- Explicitly override the value of TargetFramework defined in Directory.Build.props -->
+    <TargetFramework></TargetFramework>
+
     <TargetFrameworks>net8.0;net471</TargetFrameworks>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
