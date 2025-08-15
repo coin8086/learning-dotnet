@@ -2,8 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-DynamicConfiguration-0eb47564-656d-483f-80d8-10ea4064628d</UserSecretsId>
   </PropertyGroup>
 

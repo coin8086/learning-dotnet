@@ -1,9 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-ConsoleLogFormatByConfig-60f3647a-955f-4a1c-891d-a1e7535061a9</UserSecretsId>
   </PropertyGroup>
 

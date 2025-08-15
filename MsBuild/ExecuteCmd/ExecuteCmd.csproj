@@ -2,7 +2,6 @@
   <Sdk Name="Microsoft.Build.NoTargets" Version="3.7.56" />
   <PropertyGroup>
     <!-- TargetFramework is required even when no assembly is to be built. -->
-    <TargetFramework>net8.0</TargetFramework>
 
     <PowerShellExe Condition=" '$(PowerShellExe)'=='' ">%WINDIR%\System32\WindowsPowerShell\v1.0\powershell.exe</PowerShellExe>
 
