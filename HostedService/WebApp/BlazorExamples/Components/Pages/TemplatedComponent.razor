@@ -1,0 +1,32 @@
+@page "/templated-component"
+@rendermode InteractiveServer
+
+<h1>Templated Component</h1>
+
+<p>See <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/components/templated-components?view=aspnetcore-9.0">Blazor templated components</a></p>
+
+<TableTemplate Items="Numbers">
+    <Header>
+        <th>Base</th>
+        <th>10x</th>
+    </Header>
+    <Row Context="num">
+        <td style="text-align: right;">@num</td>
+        <td style="text-align: right;">@(num * 10)</td>
+    </Row>
+</TableTemplate>
+
+@code {
+    private List<int> Numbers { get; set; } = new List<int>() { 1, 2, 3 };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (Numbers.Count < 10)
+        {
+            await Task.Delay(3000);
+            //Numbers.Add(Numbers.Count + 1);
+            Numbers.Insert(0, Numbers.Count + 1);
+            StateHasChanged();
+        }
+    }
+}
