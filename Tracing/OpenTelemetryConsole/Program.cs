@@ -1,4 +1,4 @@
-﻿//See https://learn.microsoft.com/en-us/dotnet/core/diagnostics/distributed-tracing-collection-walkthroughs#collect-traces-using-opentelemetry
+//See https://learn.microsoft.com/en-us/dotnet/core/diagnostics/distributed-tracing-collection-walkthroughs#collect-traces-using-opentelemetry
 
 using MyLib;
 using OpenTelemetry;
@@ -28,7 +28,7 @@ class Program
             var worker = new MyWorker();
             await worker.DoSomeWork("banana", 8).ConfigureAwait(false);
 
-            Console.WriteLine("Some work done");
+            Console.WriteLine("End some work");
         }
     }
 }

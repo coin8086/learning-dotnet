@@ -1,4 +1,4 @@
-﻿//See https://learn.microsoft.com/en-us/dotnet/core/diagnostics/distributed-tracing-instrumentation-walkthroughs
+//See https://learn.microsoft.com/en-us/dotnet/core/diagnostics/distributed-tracing-instrumentation-walkthroughs
 
 using System.Diagnostics;
 
@@ -23,17 +23,19 @@ public class MyWorker
 
     async Task StepOne()
     {
+        await Task.Delay(500).ConfigureAwait(false);
         using (var activity = _source.StartActivity("StepOne"))
         {
-            await Task.Delay(500).ConfigureAwait(false);
+            Console.WriteLine("Do it in step one.");
         }
     }
 
     async Task StepTwo()
     {
+        await Task.Delay(1000).ConfigureAwait(false);
         using (var activity = _source.StartActivity("StepTwo"))
         {
-            await Task.Delay(1000).ConfigureAwait(false);
+            Console.WriteLine("Do it in step two.");
         }
     }
 }
