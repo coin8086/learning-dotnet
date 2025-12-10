@@ -1,0 +1,6 @@
+@UsingOpenTelemetry_HostAddress = http://localhost:5245
+
+GET {{UsingOpenTelemetry_HostAddress}}/
+Accept: application/json
+
+###

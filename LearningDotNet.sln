@@ -293,6 +293,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingConcurrentBag", "Colle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILoggerAndActivity", "Tracing\ILoggerAndActivity\ILoggerAndActivity.csproj", "{99822907-78F7-4ACD-A6DA-D6CF4E2CF315}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingOpenTelemetry", "Tracing\UsingOpenTelemetry\UsingOpenTelemetry.csproj", "{35BB3BC5-6E77-479F-812F-3239E69500AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1707,6 +1709,18 @@ Global
 		{99822907-78F7-4ACD-A6DA-D6CF4E2CF315}.Release|x64.Build.0 = Release|Any CPU
 		{99822907-78F7-4ACD-A6DA-D6CF4E2CF315}.Release|x86.ActiveCfg = Release|Any CPU
 		{99822907-78F7-4ACD-A6DA-D6CF4E2CF315}.Release|x86.Build.0 = Release|Any CPU
+		{35BB3BC5-6E77-479F-812F-3239E69500AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35BB3BC5-6E77-479F-812F-3239E69500AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35BB3BC5-6E77-479F-812F-3239E69500AB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{35BB3BC5-6E77-479F-812F-3239E69500AB}.Debug|x64.Build.0 = Debug|Any CPU
+		{35BB3BC5-6E77-479F-812F-3239E69500AB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{35BB3BC5-6E77-479F-812F-3239E69500AB}.Debug|x86.Build.0 = Debug|Any CPU
+		{35BB3BC5-6E77-479F-812F-3239E69500AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35BB3BC5-6E77-479F-812F-3239E69500AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35BB3BC5-6E77-479F-812F-3239E69500AB}.Release|x64.ActiveCfg = Release|Any CPU
+		{35BB3BC5-6E77-479F-812F-3239E69500AB}.Release|x64.Build.0 = Release|Any CPU
+		{35BB3BC5-6E77-479F-812F-3239E69500AB}.Release|x86.ActiveCfg = Release|Any CPU
+		{35BB3BC5-6E77-479F-812F-3239E69500AB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1834,6 +1848,7 @@ Global
 		{3D456403-7AE0-4E25-A4BF-1B8D5FA6BBC6} = {B681AB42-2700-4D42-B1F8-31EB13C35E31}
 		{33D37295-D1E3-4026-B07E-B89DC248985A} = {B78A4FEC-D743-4D76-8075-7A1D7D7718D3}
 		{99822907-78F7-4ACD-A6DA-D6CF4E2CF315} = {0B1FC8EE-951B-4732-9D14-9BAEC12F781B}
+		{35BB3BC5-6E77-479F-812F-3239E69500AB} = {0B1FC8EE-951B-4732-9D14-9BAEC12F781B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6F48E9A7-1366-4AD7-B870-5DC3C142DDBE}
