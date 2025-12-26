@@ -1,6 +1,7 @@
 <Project>
   <!-- See https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management -->
   <ItemGroup>
+    <PackageVersion Include="Azure.Monitor.OpenTelemetry.Exporter" Version="1.5.0" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <PackageVersion Include="Google.Protobuf" Version="3.32.0" />
     <PackageVersion Include="Grpc.AspNetCore" Version="2.71.0" />

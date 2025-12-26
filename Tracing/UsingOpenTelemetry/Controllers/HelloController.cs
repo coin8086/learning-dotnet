@@ -22,7 +22,7 @@ public class HelloController : ControllerBase
         await Task.Yield();
 
         // Create a new Activity scoped to the method
-        using var activity = Globals.GreeterActivitySource.StartActivity("GreeterActivity");
+        using var activity = Globals.Source.StartActivity("GreeterActivity");
 
         // Log a message
         _logger.LogInformation("Sending greeting");
@@ -40,7 +40,7 @@ public class HelloController : ControllerBase
     public async Task SendNestedGreeting([FromQuery] int nestlevel)
     {
         // Create a new Activity scoped to the method
-        using var activity = Globals.GreeterActivitySource.StartActivity("GreeterActivity");
+        using var activity = Globals.Source.StartActivity("GreeterActivity");
 
         if (nestlevel <= 5)
         {

@@ -5,17 +5,17 @@ namespace UsingOpenTelemetry;
 
 public static class Globals
 {
-    #region Custom metrics for the application
+    #region metrics
 
-    public static Meter GreeterMeter { get; } = new Meter("OtPrGrYa.Example", "1.0.0");
+    public static Meter Meter { get; } = new Meter("Example");
 
-    public static Counter<int> GreetingsCount { get; } = GreeterMeter.CreateCounter<int>("greetings.count", description: "Counts the number of greetings");
+    public static Counter<int> GreetingsCount { get; } = Meter.CreateCounter<int>("greetings.count", description: "Counts the number of greetings");
 
     #endregion
 
-    #region Custom ActivitySource for the application
+    #region trace
 
-    public static ActivitySource GreeterActivitySource { get; } = new ActivitySource("OtPrGrJa.Example");
+    public static ActivitySource Source { get; } = new ActivitySource("Example");
 
     #endregion
 }
