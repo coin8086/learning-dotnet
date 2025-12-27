@@ -7,11 +7,14 @@ namespace UsingOpenTelemetry;
 
 public static class OpenTelemetryIHostApplicationBuilderExt
 {
-    public static IHostApplicationBuilder AddOpenTelemetry(this IHostApplicationBuilder builder, TelemteryOptions telemetryOptions)
+    public static IHostApplicationBuilder AddOpenTelemetry(this IHostApplicationBuilder builder, TelemteryOptions telemetryOptions, string? version = null)
     {
         var otel = builder.Services.AddOpenTelemetry();
 
-        otel.ConfigureResource(resource => resource.AddService(serviceName: builder.Environment.ApplicationName));
+        otel.ConfigureResource(resource =>
+        {
+            resource.AddService(serviceName: builder.Environment.ApplicationName, serviceVersion: version);
+        });
 
         otel.WithMetrics(metrics =>
         {
@@ -25,10 +28,6 @@ public static class OpenTelemetryIHostApplicationBuilderExt
             if (telemetryOptions.ExportToPrometheus)
             {
                 metrics.AddPrometheusExporter();
-            }
-            if (telemetryOptions.Otlp != null)
-            {
-                metrics.AddOtlpExporter(opts => opts.Endpoint = new Uri(telemetryOptions.Otlp.EndPoint));
             }
             if (telemetryOptions.AzureMonitor != null)
             {

@@ -3,6 +3,8 @@
 //and https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-configuration?tabs=net
 //and https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-add-modify?tabs=net
 
+using System.Reflection;
+
 namespace UsingOpenTelemetry;
 
 public class Program
@@ -17,7 +19,7 @@ public class Program
         var telemetryOptions = builder.Configuration.GetTelemteryOptions("Telemetry");
         if (telemetryOptions != null)
         {
-            builder.AddOpenTelemetry(telemetryOptions);
+            builder.AddOpenTelemetry(telemetryOptions, GetVersion());
         }
 
         var app = builder.Build();
@@ -29,5 +31,16 @@ public class Program
         app.MapControllers();
 
         app.Run();
+    }
+
+    public static string? GetVersion()
+    {
+        var assembly = typeof(Program).Assembly;
+        var infoVersion = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+        if (infoVersion == null)
+        {
+            return null;
+        }
+        return infoVersion.Split('+')[0];
     }
 }

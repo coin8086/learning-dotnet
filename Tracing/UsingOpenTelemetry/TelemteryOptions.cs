@@ -4,12 +4,16 @@ namespace UsingOpenTelemetry;
 
 public class TelemteryOptions
 {
+    //Export metrics and trace to console
     public bool ExportToConsole { get; set; } = false;
 
+    //Export metrics to Prometheus
     public bool ExportToPrometheus { get; set; } = false;
 
+    //Export trace in OTLP
     public OtlpOptions? Otlp { get; set; }
 
+    //Export metrics, trace and optionally logs to Azure Monitor
     public AzureMonitorOptions? AzureMonitor { get; set; }
 }
 
