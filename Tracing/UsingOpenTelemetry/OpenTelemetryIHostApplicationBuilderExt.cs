@@ -7,7 +7,8 @@ namespace UsingOpenTelemetry;
 
 public static class OpenTelemetryIHostApplicationBuilderExt
 {
-    public static IHostApplicationBuilder AddOpenTelemetry(this IHostApplicationBuilder builder, TelemteryOptions telemetryOptions, string? version = null)
+    public static IHostApplicationBuilder AddOpenTelemetry(this IHostApplicationBuilder builder, TelemteryOptions telemetryOptions,
+        Action<MeterProviderBuilder>? configureMeter = null, Action<TracerProviderBuilder>? configureTracer = null, string? version = null)
     {
         var otel = builder.Services.AddOpenTelemetry();
 
@@ -16,44 +17,45 @@ public static class OpenTelemetryIHostApplicationBuilderExt
             resource.AddService(serviceName: builder.Environment.ApplicationName, serviceVersion: version);
         });
 
-        otel.WithMetrics(metrics =>
+        if (configureMeter != null)
         {
-            metrics.AddAspNetCoreInstrumentation();
-            metrics.AddMeter(Globals.Meter.Name);
+            otel.WithMetrics(metrics =>
+            {
+                if (telemetryOptions.ExportToConsole)
+                {
+                    metrics.AddConsoleExporter();
+                }
+                if (telemetryOptions.ExportToPrometheus)
+                {
+                    metrics.AddPrometheusExporter();
+                }
+                if (telemetryOptions.AzureMonitor != null)
+                {
+                    metrics.AddAzureMonitorMetricExporter(opts => opts.ConnectionString = telemetryOptions.AzureMonitor.ConnectionString);
+                }
+                configureMeter(metrics);
+            });
+        }
 
-            if (telemetryOptions.ExportToConsole)
-            {
-                metrics.AddConsoleExporter();
-            }
-            if (telemetryOptions.ExportToPrometheus)
-            {
-                metrics.AddPrometheusExporter();
-            }
-            if (telemetryOptions.AzureMonitor != null)
-            {
-                metrics.AddAzureMonitorMetricExporter(opts => opts.ConnectionString = telemetryOptions.AzureMonitor.ConnectionString);
-            }
-        });
-
-        otel.WithTracing(tracing =>
+        if (configureTracer != null)
         {
-            tracing.AddAspNetCoreInstrumentation();
-            tracing.AddHttpClientInstrumentation();
-            tracing.AddSource(Globals.Source.Name);
-
-            if (telemetryOptions.ExportToConsole)
+            otel.WithTracing(tracing =>
             {
-                tracing.AddConsoleExporter();
-            }
-            if (telemetryOptions.Otlp != null)
-            {
-                tracing.AddOtlpExporter(opts => opts.Endpoint = new Uri(telemetryOptions.Otlp.EndPoint));
-            }
-            if (telemetryOptions.AzureMonitor != null)
-            {
-                tracing.AddAzureMonitorTraceExporter(opts => opts.ConnectionString = telemetryOptions.AzureMonitor.ConnectionString);
-            }
-        });
+                if (telemetryOptions.ExportToConsole)
+                {
+                    tracing.AddConsoleExporter();
+                }
+                if (telemetryOptions.Otlp != null)
+                {
+                    tracing.AddOtlpExporter(opts => opts.Endpoint = new Uri(telemetryOptions.Otlp.EndPoint));
+                }
+                if (telemetryOptions.AzureMonitor != null)
+                {
+                    tracing.AddAzureMonitorTraceExporter(opts => opts.ConnectionString = telemetryOptions.AzureMonitor.ConnectionString);
+                }
+                configureTracer(tracing);
+            });
+        }
 
         if (telemetryOptions?.AzureMonitor?.ExportLog ?? false)
         {

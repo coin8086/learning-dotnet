@@ -40,7 +40,7 @@ public class HelloController : ControllerBase
     public async Task SendNestedGreeting([FromQuery] int nestlevel)
     {
         // Create a new Activity scoped to the method
-        using var activity = Globals.Source.StartActivity("GreeterActivity");
+        using var activity = Globals.Source.StartActivity("NestedGreeterActivity");
 
         if (nestlevel <= 5)
         {

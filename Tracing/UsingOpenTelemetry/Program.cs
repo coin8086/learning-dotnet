@@ -3,6 +3,8 @@
 //and https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-configuration?tabs=net
 //and https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-add-modify?tabs=net
 
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Trace;
 using System.Reflection;
 
 namespace UsingOpenTelemetry;
@@ -19,7 +21,11 @@ public class Program
         var telemetryOptions = builder.Configuration.GetTelemteryOptions("Telemetry");
         if (telemetryOptions != null)
         {
-            builder.AddOpenTelemetry(telemetryOptions, GetVersion());
+            builder.AddOpenTelemetry(
+                telemetryOptions,
+                meterBuilder => meterBuilder.AddAspNetCoreInstrumentation().AddMeter(Globals.Meter.Name),
+                tracerBuilder => tracerBuilder.AddAspNetCoreInstrumentation().AddHttpClientInstrumentation().AddSource(Globals.Source.Name),
+                GetVersion());
         }
 
         var app = builder.Build();
