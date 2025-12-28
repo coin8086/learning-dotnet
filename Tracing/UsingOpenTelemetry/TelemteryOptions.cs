@@ -10,7 +10,7 @@ public class TelemteryOptions
     //Export metrics to Prometheus
     public bool ExportToPrometheus { get; set; } = false;
 
-    //Export trace in OTLP
+    //Export metrics and/or trace in OTLP
     public OtlpOptions? Otlp { get; set; }
 
     //Export metrics, trace and optionally logs to Azure Monitor

@@ -2,9 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace UsingOpenTelemetry;
 
-public class OtlpOptions
+public class OtlpOptions : OtlpBaseOptions
 {
-    [Required]
-    [Url]
-    public string EndPoint { get; set; } = default!;
+    public OtlpBaseOptions? Metrics { get; set; }
+
+    public OtlpBaseOptions? Trace { get; set; }
 }

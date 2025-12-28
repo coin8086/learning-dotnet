@@ -7,7 +7,7 @@ namespace UsingOpenTelemetry;
 
 public static class OpenTelemetryIHostApplicationBuilderExt
 {
-    public static IHostApplicationBuilder AddOpenTelemetry(this IHostApplicationBuilder builder, TelemteryOptions telemetryOptions,
+    public static IHostApplicationBuilder AddOpenTelemetry(this IHostApplicationBuilder builder, TelemteryOptions options,
         Action<MeterProviderBuilder>? configureMeter = null, Action<TracerProviderBuilder>? configureTracer = null, string? version = null)
     {
         var otel = builder.Services.AddOpenTelemetry();
@@ -21,17 +21,33 @@ public static class OpenTelemetryIHostApplicationBuilderExt
         {
             otel.WithMetrics(metrics =>
             {
-                if (telemetryOptions.ExportToConsole)
+                if (options.ExportToConsole)
                 {
                     metrics.AddConsoleExporter();
                 }
-                if (telemetryOptions.ExportToPrometheus)
+                if (options.Otlp != null)
+                {
+                    var endPoint = options.Otlp.Metrics?.EndPoint ?? options.Otlp.EndPoint;
+                    if (endPoint != null)
+                    {
+                        metrics.AddOtlpExporter(opts =>
+                        {
+                            opts.Endpoint = new Uri(endPoint);
+                            var protocol = options.Otlp.Metrics?.Protocol ?? options.Otlp.Protocol;
+                            if (protocol != null)
+                            {
+                                opts.Protocol = protocol.Value;
+                            }
+                        });
+                    }
+                }
+                if (options.ExportToPrometheus)
                 {
                     metrics.AddPrometheusExporter();
                 }
-                if (telemetryOptions.AzureMonitor != null)
+                if (options.AzureMonitor != null)
                 {
-                    metrics.AddAzureMonitorMetricExporter(opts => opts.ConnectionString = telemetryOptions.AzureMonitor.ConnectionString);
+                    metrics.AddAzureMonitorMetricExporter(opts => opts.ConnectionString = options.AzureMonitor.ConnectionString);
                 }
                 configureMeter(metrics);
             });
@@ -41,30 +57,41 @@ public static class OpenTelemetryIHostApplicationBuilderExt
         {
             otel.WithTracing(tracing =>
             {
-                if (telemetryOptions.ExportToConsole)
+                if (options.ExportToConsole)
                 {
                     tracing.AddConsoleExporter();
                 }
-                if (telemetryOptions.Otlp != null)
+                if (options.Otlp != null)
                 {
-                    tracing.AddOtlpExporter(opts => opts.Endpoint = new Uri(telemetryOptions.Otlp.EndPoint));
+                    var endPoint = options.Otlp.Trace?.EndPoint ?? options.Otlp.EndPoint;
+                    if (endPoint != null)
+                    {
+                        tracing.AddOtlpExporter(opts =>
+                        {
+                            opts.Endpoint = new Uri(endPoint);
+                            var protocol = options.Otlp.Trace?.Protocol ?? options.Otlp.Protocol;
+                            if (protocol != null) {
+                                opts.Protocol = protocol.Value;
+                            }
+                        });
+                    }
                 }
-                if (telemetryOptions.AzureMonitor != null)
+                if (options.AzureMonitor != null)
                 {
-                    tracing.AddAzureMonitorTraceExporter(opts => opts.ConnectionString = telemetryOptions.AzureMonitor.ConnectionString);
+                    tracing.AddAzureMonitorTraceExporter(opts => opts.ConnectionString = options.AzureMonitor.ConnectionString);
                 }
                 configureTracer(tracing);
             });
         }
 
-        if (telemetryOptions?.AzureMonitor?.ExportLog ?? false)
+        if (options?.AzureMonitor?.ExportLog ?? false)
         {
-            builder.Logging.AddOpenTelemetry(options =>
+            builder.Logging.AddOpenTelemetry(opts =>
             {
-                options.AddAzureMonitorLogExporter(opts =>
+                opts.AddAzureMonitorLogExporter(opts2 =>
                 {
-                    opts.ConnectionString = telemetryOptions.AzureMonitor.ConnectionString;
-                    opts.EnableTraceBasedLogsSampler = false;
+                    opts2.ConnectionString = options.AzureMonitor.ConnectionString;
+                    opts2.EnableTraceBasedLogsSampler = false;
                 });
             });
         }
