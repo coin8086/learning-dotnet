@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace CustomValidator;
 
@@ -19,9 +19,11 @@ public class RecursiveValidationAttribute : ValidationAttribute
             var displayName = DisplayName ?? context.DisplayName;
             var ctx = new ValidationContext(value) { DisplayName = displayName };
             var results = new List<ValidationResult>();
-            if (!Validator.TryValidateObject(value, ctx, results, false))
+            if (!Validator.TryValidateObject(value, ctx, results, true))
             {
-                return new ValidationResult($"{displayName}: {results[0].ErrorMessage}", [displayName]);
+                var errors = results.Select(x => x.ErrorMessage);
+                var errorMsg = string.Join('\n', errors);
+                return new ValidationResult($"{displayName}:\n{errorMsg}", [displayName]);
             }
         }
         return ValidationResult.Success;
