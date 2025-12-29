@@ -63,13 +63,13 @@ public static class OpenTelemetryIHostApplicationBuilderExt
                 }
                 if (options.Otlp != null)
                 {
-                    var endPoint = options.Otlp.Trace?.EndPoint ?? options.Otlp.EndPoint;
+                    var endPoint = options.Otlp.Tracing?.EndPoint ?? options.Otlp.EndPoint;
                     if (endPoint != null)
                     {
                         tracing.AddOtlpExporter(opts =>
                         {
                             opts.Endpoint = new Uri(endPoint);
-                            var protocol = options.Otlp.Trace?.Protocol ?? options.Otlp.Protocol;
+                            var protocol = options.Otlp.Tracing?.Protocol ?? options.Otlp.Protocol;
                             if (protocol != null) {
                                 opts.Protocol = protocol.Value;
                             }

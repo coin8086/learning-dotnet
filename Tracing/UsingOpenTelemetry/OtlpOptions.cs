@@ -6,5 +6,5 @@ public class OtlpOptions : OtlpBaseOptions
 {
     public OtlpBaseOptions? Metrics { get; set; }
 
-    public OtlpBaseOptions? Trace { get; set; }
+    public OtlpBaseOptions? Tracing { get; set; }
 }
